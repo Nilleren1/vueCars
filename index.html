@@ -15,9 +15,11 @@
   <title>Cars</title>
 </head>
 
-<body>
+<body class="centerImg">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <!-- <a style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" class="navbar-brand" href="#">Mit Lift</a> -->
+    <img style="margin-right: 5em; height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,11 +27,17 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item active ">
           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/AddCar.html">Add Car</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/login.html">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup.html">Sign Up</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -46,14 +54,14 @@
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
   </nav>
 
   <div id="app">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-6 margin3">
         <h1>All cars</h1>
         <h3>Car list</h3>
         <ul v-if="carArray">
@@ -65,6 +73,11 @@
         <div v-else>
           Error! No cars
         </div>
+      </div>
+      <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+      <div class="col-sm-12">
+        
       </div>
     </div>
 
@@ -80,40 +93,61 @@ bottom: 0; width: 100%;
           <!-- Section: Social media -->
           <section class="mb-4">
             <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                class="fab fa-facebook-f"></i></a>
+            <div class="row">
+            <div class="col">
+              Follow us on social media:
+            </div>
+            <div class="">
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-facebook-f"></i></a>
 
-            <!-- Twitter -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-twitter"></i></a>
 
-            <!-- Google -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+              <!-- Google -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-google"></i></a>
 
-            <!-- Instagram -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                class="fab fa-instagram"></i></a>
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-instagram"></i></a>
 
-            <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                class="fab fa-linkedin-in"></i></a>
+              <!-- Linkedin -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-linkedin-in"></i></a>
 
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-          </section>
-          <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
+              <!-- Github -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-github"></i></a>
+            </div>
+            <div class="col">
+              - © 2023 Copyright:
+              <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
 
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2023 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
+          </div>
+        </section>
     </div>
+    <!-- Grid container -->
+
+
+    </footer>
+  </div>
   </div>
   <script defer src="script.js"></script>
 </body>
 
 </html>
+
+<style>
+  .centerImg {
+    background-image: url('/img/backgroundMaps.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  .margin3{
+    margin: 3em;
+  }
+</style>
