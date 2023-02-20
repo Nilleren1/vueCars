@@ -1,14 +1,31 @@
+
+body.centerImg {
+    background-image: url('/img/backgroundMaps.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  .margin3 {
+    margin: 3em;
+  }
+
 .footerBot{
     position: fixed;
    bottom: 0;
 }
+label{
+    font-weight: 600;
 
+}
 .form-control{
     border-radius: 30px;
+
 }
 
 .btn.logindBtnStyle{
     border-radius: 25px;
     border-color: darkgray;
     background-color: rgb(176, 188, 190);
+    font-weight: 600;
 }
