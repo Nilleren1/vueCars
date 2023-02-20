@@ -1,4 +1,4 @@
-const baseUrl = "https://corolabpraktik.azurewebsites.net/cars"
+const baseUrl = "https://myressourcem.azurewebsites.net/api/carshare"
 
 Vue.createApp({
     data() {
@@ -12,10 +12,6 @@ Vue.createApp({
         this.getAllCars()
     },
     methods: {
-        getAllCars(){
-            this.getAllCarsHelper(baseUrl)
-            //istedet for at genskrive koden, gør jeg den mere dry ved at lave en helper
-        },
         async getAllCarsHelper(url){
             try {//fejl håndtering 
                 const result = await axios.get(url)
@@ -26,6 +22,12 @@ Vue.createApp({
                 alert(ex.message) 
             }
         },
+        getAllCars(){
+            console.log("Getting the get method")
+            this.getAllCarsHelper(baseUrl)
+            //istedet for at genskrive koden, gør jeg den mere dry ved at lave en helper
+        },
+        
         cleanList() {
             this.carArray = []
             this.error = null

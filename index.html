@@ -5,25 +5,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"-->
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!--Bootstrap-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Axios -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js%22%3E"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
   <!--Vue.js-->
-  <script src="https://unpkg.com/vue@next%22%3E"></script>
   <!--Own CSS link-->
   <link rel="stylesheet" href="style.css">
+
   <title>Cars</title>
 </head>
 
 <body class="centerImg">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <!-- <a style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" class="navbar-brand" href="#">Mit Lift</a> -->
-    <img style="margin-right: 5em; height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
-    
+    <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -43,18 +45,21 @@
         <li class="nav-item">
           <a class="nav-link" href="/Pages/createAccount.html">Sign Up</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+        <li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+              <button class="dropdown-item" type="button">Action</button>
+              <button class="dropdown-item" type="button">Another action</button>
+              <button class="dropdown-item" type="button">Something else here</button>
+            </div>
           </div>
         </li>
+
+
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -68,21 +73,44 @@
       <div class="col-sm-6 margin3">
         <h1>All cars</h1>
         <h3>Car list</h3>
-        <ul v-if="carArray">
-          <li v-for="car in carArray">
-            <!-- shows cars -->
-            {{ car }}
-          </li>
-        </ul>
+
+        <table v-if="carArray.length" class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th>CarId</th>
+              <th>AccountId</th>
+              <th>Start Dest.</th>
+              <th>End Dest.</th>
+              <th>Drive Date</th>
+              <th>Price</th>
+              <th>Seats</th>
+              <th>brand</th>
+              <th>Model</th>
+              <th>Fuel Type</th>
+              <th>Is Full</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="car in carArray">
+              <td>{{car.carId}}</td>
+              <td>{{car.accountId}}</td>
+              <td>{{car.startDestination}}</td>
+              <td>{{car.endDestination}}</td>
+              <td>{{car.driveDate}}</td>
+              <td>{{car.price}}</td>
+              <td>{{car.availableSeats}}</td>
+              <td>{{car.brand}}</td>
+              <td>{{car.model}}</td>
+              <td>{{car.fuelType}}</td>
+              <td>{{car.isFull}}</td>
+            </tr>
+          </tbody>
+        </table>
         <div v-else>
           Error! No cars
         </div>
       </div>
-      <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-      <div class="col-sm-12">
-        
-      </div>
+      <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
     </div>
 
     <!-- style="position: fixed;
@@ -98,48 +126,48 @@ bottom: 0; width: 100%;
           <section class="mb-4">
             <!-- Facebook -->
             <div class="row">
-            <div class="col">
-              Follow us on social media:
+              <div class="col">
+                Follow us on social media:
+              </div>
+              <div class="">
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-github"></i></a>
+              </div>
+              <div class="col">
+                - © 2023 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+              </div>
+
             </div>
-            <div class="">
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                  class="fab fa-facebook-f"></i></a>
+          </section>
+        </div>
+        <!-- Grid container -->
 
-              <!-- Twitter -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                  class="fab fa-twitter"></i></a>
 
-              <!-- Google -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                  class="fab fa-google"></i></a>
-
-              <!-- Instagram -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                  class="fab fa-instagram"></i></a>
-
-              <!-- Linkedin -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                  class="fab fa-linkedin-in"></i></a>
-
-              <!-- Github -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                  class="fab fa-github"></i></a>
-            </div>
-            <div class="col">
-              - © 2023 Copyright:
-              <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-            </div>
-
-          </div>
-        </section>
+      </footer>
     </div>
-    <!-- Grid container -->
-
-
-    </footer>
   </div>
-  </div>
-  <script defer src="script.js"></script>
+  <script src="/index.js"></script>
 </body>
 
 </html>
@@ -151,7 +179,8 @@ bottom: 0; width: 100%;
     background-attachment: fixed;
     background-position: center;
   }
-  .margin3{
+
+  .margin3 {
     margin: 3em;
   }
 </style>
