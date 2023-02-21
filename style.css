@@ -4,18 +4,9 @@ body.centerImg {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
   }
 
-  .margin3 {
-    margin: 3em;
-    
-
-  }
-
-.footerBot{
-    position: fixed;
-   bottom: 0;
-}
 label{
     font-weight: 600;
 
@@ -33,8 +24,11 @@ label{
     font-weight: 600;
 }
 
+.frontpageBackStyling{
+  background-color: #8f8f8f;
+}
+
 .search{
-  width: 100;
   padding: 5%;
   background-position: center;
   display: flex;
@@ -46,7 +40,7 @@ label{
   background-color: rgb(212, 212, 218);
   display: flex;
   align-items: center;
-  border-radius: 70px;
+  border-radius: 40px;
   padding: 10px 10px;
   
 }
