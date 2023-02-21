@@ -8,6 +8,8 @@ body.centerImg {
 
   .margin3 {
     margin: 3em;
+    
+
   }
 
 .footerBot{
@@ -30,3 +32,60 @@ label{
     background-color: rgb(176, 188, 190);
     font-weight: 600;
 }
+
+.search{
+  width: 100;
+  padding: 5%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+} 
+.search-bar{
+  width: 100%;
+  max-width: 350px;
+  background-color: rgb(212, 212, 218);
+  display: flex;
+  align-items: center;
+  border-radius: 70px;
+  padding: 10px 10px;
+  
+}
+
+.search-bar input{
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 15px 15px;
+  font-size: 15px;
+  color: #7c7c7c;
+}
+
+<!-- manlger billede-->
+.search-bar button img{
+  width: px;
+}
+.search-bar button{
+  width: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: rgb(253, 254, 255);
+  cursor: pointer;
+
+}
+.datetime-{
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+ 
+  
+}
+.datetime{
+  border-radius: 50px;
+  cursor: pointer;
+ 
+}
+
+
+
