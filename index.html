@@ -25,7 +25,7 @@
 <body class="centerImg">
   <div id="app">
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark navStyling">
       <a class="navbar-brand" href="index.html">
         <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
       </a>
@@ -44,7 +44,7 @@
             <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
           </li>
           <!-- Dropdown -->
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
               Dropdown link
             </a>
@@ -53,83 +53,55 @@
               <a class="dropdown-item" href="#">Link 2</a>
               <a class="dropdown-item" href="#">Link 3</a>
             </div>
-          </li>
+          </li> -->
         </ul>
+
+      </div>
+      <div class="nav-item d-flex justify-content-between">
+        <!--div class="nav-link text-white" href="">Mit Lift</div-->
+        <div class="nav-link text-white" href="">Login</div>
+      </div>
+      <div class="d-flex justify-content-between text-white">
+        <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
       </div>
     </nav>
-    
-<!-- SØG LIFT -->
-<div class="row">
-  <div class="col-3">
-    1
-  </div>
-  <div class="col-6 border p-3 frontpageBackStyling">
-      <form action="" class="">
-        <input class="datetime" type="text" 
-        placeholder="Til">
-        <input class="datetime" type="text" 
-        placeholder="Fra">
-            <input class="datetime" 
-            type="datetime-local" 
-            placeholder="Select datetime-local">
-        <!--button type="submit"><img src=""-->
-      </form>
-      <br>
-      <br>
-    <a class="container btn btn-primary btn-md btn-block p-1" href="#!" role="button">
-      <span style="font-size:smaller;">Søg</span></a>
-  </div>
-  <div class="col-3">
-    2
-  </div>
-</div>
 
-  <div class="row">
-    <div class="container col-7">
-<div class="card">
-  <div class="card-body"></div>
-  <h4 class="card-title">Melanie </h4>
-  <h5>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-    </h5>
-  <div class="d-flex align-items-center flex-column" style="height: 200px;">
-    <div class="p-1">I morgen kl 14.00</div>
-    <div class="p-1">Roskilde</div>
-    <div class="p-1">Maglegårdsvej 5 Roskilde</div>
-  </div>
-  <div class="d-flex align-items-end flex-column" style="height: 200px;">
-    <div class="p-1">DKK 150kr</div>
-</div>
-  <a href="#" class="btn btn-primary">See Profile</a>
-</div>
-</div>
-</div>
-</div>
-
-
-    <!-- <div class="card" >
-     
-      <div class="card">
-        <div class="card-body"></div>
-        <h4 class="card-title">Anders</h4>
-        <p class="card-text">Roskilde</p>
-        <a href="#" class="btn btn-primary">See Profile</a>
+    <!-- SØG LIFT -->
+    <div class="row">
+      <div class="col-3">
+        1
+      </div>
+      <div class="col-6 border p-3 frontpageBackStyling">
+        <!-- <form action="" class="">
+          <input class="datetime" type="text" placeholder="Til">
+          <input class="datetime" type="text" placeholder="Fra">
+          <input class="datetime" type="datetime-local" placeholder="Select datetime-local">
+        </form> -->
+        <form>
+          <div class="form-row">
+            <div class="col-3">
+              <input class="datetime" type="text" placeholder="Til...">
+            </div>
+            <div class="col-3">
+              <input class="datetime" type="text" placeholder="Fra... ">
+            </div>
+            <div class="col d-flex justify-content-end">
+              <input class="datetime text-white" type="datetime-local" placeholder="Select date and time">
+            </div>
+          </div>
+        </form>
+        <br>
+        <br>
+        <a class="container btn btn-primary btn-md btn-block p-1" href="#!" role="button">
+          <span style="font-size:smaller;">Søg</span></a>
+      </div>
+      <div class="col-3">
+        2
       </div>
     </div>
-    <div class="w-100"></div>
-    <div class="card">
-      <div class="card-body"></div>
-      <h4 class="card-title">Patrick</h4>
-      <p class="card-text">Hedehusene </p>
-      <a href="#" class="btn btn-primary">See Profile</a> -->
-      
-   
-<!--NEW ROW WITH DATA-->
+
+
+    <!--NEW ROW WITH DATA-->
     <div class="row">
       <div class="col-3">
         col-1
@@ -137,26 +109,70 @@
       <div class="col-6 mt-3 p-3 frontpageBackStyling">
         <table v-if="carArray.length" class="table table-dark table-striped">
           <div class="row">
-            <div class="container col-9">
-        <div class="card">
-          <div class="card-body"></div>
-          <h4 class="card-title">Melanie</h4>
-          <p class="card-text">Taastrup</p>
-          <a href="#" class="btn btn-primary">See Profile</a>
-            <div class="card-body"></div>
-            <h4 class="card-title">Anders</h4>
-            <p class="card-text">Roskilde</p>
-            <a href="#" class="btn btn-primary">See Profile</a>
+            <div class="container col">
+              <!--CARD START-->
+              <div class="card cardStyling">
+                <div class="card-body d-flex justify-content-between">
+                  <div>
+                    <img class="card-img-top" src="/img/mit lift-logos_black.png" alt="Card image cap"
+                      style="height: 90px; width: auto;">
+                    <h4 class="card-title">Melanie</h4>
+                    <h6><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
+                        class="fa fa-star checked"></span><span class="fa fa-star"></span><span
+                        class="fa fa-star"></span></h6>
+                  </div>
+
+                  <div class="card-text">
+                    Imorgen kl.09.00 <br>
+                    Fra: Taastrup <br>
+                    <div class="text-secondary">Høje taastrup</div>
+                    Til: Roskilde
+                    <div class="text-secondary">Maglegårdsvej 3</div>
+                  </div>
+
+                  <!--FIX: LAST DIV NOT RESPONSIVE-->
+                  <div class="">
+                    <div class="text-center">DKK 150 </div> <br>
+                    <img src="img/car-2897 (5).png" alt="car">
+                  </div>
+
+                </div>
+              </div>
+              <!--CARD SLUT-->
+              <br>
+              <!--CARD START-->
+              <div class="card cardStyling">
+                <div class="card-body d-flex justify-content-between">
+                  <div>
+                    <img class="card-img-top" src="/img/mit lift-logos_black.png" alt="Card image cap"
+                      style="height: 90px; width: auto;">
+                    <h4 class="card-title">Anders</h4>
+                    <h6><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
+                        class="fa fa-star checked"></span><span class="fa fa-star"></span><span
+                        class="fa fa-star"></span></h6>
+                  </div>
+
+                  <div class="card-text">
+                    Imorgen kl.10.00 <br>
+                    Fra: Solrød Strand <br>
+                    <div class="text-secondary">Solrød st</div>
+                    Til: Århus
+                    <div class="text-secondary">Banegården 2</div>
+                  </div>
+
+                  <!--FIX: LAST DIV NOT RESPONSIVE-->
+                  <div class="">
+                    <div class="text-center">DKK 150 </div> <br>
+                    <img src="img/car-2897 (5).png" alt="car">
+                  </div>
+
+                </div>
+              </div>
+              <!--CARD SLUT-->
+
+            </div>
           </div>
-        <div class="w-100"></div>
-        <div class="card">
-          <div class="card-body"></div>
-          <h4 class="card-title">Patrick</h4>
-          <p class="card-text">Hedehusene </p>
-          <a href="#" class="btn btn-primary">See Profile</a>
-        </div>
-        </div>
-        </div>
+
           <thead>
             <tr>
               <th scope="col">CarId</th>
@@ -174,7 +190,7 @@
           </thead>
           <tbody>
             <tr v-for="car in carArray">
-              <td >{{car.carId}}</td>
+              <td>{{car.carId}}</td>
               <td>{{car.accountId}}</td>
               <td>{{car.startDestination}}</td>
               <td>{{car.endDestination}}</td>
@@ -196,30 +212,42 @@
         col-2
       </div>
       <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+    </div><!--NEW ROW WITH DATA END-->
+    <div class="row">
+      <div class="container">
+        col 12
+      </div>
     </div>
 
     <!--FOOTER-->
-      <div class="container p-4">
+    <footer class="footerStyling">
+      <div class="container-fluid p-5 d-flex justify-content-between">
+        <div class="text-white p-3">
+          Kontakt os <br>
+          © 2023 Copyright: <br>
+          <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
+        </div>
+
         <!-- Section: Social media section -->
-        <section class="mb-4">
-          <!-- Facebook -->
-          <!-- <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+        <section class="text-center">
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
               class="fab fa-facebook-f"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a> -->
-          <!-- <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a> -->
-          <!-- <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
               class="fab fa-linkedin-in"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a> -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
         </section>
+
+        <div class="p-3 text-white">
+          Om os <br>
+          Privatlivspolitik
+        </div>
       </div>
-      <!-- Copyright -->
-      <!-- <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2023 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
-      </div> -->
+    </footer>
     <!-- Footer END -->
-    
+
     <!--FLATPICKR JS-->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>

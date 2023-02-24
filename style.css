@@ -24,8 +24,14 @@ label{
     font-weight: 600;
 }
 
+.cardStyling{
+  border-radius: 25px;
+  border: 0.5px solid rgb(71, 71, 71);
+
+}
+
 .frontpageBackStyling{
-  background-color: #8f8f8f;
+  background-color: #cecece;
 }
 
 .search{
@@ -55,7 +61,6 @@ label{
   color: #7c7c7c;
 }
 
-<!-- manlger billede-->
 .search-bar button img{
   width: px;
 }
@@ -68,16 +73,14 @@ label{
   cursor: pointer;
 
 }
-.datetime-{
+/* .datetime-{
   padding: 1%;
   display: flex;
   justify-content: center;
- 
-  
-}
+} */
 .datetime{
-  border-radius: 50px;
   cursor: pointer;
+  background-color: rgb(29, 28, 36);
  
 }
 
@@ -90,12 +93,15 @@ label{
 } */
 .checked{
   color: gold;
-  
-    
-  
 }
 
+footer.footerStyling{
+  background-color: black;
+}
+nav.navStyling{
+  background-color: black;
 
+}
 
 
 
