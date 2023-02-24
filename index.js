@@ -5,7 +5,13 @@ Vue.createApp({
         return {
             carArray: [],
             error: null,
-            carId: ""
+            carId: "",
+            postCars: { 
+                carId: 0,
+                accountId: 0,
+                
+            },
+
         }
     },
     created() { // life cycle method. Called when browser reloads page
@@ -28,9 +34,18 @@ Vue.createApp({
             //istedet for at genskrive koden, gør jeg den mere dry ved at lave en helper
         },
         
-        cleanList() {
-            this.carArray = []
-            this.error = null
-        },
+        // cleanList() {
+        //     this.carArray = []
+        //     this.error = null
+        // },
+
+        postCars(){
+            try{
+                const result = axios.post(baseUrl)
+            }catch(ex){
+
+            }
+        }
+
     }
 }).mount("#app")
