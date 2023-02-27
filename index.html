@@ -72,11 +72,6 @@
         1
       </div>
       <div class="col-6 border p-3 frontpageBackStyling">
-        <!-- <form action="" class="">
-          <input class="datetime" type="text" placeholder="Til">
-          <input class="datetime" type="text" placeholder="Fra">
-          <input class="datetime" type="datetime-local" placeholder="Select datetime-local">
-        </form> -->
         <form>
           <div class="form-row">
             <div class="col-3">
@@ -93,7 +88,7 @@
         <br>
         <br>
         <a class="container btn btn-primary btn-md btn-block p-1" href="#!" role="button">
-          <span style="font-size:smaller;">Søg</span></a>
+          <span style="font-size:smaller;">Søg Lift</span></a>
       </div>
       <div class="col-3">
         2
@@ -107,152 +102,96 @@
         col-1
       </div>
       <div class="col-6 mt-3 p-3 frontpageBackStyling">
-        <table v-if="carArray.length" class="table table-dark table-striped">
           <div class="row">
             <div class="container col">
               <!--CARD START-->
-              <div class="card cardStyling">
+              <div v-for="car in carArray" class="card cardStyling">
                 <div class="card-body d-flex justify-content-between">
-                  <div>
+
+                  <!--USERNAME FROM ACCOUNT-->
+                  <div v-for="account in accountArray" class="card-title">
+                    
                     <img class="card-img-top" src="/img/mit lift-logos_black.png" alt="Card image cap"
                       style="height: 90px; width: auto;">
-                    <h4 class="card-title">Melanie</h4>
-                    <h6><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
+                    <h6 class="text-center">
+                      {{ account.userName }} <br>
+                      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
                         class="fa fa-star checked"></span><span class="fa fa-star"></span><span
-                        class="fa fa-star"></span></h6>
+                        class="fa fa-star"></span>
+                    </h6>
                   </div>
-
                   <div class="card-text">
-                    Imorgen kl.09.00 <br>
-                    Fra: Taastrup <br>
-                    <div class="text-secondary">Høje taastrup</div>
-                    Til: Roskilde
-                    <div class="text-secondary">Maglegårdsvej 3</div>
+                    ID: {{ car.carId }} <br>
+                    Dato: {{ car.driveDate }} <br>
+                    Pris: {{ car.price }} <br>
+                    <div class="text-secondary">
+                      Fra: {{car.startDestination}}
+                    </div>
+                    <div class="text-secondary">
+                      Til: {{car.endDestination}}
+                    </div>
                   </div>
 
                   <!--FIX: LAST DIV NOT RESPONSIVE-->
                   <div class="">
-                    <div class="text-center">DKK 150 </div> <br>
+                    <div class="text-center">
+                      Pris: {{ car.price }} <br>
+                    </div>
+                    <br>
                     <img src="img/car-2897 (5).png" alt="car">
                   </div>
 
                 </div>
               </div>
-              <!--CARD SLUT-->
-              <br>
-              <!--CARD START-->
-              <div class="card cardStyling">
-                <div class="card-body d-flex justify-content-between">
-                  <div>
-                    <img class="card-img-top" src="/img/mit lift-logos_black.png" alt="Card image cap"
-                      style="height: 90px; width: auto;">
-                    <h4 class="card-title">Anders</h4>
-                    <h6><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                        class="fa fa-star checked"></span><span class="fa fa-star"></span><span
-                        class="fa fa-star"></span></h6>
-                  </div>
-
-                  <div class="card-text">
-                    Imorgen kl.10.00 <br>
-                    Fra: Solrød Strand <br>
-                    <div class="text-secondary">Solrød st</div>
-                    Til: Århus
-                    <div class="text-secondary">Banegården 2</div>
-                  </div>
-
-                  <!--FIX: LAST DIV NOT RESPONSIVE-->
-                  <div class="">
-                    <div class="text-center">DKK 150 </div> <br>
-                    <img src="img/car-2897 (5).png" alt="car">
-                  </div>
-
-                </div>
-              </div>
-              <!--CARD SLUT-->
-
             </div>
           </div>
-
-          <thead>
-            <tr>
-              <th scope="col">CarId</th>
-              <th>AccountId</th>
-              <th>Start Dest.</th>
-              <th>End Dest.</th>
-              <th>Drive Date</th>
-              <th>Price</th>
-              <th>Seats</th>
-              <th>brand</th>
-              <th>Model</th>
-              <th>Fuel Type</th>
-              <th>Is Full</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="car in carArray">
-              <td>{{car.carId}}</td>
-              <td>{{car.accountId}}</td>
-              <td>{{car.startDestination}}</td>
-              <td>{{car.endDestination}}</td>
-              <td>{{car.driveDate}}</td>
-              <td>{{car.price}}</td>
-              <td>{{car.availableSeats}}</td>
-              <td>{{car.brand}}</td>
-              <td>{{car.model}}</td>
-              <td>{{car.fuelType}}</td>
-              <td>{{car.isFull}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <div v-else>
-          Error! No cars
-        </div>
-      </div>
-      <div class="col-3">
-        col-2
-      </div>
-      <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-    </div><!--NEW ROW WITH DATA END-->
-    <div class="row">
-      <div class="container">
-        col 12
+          <!--CARD SLUT-->
       </div>
     </div>
+  </div>
+  <div class="col-3">
+    col-2
+  </div>
+  <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+  </div>
+  <div class="row">
+    <div class="container">
+      col 12
+    </div>
+  </div>
 
-    <!--FOOTER-->
-    <footer class="footerStyling">
-      <div class="container-fluid p-5 d-flex justify-content-between">
-        <div class="text-white p-3">
-          Kontakt os <br>
-          © 2023 Copyright: <br>
-          <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
-        </div>
-
-        <!-- Section: Social media section -->
-        <section class="text-center">
-          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-              class="fab fa-facebook-f"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-              class="fab fa-linkedin-in"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-        </section>
-
-        <div class="p-3 text-white">
-          Om os <br>
-          Privatlivspolitik
-        </div>
+  <!--FOOTER-->
+  <footer class="footerStyling">
+    <div class="container-fluid p-5 d-flex justify-content-between">
+      <div class="text-white p-3">
+        Kontakt os <br>
+        © 2023 Copyright: <br>
+        <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
       </div>
-    </footer>
-    <!-- Footer END -->
 
-    <!--FLATPICKR JS-->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-      flatpickr("#myID", {});
-    </script>
+      <!-- Section: Social media section -->
+      <section class="text-center">
+        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+      </section>
+
+      <div class="p-3 text-white">
+        Om os <br>
+        Privatlivspolitik
+      </div>
+    </div>
+  </footer>
+  <!-- Footer END -->
+
+  <!--FLATPICKR JS-->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr("#myID", {});
+  </script>
 
   </div><!--app close-->
   <script src="/index.js"></script>
