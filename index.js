@@ -3,7 +3,7 @@ const carRidesUrl = "https://localhost:44343/Api/CarRides"
 const carUrl = "https://localhost:44343/Api/Cars"
 const accountUrl = "https://localhost:44343/Api/Accounts"
 
-Vue.createApp({
+const home = Vue.createApp({
     data() {
         return {
             carArray: [],
@@ -16,8 +16,9 @@ Vue.createApp({
 
             cars: [],
             carId: "",
-            addData: { brand: "", model:"", fuelType:"" },
             addMessage: "",
+
+           
 
         }
     },
@@ -86,16 +87,18 @@ Vue.createApp({
         },
 
         //POST METODER
-        async postCar(){
-            try{
-                
-                response= await axios.post(carUrl, this.addData)
-                this.addMessage="Response: " + response.status + " " + response.statusText
-                this.getAllCars()
-            }catch(ex){
-                alert(ex.message)
-            }
-        },
+
+
+        // async postCar(){
+        //     try{
+        //         response = await axios.post(carUrl, this.addData)
+        //         this.addMessage="Response: " + response.status + " " + response.statusText
+        //         this.getAllCars()
+        //     }catch(ex){
+        //         alert(ex.message)
+        //     }
+        // },
 
     }
-}).mount("#app")
+})
+home.mount("#app")
