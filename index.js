@@ -87,6 +87,8 @@ const home = Vue.createApp({
         },
 
         //POST METODER
+
+
         // async postCar(){
         //     try{
         //         response = await axios.post(carUrl, this.addData)
