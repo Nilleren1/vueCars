@@ -62,4 +62,4 @@ const mineBiler = Vue.createApp({
         //GET BY ID METODER
     }
 })
-addCar.mount('#mineBiler')
+mineBiler.mount('#mineBiler')

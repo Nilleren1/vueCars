@@ -72,43 +72,25 @@
       <div class="col-3">
         col-1
       </div>
-      <div class="col-6 mt-3 p-3 frontpageBackStyling">
-
-        <div class="row">
-          <div class="container col">
-            <!--CARD START-->
-            <div v-for="car in cars" class="card cardStyling">
-              <div class="card-body d-flex justify-content-between">
-                <div class="card-title">
-                  <h4>
-                    {{ car.Brand }}
-                  </h4>
-                </div>
-              </div>
-                <div class="card-text">
-                  ID: {{ car.carId }} <br>
-                  Model: {{ car.model }} <br>
-                  Fuel type: {{ car.fuelType }} <br>
-                  Account Username:
-                  <div name="accountId" v-model="carData.accountId">
-                    <p v-bind:value="account.accountId" v-for="account in accountArray">
-                      {{ account.userName }}
-                    </p>
-                  </div>
-                  </div>
-                  <!--FIX: LAST DIV NOT RESPONSIVE-->
-                  <div class="">
-                    <div class="text-center"></div> <br>
-                    <!--img src="img/car-2897 (5).png" alt="car"-->
-                  </div>
-              </div>
-            </div>
-              <!--CARD SLUT-->
-              <br>
-
-
-            </div>
+      <div class="col-6 container">
+<h2>Liste over biler</h2>
+      <br>
+        <div v-for="car in cars" class="card cardStyling">
+          <div class="card-body bg-light m-2">
+            <h5 class="card-title">
+              Bil med ID: {{ car.carId }}
+            </h5>
+            <h6>
+              Account Id: {{ car.accountId }}
+            </h6>
+            <p class="card-text">
+              Brand: {{ car.brand }} <br>
+              Model: {{ car.model }} <br>
+              Fuel type: {{ car.fuelType }}
+            </p>
           </div>
+        </div>
+      </div>
           </table>
           <div v-else>
             Error! No cars
@@ -161,11 +143,9 @@
             Privatlivspolitik
           </div>
         </div>
-      </footer>
-      <!-- Footer END -->
+      </footer><!-- Footer END -->
+      
     </div><!--app close-->
-    <!-- <script src="/index.js"></script> -->
     <script src="/mineBiler.js"></script>
 </body>
-
 </html>

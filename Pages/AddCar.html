@@ -45,19 +45,18 @@
           <li class="nav-item">
             <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
           </li>
-          <!-- Dropdown -->
-          <!-- <li class="nav-item dropdown">
-
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          Konto Relateret
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-          <a class="dropdown-item" href="#">Mine Lift</a>
-          <a class="dropdown-item" href="#">Link 3</a>
-        </div>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  Konto Relateret
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+                  <a class="dropdown-item" href="#">Mine Lift</a>
+                  <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+              </li>
         
-      </li> -->
         </ul>
       </div>
       <div class="nav-item d-flex justify-content-between">
@@ -74,42 +73,8 @@
         col-1
       </div>
       <div class="col-4 container">
-        <!-- <table class="table table-striped border p-3 mb-2">
-        <thead>
-          <tr>
-            <th>Car Id</th>
-            <th>Account Id</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Fuel</th>
-         </tr>
-        </thead>
-        <tbody v-for="car in cars">
-          <tr>
-            <td>{{ car.carId }}</td>
-            <td>{{ car.accountId }}</td>
-            <td>{{ car.brand }}</td>
-            <td>{{ car.model }}</td>
-            <td>{{ car.fuelType }}</td>
-          </tr>
-        </tbody>
-      </table> -->
-
-        <div v-for="car in cars" class="card cardStyling">
-          <div class="card-body bg-light m-2">
-            <h5 class="card-title">
-              Bil med ID: {{ car.carId }}
-            </h5>
-            <h6>
-              Account FK: {{ car.accountId }}
-            </h6>
-            <p class="card-text">
-              Brand: {{ car.brand }} <br>
-              Model: {{ car.model }} <br>
-              Fuel type: {{ car.fuelType }}
-            </p>
-          </div>
-        </div>
+      
+     
       </div>
       <div class="col-4">
         col-2
