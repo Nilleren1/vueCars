@@ -2,217 +2,170 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <!-- Add further Bootstrap links-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
-    <!--Vue.js-->
-    <script src="https://unpkg.com/vue@next"></script>
-    <!--Own CSS link-->
-    <link rel="stylesheet" href="../style.css">
-    <title>Mine Biler</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <!-- Add further Bootstrap links-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+  <!--Vue.js-->
+  <script src="https://unpkg.com/vue@next"></script>
+  <!--Own CSS link-->
+  <link rel="stylesheet" href="../style.css">
+  <title>Mine Biler</title>
 </head>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-md navbar-dark navStyling">
-    <a class="navbar-brand" href="../index.html">
+<body>
+  <div id="mineBiler">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark navStyling">
+      <a class="navbar-brand" href="../index.html">
         <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/Pages/login.html">Log ind</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Pages/createAccount.html">Opret konto</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
-            </li>
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Konto Relateret
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-                    <a class="dropdown-item" href="#">Mine Lift</a>
-                    <a class="dropdown-item" href="#">Link 3</a>
-                </div>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Pages/login.html">Log ind</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Pages/createAccount.html">Opret konto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
+          </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Konto Relateret
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+              <a class="dropdown-item" href="#">Mine Lift</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+          </li>
         </ul>
 
-    </div>
-    <div class="nav-item d-flex justify-content-between">
+      </div>
+      <div class="nav-item d-flex justify-content-between">
         <!--div class="nav-link text-white" href="">Mit Lift</div-->
         <div class="nav-link text-white" href="">Login</div>
-    </div>
-    <div class="d-flex justify-content-between text-white">
+      </div>
+      <div class="d-flex justify-content-between text-white">
         <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<!-- Body -->
-<!--NEW ROW WITH DATA-->
-<div class="row">
-    <div class="col-3">
-      col-1
-    </div>
-    <div class="col-6 mt-3 p-3 frontpageBackStyling">
-      
+    <!-- Body -->
+    <!--NEW ROW WITH DATA-->
+    <div class="row">
+      <div class="col-3">
+        col-1
+      </div>
+      <div class="col-6 mt-3 p-3 frontpageBackStyling">
+
         <div class="row">
           <div class="container col">
             <!--CARD START-->
-            <div class="card cardStyling">
+            <div v-for="car in cars" class="card cardStyling">
               <div class="card-body d-flex justify-content-between">
-                <div>
-                  <img class="card-img-top" src="/img/mit lift-logos_black.png" alt="Card image cap"
-                    style="height: 90px; width: auto;">
-                  <h4 class="card-title">Melanie</h4>
-                  <h6><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                      class="fa fa-star checked"></span><span class="fa fa-star"></span><span
-                      class="fa fa-star"></span></h6>
+                <div class="card-title">
+                  <h4>
+                    {{ car.Brand }}
+                  </h4>
                 </div>
-
+              </div>
                 <div class="card-text">
-                  Imorgen kl.09.00 <br>
-                  Fra: Taastrup <br>
-                  <div class="text-secondary">Høje taastrup</div>
-                  Til: Roskilde
-                  <div class="text-secondary">Maglegårdsvej 3</div>
-                </div>
-
-                <!--FIX: LAST DIV NOT RESPONSIVE-->
-                <div class="">
-                  <div class="text-center">DKK 150 </div> <br>
-                  <img src="img/car-2897 (5).png" alt="car">
-                </div>
-
+                  ID: {{ car.carId }} <br>
+                  Model: {{ car.model }} <br>
+                  Fuel type: {{ car.fuelType }} <br>
+                  Account Username:
+                  <div name="accountId" v-model="carData.accountId">
+                    <p v-bind:value="account.accountId" v-for="account in accountArray">
+                      {{ account.userName }}
+                    </p>
+                  </div>
+                  </div>
+                  <!--FIX: LAST DIV NOT RESPONSIVE-->
+                  <div class="">
+                    <div class="text-center"></div> <br>
+                    <!--img src="img/car-2897 (5).png" alt="car"-->
+                  </div>
               </div>
             </div>
-            <!--CARD SLUT-->
-            <br>
-            <!--CARD START-->
-            <div class="card cardStyling">
-              <div class="card-body d-flex justify-content-between">
-                <div>
-                  <img class="card-img-top" src="/img/mit lift-logos_black.png" alt="Card image cap"
-                    style="height: 90px; width: auto;">
-                  <h4 class="card-title">Anders</h4>
-                  <h6><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                      class="fa fa-star checked"></span><span class="fa fa-star"></span><span
-                      class="fa fa-star"></span></h6>
-                </div>
+              <!--CARD SLUT-->
+              <br>
 
-                <div class="card-text">
-                  Imorgen kl.10.00 <br>
-                  Fra: Solrød Strand <br>
-                  <div class="text-secondary">Solrød st</div>
-                  Til: Århus
-                  <div class="text-secondary">Banegården 2</div>
-                </div>
 
-                <!--FIX: LAST DIV NOT RESPONSIVE-->
-                <div class="">
-                  <div class="text-center">DKK 150 </div> <br>
-                  <img src="img/car-2897 (5).png" alt="car">
-                </div>
-
-              </div>
             </div>
-            <!--CARD SLUT-->
-
+          </div>
+          </table>
+          <div v-else>
+            Error! No cars
           </div>
         </div>
-
-        <thead>
-          <tr>
-            <th scope="col">CarId</th>
-            <th>AccountId</th>
-            <th>Start Dest.</th>
-            <th>End Dest.</th>
-            <th>Drive Date</th>
-            <th>Price</th>
-            <th>Seats</th>
-            <th>brand</th>
-            <th>Model</th>
-            <th>Fuel Type</th>
-            <th>Is Full</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="car in carArray">
-            <td>{{car.carId}}</td>
-            <td>{{car.accountId}}</td>
-            <td>{{car.startDestination}}</td>
-            <td>{{car.endDestination}}</td>
-            <td>{{car.driveDate}}</td>
-            <td>{{car.price}}</td>
-            <td>{{car.availableSeats}}</td>
-            <td>{{car.brand}}</td>
-            <td>{{car.model}}</td>
-            <td>{{car.fuelType}}</td>
-            <td>{{car.isFull}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div v-else>
-        Error! No cars
+        <div class="col-3">
+          col-2
+        </div>
+        <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+      <div class="row">
+        <div class="container">
+          col 12
+        </div>
       </div>
-    </div>
-    <div class="col-3">
-      col-2
-    </div>
-    <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-  </div><!--NEW ROW WITH DATA END-->
-  <div class="row">
-    <div class="container">
-      col 12
-    </div>
-  </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
-
-
-<!--FOOTER-->
-<footer class="footerStyling">
-    <div class="container-fluid p-5 d-flex justify-content-between">
-        <div class="text-white p-3">
+      <!--FOOTER-->
+      <footer class="footerStyling">
+        <div class="container-fluid p-5 d-flex justify-content-between">
+          <div class="text-white p-3">
             Kontakt os <br>
             © 2023 Copyright: <br>
             <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
-        </div>
+          </div>
 
-        <!-- Section: Social media section -->
-        <section class="text-center">
+          <!-- Section: Social media section -->
+          <section class="text-center">
             <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                    class="fab fa-facebook-f"></i></a>
+                class="fab fa-facebook-f"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
             <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                    class="fab fa-instagram"></i></a>
+                class="fab fa-instagram"></i></a>
             <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                    class="fab fa-linkedin-in"></i></a>
+                class="fab fa-linkedin-in"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-        </section>
+          </section>
 
-        <div class="p-3 text-white">
+          <div class="p-3 text-white">
             Om os <br>
             Privatlivspolitik
+          </div>
         </div>
-    </div>
-</footer>
-<!-- Footer END -->
+      </footer>
+      <!-- Footer END -->
+    </div><!--app close-->
+    <!-- <script src="/index.js"></script> -->
+    <script src="/mineBiler.js"></script>
+</body>
 
 </html>

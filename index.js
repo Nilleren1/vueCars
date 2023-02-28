@@ -1,7 +1,8 @@
 //const baseUrl = "https://myressourcem.azurewebsites.net/api/carshare"
-const carRidesUrl = "https://localhost:44343/Api/CarRides"
-const carUrl = "https://localhost:44343/Api/Cars"
-const accountUrl = "https://localhost:44343/Api/Accounts"
+// const carRidesUrl = "https://localhost:44343/Api/CarRides"
+// const carUrl = "https://localhost:44343/Api/Cars"
+// const accountUrl = "https://localhost:44343/Api/Accounts"
+const baseUrl = "https://mitlift.azurewebsites.net/Api"
 
 const home = Vue.createApp({
     data() {
@@ -25,7 +26,6 @@ const home = Vue.createApp({
     created() { // life cycle method. Called when browser reloads page
         this.getAllRides()
         this.getAllAccounts()
-        this.getAllCars()
     },
     methods: {
        //istedet for at genskrive koden, gør jeg den mere dry ved at lave en helper
@@ -62,15 +62,11 @@ const home = Vue.createApp({
         //GET ALL METODER
         getAllRides(){
             console.log("Getting the car ride get method")
-            this.getAllCarRidesHelper(carRidesUrl)
+            this.getAllCarRidesHelper(baseUrl+"/CarRides")
         },
         getAllAccounts(){
             console.log("Getting the account get method")
-            this.getAllAccountsHelper(accountUrl)
-        },
-        getAllCars(){
-            console.log("Getting the car ride get method")
-            this.getAllCarsHelper(carUrl)
+            this.getAllAccountsHelper(baseUrl+"/Accounts")
         },
 
         //GET BY ID METODER
