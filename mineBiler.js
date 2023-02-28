@@ -1,22 +1,23 @@
-const carRidesUrl = "https://localhost:44343/Api/CarRides"
-const carUrl = "https://localhost:44343/Api/Cars"
-const accountUrl = "https://localhost:44343/Api/Accounts"
+// const carRidesUrl = "https://localhost:44343/Api/CarRides"
+// const carUrl = "https://localhost:44343/Api/Cars"
+// const accountUrl = "https://localhost:44343/Api/Accounts"
+const baseUrl = "https://mitlift.azurewebsites.net/Api"
 
-const addCar = Vue.createApp({
-    name: '#addCar',
+
+const mineBiler = Vue.createApp({
+    name: '#mineBiler',
     data() {
         return {
             cars: [],
             carId: "",
             addMessage: "",
 
-            addData: {
+            carData: {
                 accountId: 0,
                 brand: "",
                 model: "",
                 fuelType: ""
               },
-              foobar: null,
               accountArray: [],
         }
     },
@@ -51,32 +52,14 @@ const addCar = Vue.createApp({
         //GET ALL METODER
         getAllCars(){
             console.log("Getting the car get method")
-            this.getAllCarsHelper(carUrl)
+            this.getAllCarsHelper(baseUrl+"/Cars")
         },
         getAllAccounts(){
             console.log("Getting the account get method")
-            this.getAllAccountsHelper(accountUrl)
+            this.getAllAccountsHelper(baseUrl+"/Accounts")
         },
 
         //GET BY ID METODER
-          async postCar(){
-            try{
-                response = await axios.post(carUrl, this.addData)
-                this.addMessage="Response: " + response.status + " " + response.statusText
-                if (response.status == 200) {
-                    location.href="/Pages/mineBiler.html"
-                }
-                else{
-                    alert("Der er noget galt her " + response.status)
-                }
-                
-            }catch(ex){
-                alert(ex.message)
-            }
-        },
-        //submit(){
-        //     this.$router.push("/index.html")
-        //   }
     }
 })
-addCar.mount('#addCar')
+addCar.mount('#mineBiler')

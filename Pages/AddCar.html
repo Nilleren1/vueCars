@@ -127,7 +127,7 @@
           <h5>Post a car</h5>
           <p>{{ addData }}</p>
           <div class="form-group">
-            <label for="model">Account Id (FK)</label>
+            <label for="model">Account Username</label>
             <select name="accountId" v-model="addData.accountId">
               <option v-bind:value="account.accountId" v-for="account in accountArray">
                 {{ account.userName }}
