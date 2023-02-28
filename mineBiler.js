@@ -43,7 +43,7 @@ const mineBiler = Vue.createApp({
             try {//fejl håndtering 
                 const result = await axios.get(url)
                 this.accountArray= result.data
-                console.log(this.carArray)
+                console.log(this.accountArray)
                 //console.writeline udskriver til konsollen
             } catch (ex) {//exception
                 alert(ex.message) 
@@ -62,4 +62,4 @@ const mineBiler = Vue.createApp({
         //GET BY ID METODER
     }
 })
-addCar.mount('#mineBiler')
+mineBiler.mount('#mineBiler')

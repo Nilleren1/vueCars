@@ -25,7 +25,7 @@
 <body>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-md navbar-dark navStyling">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="../index.html">
       <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -42,32 +42,28 @@
         <li class="nav-item">
           <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
         </li>
-        
+        <!-- Dropdown -->
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Konto Relateret
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+                <a class="dropdown-item" href="#">Mine Lift</a>
+                <a class="dropdown-item" href="#">Link 3</a>
+              </div>
+            </li>
       </ul>
-    </div>
     
-    <div class="navbar position-relative top-0 end-0">
-    <!-- Dropdown -->
-      <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop" data-toggle="dropdown" animation-name="example">
-        <img src="/img/Profile Pic Icon.png" width="45" height="50">
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-        <a class="dropdown-item" href="#">Mine Lift</a>
-        <a class="dropdown-item" href="#">Min Konto</a>
-        <a class="dropdown-item" href="#">Indstiller</a>
-        <a class="dropdown-item" href="#">Log ud</a>
-      </div>
-
-
     </div>
-    <!-- <div class="nav-item d-flex justify-content-between"> -->
+    <div class="nav-item d-flex justify-content-between">
       <!--div class="nav-link text-white" href="">Mit Lift</div-->
-      <!-- <div class="nav-link text-white" href="">Login</div>
-    </div> -->
-    <!-- <div class="d-flex justify-content-between text-white">
+      <div class="nav-link text-white" href="">Login</div>
+       </div>
+        <div class="d-flex justify-content-between text-white">
       <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
-    </div> -->
+    </div>
   </nav>
   <!--NAV SLUT-->
 
@@ -106,7 +102,7 @@
           </div>
           <div class="form-group">
             <label for="Phone">Phone</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter phone number">
+            <input type="text" class="form-control" id="Phone" placeholder="Enter phone number">
           </div>
           <br>
           <button type="submit" class="btn logindBtnStyle">Opret konto</button>
@@ -129,7 +125,7 @@
     <div class="container-fluid p-5 d-flex justify-content-between">
       <div class="text-white p-3">
         Kontakt os <br>
-        © 2023 Copyright: <br>
+        Â© 2023 Copyright: <br>
         <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
       </div>
 

@@ -26,7 +26,7 @@
   <div id="mineBiler">
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md navbar-dark navStyling">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="../index.html">
         <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -43,32 +43,29 @@
           <li class="nav-item">
             <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
           </li>
-          
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Konto Relateret
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+              <a class="dropdown-item" href="#">Mine Lift</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+          </li>
         </ul>
+<div>
+  
+</div>
       </div>
-      
-      <div class="navbar position-relative top-0 end-0">
-      <!-- Dropdown -->
-        <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop" data-toggle="dropdown" animation-name="example">
-          <img src="/img/Profile Pic Icon.png" width="45" height="50">
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-          <a class="dropdown-item" href="#">Mine Lift</a>
-          <a class="dropdown-item" href="#">Min Konto</a>
-          <a class="dropdown-item" href="#">Indstiller</a>
-          <a class="dropdown-item" href="#">Log ud</a>
-        </div>
-
-
-      </div>
-      <!-- <div class="nav-item d-flex justify-content-between"> -->
+      <div class="nav-item d-flex justify-content-between">
         <!--div class="nav-link text-white" href="">Mit Lift</div-->
-        <!-- <div class="nav-link text-white" href="">Login</div>
-      </div> -->
-      <!-- <div class="d-flex justify-content-between text-white">
+        <div class="nav-link text-white" href="">Login</div>
+      </div>
+      <div class="d-flex justify-content-between text-white">
         <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
-      </div> -->
+      </div>
     </nav>
 
     <!-- Body -->
@@ -77,47 +74,29 @@
       <div class="col-3">
         col-1
       </div>
-      <div class="col-6 mt-3 p-3 frontpageBackStyling">
-
-        <div class="row">
-          <div class="container col">
-            <!--CARD START-->
-            <div v-for="car in cars" class="card cardStyling">
-              <div class="card-body d-flex justify-content-between">
-                <div class="card-title">
-                  <h4>
-                    {{ car.Brand }}
-                  </h4>
-                </div>
-              </div>
-                <div class="card-text">
-                  ID: {{ car.carId }} <br>
-                  Model: {{ car.model }} <br>
-                  Fuel type: {{ car.fuelType }} <br>
-                  Account Username:
-                  <div name="accountId" v-model="carData.accountId">
-                    <p v-bind:value="account.accountId" v-for="account in accountArray">
-                      {{ account.userName }}
-                    </p>
-                  </div>
-                  </div>
-                  <!--FIX: LAST DIV NOT RESPONSIVE-->
-                  <div class="">
-                    <div class="text-center"></div> <br>
-                    <!--img src="img/car-2897 (5).png" alt="car"-->
-                  </div>
-              </div>
-            </div>
-              <!--CARD SLUT-->
-              <br>
-
-
-            </div>
+      <div class="col-6 container">
+<h2>Liste over biler</h2>
+      <br>
+        <div v-for="car in cars" class="card cardStyling">
+          <div class="card-body bg-light m-2">
+            <h5 class="card-title">
+              Bil med ID: {{ car.carId }}
+            </h5>
+            <h6>
+              Account Id: {{ car.accountId }}
+            </h6>
+            <p class="card-text">
+              Brand: {{ car.brand }} <br>
+              Model: {{ car.model }} <br>
+              Fuel type: {{ car.fuelType }}
+            </p>
           </div>
-          </table>
-          <div v-else>
+        </div>
+        <div v-else>
             Error! No cars
           </div>
+      </div>
+          
         </div>
         <div class="col-3">
           col-2
@@ -144,7 +123,7 @@
         <div class="container-fluid p-5 d-flex justify-content-between">
           <div class="text-white p-3">
             Kontakt os <br>
-            © 2023 Copyright: <br>
+            Â© 2023 Copyright: <br>
             <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
           </div>
 
@@ -166,11 +145,9 @@
             Privatlivspolitik
           </div>
         </div>
-      </footer>
-      <!-- Footer END -->
+      </footer><!-- Footer END -->
+      
     </div><!--app close-->
-    <!-- <script src="/index.js"></script> -->
     <script src="/mineBiler.js"></script>
 </body>
-
 </html>
