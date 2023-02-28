@@ -88,6 +88,7 @@ Vue.createApp({
         //POST METODER
         async postCar(){
             try{
+                
                 response= await axios.post(carUrl, this.addData)
                 this.addMessage="Response: " + response.status + " " + response.statusText
                 this.getAllCars()
