@@ -1,6 +1,6 @@
 
 body.centerImg {
-    background-image: url('/img/backgroundMaps.jpg');
+    background-image: url('/img/road.jpeg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -18,20 +18,25 @@ label{
 }
 
 .btn.logindBtnStyle{
-    border-radius: 25px;
-    border-color: darkgray;
-    background-color: rgb(176, 188, 190);
+    border-radius: 20px;
     font-weight: 600;
+    color: white;
+    background-color: rgb(63, 108, 255);
+    border: 0.5px solid rgb(36, 36, 36);
+
 }
 
 .cardStyling{
   border-radius: 25px;
-  border: 0.5px solid rgb(71, 71, 71);
+  border: 0.1em solid rgb(163, 163, 163);
+  background-color: rgb(235, 235, 235);
 
 }
 
 .frontpageBackStyling{
-  background-color: #cecece;
+  background-color: #ffffff;
+  border: 0.1em solid rgb(209, 208, 208);
+
 }
 
 .search{
@@ -72,6 +77,10 @@ label{
   background: rgb(253, 254, 255);
   cursor: pointer;
 
+}
+card.styleTextIndex{
+  font-weight: 100;
+  font-size: larger;
 }
 /* .datetime-{
   padding: 1%;

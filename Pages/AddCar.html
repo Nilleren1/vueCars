@@ -24,10 +24,8 @@
 
 <body>
   <div id="addCar">
-
-
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-md navbar-dark navStyling">
+     <!-- NAVBAR -->
+     <nav class="navbar navbar-expand-md navbar-dark navStyling">
       <a class="navbar-brand" href="../index.html">
         <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
       </a>
@@ -42,19 +40,21 @@
           <li class="nav-item">
             <a class="nav-link" href="/Pages/createAccount.html">Opret konto</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Pages/addLift.html">Opret lift</a>
+          </li> -->
           <!-- Dropdown -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              Konto Relateret
-            </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-              <a class="dropdown-item" href="#">Mine Lift</a>
-              <a class="dropdown-item" href="#">Link 3</a>
-            </div>
+            Opret
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/Pages/AddCar.html">Opret bil</a>
+            <a class="dropdown-item" href="/Pages/addLift.html">Opret lift</a>
+          </div>
           </li>
         </ul>
       </div>
@@ -68,7 +68,7 @@
           <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
           <a class="dropdown-item" href="/index.html">Mine Lift</a>
           <a class="dropdown-item" href="/Pages/mineKontoOplysninger.html">Min Konto</a>
-          <a class="dropdown-item" href="#">Indstiller</a>
+          <a class="dropdown-item" href="#">Instillinger</a>
           <a class="dropdown-item" href="#">Log ud</a>
         </div>
       </div>
@@ -83,72 +83,75 @@
 
     <div class="row">
       <div class="col-4">
-        col-1
+        <!-- col-1 -->
       </div>
       <div class="col-4 container">
 
       </div>
       <div class="col-4">
-        col-2
+        <!-- col-2 -->
       </div>
     </div>
 
 
     <div class="row">
-      <div class="col-2">
-        col-1
+      <div class="col-4">
+        <!-- col-1 -->
       </div>
-      <div class="col-lg-6 border p-3 mb-2 bg-light">
+      <div class="col-4 border p-3 mb-2 bg-light">
 
-        <form method="post">
-          <h5>Post a car</h5>
-          <p>{{ addData }}</p>
-          <div class="form-group">
-            <label for="model">Account Username</label>
-            <select name="accountId" v-model="addData.accountId">
-              <option v-bind:value="account.accountId" v-for="account in accountArray">
-                {{ account.userName }}
-              </option>
-
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="model">Brand</label>
-            <input class="form-control" v-model="addData.brand" placeholder="brand..." type="text" /> <br>
-          </div>
-          <div class="form-group">
-            <label for="model">Model</label>
-            <input class="form-control" v-model="addData.model" placeholder="model..." type="text" /> <br>
-          </div>
-          <label for="model">Fuel type</label> <br>
-          <select name="fuelType" v-model="addData.fuelType">
-            <option>Gas</option>
-            <option>Diesel</option>
-            <option>El</option>
-            <option>Hybrid</option>
-          </select>
+        <h3>Opret din bil</h3>
+        <!-- <p>{{ addData }}</p> -->
+        <div class="form-group">
+          <label for="model">Brugernavn </label>
           <br>
-          <!--input class="form-control" v-model="addData.fuelType" placeholder="fuelType..." type="text" /--> <br>
-          <button type="button" v-on:click="postCar()" class="btn logindBtnStyle">Add car
-          </button>
+          <select name="accountId" v-model="addData.accountId">
+            <option v-bind:value="account.accountId" v-for="account in accountArray">
+              {{ account.userName }}
+            </option>
 
-          <div class="p-3" style="background-color: rgba(255,0,0,0.1); width: 60%;" v-if="addMessage">
-            <!--addMessage en var der er blevet erklæret, så vi kan bruge den til output-->
-            <!--Output is the below-->
-            {{ addMessage }}
-          </div>
-        </form>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="model">Bil mærke</label>
+          <input class="form-control" v-model="addData.brand" placeholder="brand..." type="text" /> <br>
+        </div>
+        <div class="form-group">
+          <label for="model">Bil model</label>
+          <input class="form-control" v-model="addData.model" placeholder="model..." type="text" /> <br>
+        </div>
+        <label for="model">Fuel type</label> <br>
+        <select name="fuelType" v-model="addData.fuelType">
+          <option>Gas</option>
+          <option>Diesel</option>
+          <option>El</option>
+          <option>Hybrid</option>
+        </select>
+        <br>
+        <!--input class="form-control" v-model="addData.fuelType" placeholder="fuelType..." type="text" /--> <br>
+        <button type="button" v-on:click="postCar()" class="btn logindBtnStyle">Opret
+        </button>
 
+        <div class="p-3" style="background-color: rgba(255,0,0,0.1); width: 60%;" v-if="addMessage">
+          <!--addMessage en var der er blevet erklæret, så vi kan bruge den til output-->
+          <!--Output is the below-->
+          {{ addMessage }}
+        </div>
       </div>
-
-      <div class="col-2">
-        col-2
+      <div class="col-4">
+        <!-- col-2 -->
       </div>
-
-      <br>
-      <br>
-      <br>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <!--FOOTER-->
     <footer class="footerStyling">
@@ -178,9 +181,6 @@
       </div>
     </footer>
     <!-- Footer END -->
-
-
-    <!-- <script src="/index.js"></script> -->
     <script src="/addCar.js"></script>
   </div>
 </body>
