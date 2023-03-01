@@ -26,58 +26,61 @@
 <body class="centerImg">
   <div id="app">
     <!-- NAVBAR -->
-   <nav class="navbar navbar-expand-md navbar-dark navStyling">
-    <a class="navbar-brand" href="../index.html">
-      <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/Pages/login.html">Log ind</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Pages/createAccount.html">Opret konto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
-        </li>
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Konto Relateret
+    <nav class="navbar navbar-expand-md navbar-dark navStyling">
+      <a class="navbar-brand" href="../index.html">
+        <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/Pages/login.html">Log ind</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Pages/createAccount.html">Opret konto</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Pages/addLift.html">Opret lift</a>
+          </li> -->
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Opret
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-            <a class="dropdown-item" href="#">Mine Lift</a>
-            <a class="dropdown-item" href="#">Link 3</a>
+            <a class="dropdown-item" href="/Pages/AddCar.html">Opret bil</a>
+            <a class="dropdown-item" href="/Pages/addLift.html">Opret lift</a>
           </div>
-        </li>
-      </ul>
-    </div>
-    <div class="navbar position-relative top-0 end-0">
-    <!-- Dropdown -->
-      <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown" animation-name="example">
-        <img src="/img/Profile Pic Icon.png" width="45" height="50">
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-        <a class="dropdown-item" href="/index.html">Mine Lift</a>
-        <a class="dropdown-item" href="/Pages/mineKontoOplysninger.html">Min Konto</a>
-        <a class="dropdown-item" href="#">Indstiller</a>
-        <a class="dropdown-item" href="#">Log ud</a>
+          </li>
+        </ul>
       </div>
-    </div>
-    <!-- <div class="nav-item d-flex justify-content-between"> -->
+      <div class="navbar position-relative top-0 end-0">
+        <!-- Dropdown -->
+        <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
+          animation-name="example">
+          <img src="/img/Profile Pic Icon.png" width="45" height="50">
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+          <a class="dropdown-item" href="/index.html">Mine Lift</a>
+          <a class="dropdown-item" href="/Pages/mineKontoOplysninger.html">Min Konto</a>
+          <a class="dropdown-item" href="#">Instillinger</a>
+          <a class="dropdown-item" href="#">Log ud</a>
+        </div>
+      </div>
+      <!-- <div class="nav-item d-flex justify-content-between"> -->
       <!--div class="nav-link text-white" href="">Mit Lift</div-->
       <!-- <div class="nav-link text-white" href="">Login</div>
     </div> -->
-    <!-- <div class="d-flex justify-content-between text-white">
+      <!-- <div class="d-flex justify-content-between text-white">
       <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
     </div> -->
-  </nav><!--NAV SLUT-->
+    </nav><!--NAV SLUT-->
 
 
 
@@ -97,14 +100,29 @@
       <div class="col-6 border p-3 frontpageBackStyling">
         <form>
           <div class="form-row">
-            <div class="col-3">
-              <input class="datetime" type="text" placeholder="Til...">
+            <div class="col-md-4 mb-3 d-flex justify-content-start">
+              <!-- <label for="validationServer01">Fra</label> -->
+              <input type="text" class="form-control text-white datetime" 
+              id="validationServer01" placeholder="Fra..." 
+              value="Fra" required style="max-width: 200px;">
+              <div class="valid-feedback">
+              </div>
             </div>
-            <div class="col-3">
-              <input class="datetime" type="text" placeholder="Fra... ">
+            <div class="col-md-4 mb-3 d-flex justify-content-start">
+              <!-- <label for="validationServer01">Til</label> -->
+              <input type="text" class="form-control text-white datetime" 
+              id="validationServer01" placeholder="Til" value="Til"
+                required style="max-width: 200px;">
+              <div class="valid-feedback">
+              </div>
             </div>
-            <div class="col d-flex justify-content-end">
-              <input class="datetime text-white" type="datetime-local" placeholder="Select date and time">
+          
+            <div class="col-md-4 mb-3 d-flex justify-content-end">
+              <!-- <label for="validationServer01">Dato</label> -->
+              <input type="datetime-local" class="form-control text-white datetime" id="validationServer01" placeholder="Dato"
+                value="Dato" required style="max-width: 200px;">
+              <div class="valid-feedback">
+              </div>
             </div>
           </div>
         </form>
@@ -118,8 +136,7 @@
       </div>
     </div>
 
-
-    <!--NEW ROW WITH DATA-->
+    <!--NEW ROW WITH CARDS-->
     <div class="row" style="margin: auto">
       <div class="col-3">
         <!-- col-1 -->
@@ -128,108 +145,99 @@
         <div class="row">
           <div class="container col">
             <!--CARD START-->
-            <div v-for="car in carArray" class="card cardStyling">
+            <div v-for="car in carArray" class="card mb-3 cardStyling">
               <div class="card-body d-flex justify-content-between">
-
-                <!--USERNAME FROM ACCOUNT-->
-                <div class="card-title">
-                  <div>
-                    <img class="card-img-top" src="/img/mit lift-logos_black.png" alt="Card image cap"
-                      style="height: 90px; width: auto;">
-                    <h4 class="card-title text-center">Kevin</h4>
-                    <h6><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                        class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                        class="fa fa-star checked"></span></h6>
-                  </div>
-                  <!-- <img class="card-img-top" src="/img/mit lift-logos_black.png" alt="Card image cap"
-                      style="height: 90px; width: auto;">
-                    <h6 class="text-center">
-                      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                        class="fa fa-star checked"></span><span class="fa fa-star"></span><span
-                        class="fa fa-star"></span>
-                    </h6> -->
+                <!--USERNAME AND STARS-->
+                <div class="card-title m-3">
+                  <img class="card-img-top" src="/img/mit lift-logos_black.png" alt="Card image cap"
+                    style="height: 90px; width: auto;">
+                  <h4 class="card-title text-center">Kevin</h4>
+                  <h6><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
+                      class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
+                      class="fa fa-star"></span></h6>
                 </div>
-                <div class="card-text">
-                  ID: {{ car.carId }} <br>
-                  Dato: {{ car.driveDate }} <br>
-                  Pris: {{ car.price }} <br>
-                  <div class="text-secondary">
-                    Fra: {{car.startDestination}}
-                  </div>
-                  <div class="text-secondary">
-                    Til: {{car.endDestination}}
-                  </div>
+    
+                <div class="card-text m-3" style="font-size: large;">
+                  <!-- ID: {{ car.carId }} <br> -->
+                  <b>Dato: </b> {{ car.driveDate }} <br>
+                  <b>Pris:</b> {{ car.price }} <br>
+                  <b>
+                    <div class="text-secondary">
+                      Start: {{car.startDestination}}
+                    </div>
+                    <div class="text-secondary">
+                      Slut: {{car.endDestination}}
+                    </div>
+                  </b>
                 </div>
-
+    
                 <!--FIX: LAST DIV NOT RESPONSIVE-->
-                <div class="">
-                  <div class="text-center">
-                    Pris: {{ car.price }} <br>
-                  </div>
+                <div class="m-4">
                   <br>
-                  <div>
-                    <button  id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button" class="btn btn-outline-danger">Slet</button>
+                  <div class="text-center">
+                    <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
+                      class="btn btn-outline-danger">Slet</button>
                     {{deleteMessage}}
                   </div>
-                  
+                  <br>
+                  <div class="text-center">
+                    <button id="updateButton" v-on:click="" type="button" class="btn btn-outline-primary">Ret</button>
+                  </div>
                   <!-- <img src="img/car-2897 (5).png" alt="car"> -->
                 </div>
-
               </div>
-            </div>
+            </div><!--CARD SLUT-->
+         
           </div>
         </div>
-        <!--CARD SLUT-->
       </div>
-    </div>
+    </div><!--ROW SLUT-->
+
     <div class="col-3">
       <!-- col-2 -->
     </div>
     <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-  
-  <div class="row" style="margin: auto">
-    <div class="container">
-      <!-- col 12 -->
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <!--FOOTER-->
-  <footer class="footerStyling">
-    <div class="container-fluid p-5 d-flex justify-content-between">
-      <div class="text-white p-3">
-        Kontakt os <br>
-        © 2023 Copyright: <br>
-        <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+    <!--FOOTER-->
+    <footer class="footerStyling">
+      <div class="container-fluid p-5 d-flex justify-content-between">
+        <div class="text-white p-3">
+          Kontakt os <br>
+          © 2023 Copyright: <br>
+          <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
+        </div>
+
+        <!-- Section: Social media section -->
+        <section class="text-center">
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+              class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+        </section>
+
+        <div class="p-3 text-white">
+          Om os <br>
+          Privatlivspolitik
+        </div>
       </div>
+    </footer>
+    <!-- Footer END -->
 
-      <!-- Section: Social media section -->
-      <section class="text-center">
-        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-      </section>
-
-      <div class="p-3 text-white">
-        Om os <br>
-        Privatlivspolitik
-      </div>
-    </div>
-  </footer>
-  <!-- Footer END -->
-
-  <!--FLATPICKR JS-->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
-  <!-- <script>
+    <!--FLATPICKR JS-->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+    <!-- <script>
     flatpickr("#myID", {});
   </script> -->
 
