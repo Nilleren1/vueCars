@@ -92,7 +92,7 @@
     <!-- SØG LIFT -->
     <div class="row" style="margin: auto">
       <div class="col-3">
-        1
+        <!-- 1 -->
       </div>
       <div class="col-6 border p-3 frontpageBackStyling">
         <form>
@@ -114,7 +114,7 @@
           <span style="font-size:smaller;">Søg Lift</span></a>
       </div>
       <div class="col-3">
-        2
+        <!-- 2 -->
       </div>
     </div>
 
@@ -122,7 +122,7 @@
     <!--NEW ROW WITH DATA-->
     <div class="row" style="margin: auto">
       <div class="col-3">
-        col-1
+        <!-- col-1 -->
       </div>
       <div class="col-6 mt-3 p-3 frontpageBackStyling">
         <div class="row">
@@ -167,7 +167,12 @@
                     Pris: {{ car.price }} <br>
                   </div>
                   <br>
-                  <img src="img/car-2897 (5).png" alt="car">
+                  <div>
+                    <button  id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button" class="btn btn-outline-danger">Slet</button>
+                    {{deleteMessage}}
+                  </div>
+                  
+                  <!-- <img src="img/car-2897 (5).png" alt="car"> -->
                 </div>
 
               </div>
@@ -178,13 +183,13 @@
       </div>
     </div>
     <div class="col-3">
-      col-2
+      <!-- col-2 -->
     </div>
     <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-  </div>
+  
   <div class="row" style="margin: auto">
     <div class="container">
-      col 12
+      <!-- col 12 -->
     </div>
   </div>
   <br>
@@ -223,10 +228,10 @@
   <!-- Footer END -->
 
   <!--FLATPICKR JS-->
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+  <!-- <script>
     flatpickr("#myID", {});
-  </script>
+  </script> -->
 
   </div><!--app close-->
   <script src="/index.js"></script>

@@ -11,6 +11,7 @@ const mineBiler = Vue.createApp({
             cars: [],
             carId: "",
             addMessage: "",
+            deleteMessage: "",
 
             carData: {
                 accountId: 0,
@@ -57,6 +58,17 @@ const mineBiler = Vue.createApp({
         getAllAccounts(){
             console.log("Getting the account get method")
             this.getAllAccountsHelper(baseUrl+"/Accounts")
+        },
+
+        async deleteCar(deleteId) {
+            const url = baseUrl + "/Cars/" + deleteId
+            try {
+                response = await axios.delete(url)
+                this.deleteMessage = response.status + " " + response.statusText
+                this.getAllCars()
+            } catch (ex) {
+                alert(ex.message)
+            }
         },
 
         //GET BY ID METODER

@@ -96,7 +96,12 @@
                     Phone: {{ account.phone }}
                     Phone: {{ account.email }}
                 </p>
+                <div>
+                    <button  id="deleteButton" v-on:click="deleteAccount(account.accountId)" type="button" class="btn btn-outline-danger">Slet</button>
+                    
+                  </div>
             </div>
+            {{deleteMessage}}
        </div>
       <div class="col">
         col-2

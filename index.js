@@ -18,6 +18,7 @@ const home = Vue.createApp({
             cars: [],
             carId: "",
             addMessage: "",
+            deleteMessage: ""
 
            
 
@@ -79,6 +80,17 @@ const home = Vue.createApp({
                 console.log("Get the FK accountId")
             }catch(ex){
                 alert(ex.message) 
+            }
+        },
+
+        async deleteCarRide(deleteId) {
+            const url = baseUrl + "/CarRides/" + deleteId
+            try {
+                response = await axios.delete(url)
+                this.deleteMessage = response.status + " " + response.statusText
+                this.getAllRides()
+            } catch (ex) {
+                alert(ex.message)
             }
         },
 
