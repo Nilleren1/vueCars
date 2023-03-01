@@ -78,7 +78,7 @@
                     <h5>Opret lift</h5>
                     <p>{{ addData }}</p>
                     <div class="form-group">
-                        <label for="carId">car ID</label>
+                        <label for="carId">Car Model</label>
                         <select name="carId" v-model="addData.carId">
                             <option v-bind:value="car.carId" v-for="car in carArray">{{car.model}}</option>
                           </select>
