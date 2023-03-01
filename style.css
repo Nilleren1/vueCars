@@ -111,4 +111,13 @@ nav.navStyling{
   background-color: transparent;
 }
 
+.justify-content-center{
+text-align: center;
+}
+
+
+/* .justify-content-around{
+text-align: center;
+} */
+
 
