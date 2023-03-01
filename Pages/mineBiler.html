@@ -67,40 +67,35 @@
         <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
       </div>
     </nav>
-
-    <!-- Body -->
     <!--NEW ROW WITH DATA-->
     <div class="row">
-      <div class="col-3">
+      <div class="col">
         col-1
       </div>
-      <div class="col-6 container">
-<h2>Liste over biler</h2>
-      <br>
-        <div v-for="car in cars" class="card cardStyling">
-          <div class="card-body bg-light m-2">
-            <h5 class="card-title">
-              Bil med ID: {{ car.carId }}
-            </h5>
-            <h6>
-              Account Id: {{ car.accountId }}
-            </h6>
-            <p class="card-text">
-              Brand: {{ car.brand }} <br>
-              Model: {{ car.model }} <br>
-              Fuel type: {{ car.fuelType }}
-            </p>
-          </div>
-        </div>
-        <div v-else>
-            Error! No cars
-          </div>
-      </div>
-          
-        </div>
-        <div class="col-3">
+        <div class="col-4 border p-3 frontpageBackStyling">
+          <h2>Liste over biler</h2>
+            <br>
+              <div v-for="car in cars" class="card cardStyling">
+                <div class="card-body bg-light m-2">
+                  <h5 class="card-title">
+                    Bil med ID: {{ car.carId }}
+                  </h5>
+                  <h6>
+                    Account Id: {{ car.accountId }}
+                  </h6>
+                  <p class="card-text">
+                    Brand: {{ car.brand }} <br>
+                    Model: {{ car.model }} <br>
+                    Fuel type: {{ car.fuelType }}
+                  </p>
+                </div>
+              </div>
+         </div>
+        <div class="col">
           col-2
         </div>
+      </div>
+
         <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
       <div class="row">
         <div class="container">
