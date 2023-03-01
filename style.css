@@ -115,7 +115,23 @@ nav.navStyling{
 text-align: center;
 }
 
-
+.yourtext{
+  color: rgba(0, 0, 0, 0.295);
+  font-weight: bolder;
+  font-size: large;
+}
+.car{
+  color: rgb(255, 0, 0);
+  font-size: xx-large;
+}
+.tree{
+  color: rgb(0, 255, 55);
+  font-size: xx-large;
+}
+.star{
+  color: gold;
+  font-size: xx-large;
+}
 /* .justify-content-around{
 text-align: center;
 } */
