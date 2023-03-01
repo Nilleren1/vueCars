@@ -23,51 +23,60 @@
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-md navbar-dark navStyling">
+  <div id="createAccount">
+   <!-- NAVBAR -->
+   <nav class="navbar navbar-expand-md navbar-dark navStyling">
     <a class="navbar-brand" href="../index.html">
-        <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+      <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/Pages/login.html">Log ind</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Pages/createAccount.html">Opret konto</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Pages/addLift.html">Opret Lift</a>
-            </li>
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Konto Relateret
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-                    <a class="dropdown-item" href="#">Mine Lift</a>
-                    <a class="dropdown-item" href="#">Om Os</a>
-                </div>
-            </li>
-        </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/Pages/login.html">Log ind</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Pages/createAccount.html">Opret konto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
+        </li>
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Konto Relateret
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+            <a class="dropdown-item" href="#">Mine Lift</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+          </div>
+        </li>
+      </ul>
     </div>
-    <div class="nav-item d-flex justify-content-between">
-        <!--div class="nav-link text-white" href="">Mit Lift</div-->
-        <div class="nav-link text-white" href="">Login</div>
+    <div class="navbar position-relative top-0 end-0">
+    <!-- Dropdown -->
+      <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown" animation-name="example">
+        <img src="/img/Profile Pic Icon.png" width="45" height="50">
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+        <a class="dropdown-item" href="/index.html">Mine Lift</a>
+        <a class="dropdown-item" href="/Pages/mineKontoOplysninger.html">Min Konto</a>
+        <a class="dropdown-item" href="#">Indstiller</a>
+        <a class="dropdown-item" href="#">Log ud</a>
+      </div>
     </div>
-    <div class="d-flex justify-content-between text-white">
-        <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
-    </div>
-</nav>
-  <!--NAV SLUT-->
-
+    <!-- <div class="nav-item d-flex justify-content-between"> -->
+      <!--div class="nav-link text-white" href="">Mit Lift</div-->
+      <!-- <div class="nav-link text-white" href="">Login</div>
+    </div> -->
+    <!-- <div class="d-flex justify-content-between text-white">
+      <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
+    </div> -->
+  </nav><!--NAV SLUT-->
 
   <div class="container">
     <div class="row">
@@ -86,28 +95,44 @@
         <a class="btn btn-outline-warning  btn-lg btn-block p-0" href="#!" role="button">
           <i class="fab fa-google mr-1"></i><span style="font-size:smaller;">Google</span></a>
         <br>
-        <form>
+
+          <p>{{ addData }}</p>
           <div class="form-group">
-            <label for="Username">Username</label>
-            <input type="text" class="form-control" placeholder="Username input" style="border-radius: 15px;">
-            <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small-->
+            <label for="userName">Username</label>
+            <input v-model="addData.userName" type="text" class="form-control" placeholder="Username input" style="border-radius: 15px;">
           </div>
           <div class="form-group">
-            <label for="Email">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-            <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small-->
+            <label for="dateOfBirth">Date of birth</label>
+            <input v-model="addData.dateOfBirth" 
+            type="date" 
+            class="form-control" 
+            placeholder="dateOfBirth..." 
+            style="border-radius: 15px;">
           </div>
           <div class="form-group">
-            <label for="Password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter password">
+            <label for="userAddress">User Address</label>
+            <input v-model="addData.userAddress" type="text" class="form-control" id="userAddress" placeholder="Enter userAddress">
           </div>
+          
           <div class="form-group">
             <label for="Phone">Phone</label>
-            <input type="text" class="form-control" id="Phone" placeholder="Enter phone number">
+            <input v-model="addData.phone" type="text" class="form-control" id="Phone" placeholder="Enter phone number">
           </div>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input v-model="addData.email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+        
+          
           <br>
-          <button type="submit" class="btn logindBtnStyle">Opret konto</button>
-        </form>
+          <button type="button" v-on:click="postAccount()" class="btn logindBtnStyle">
+            Opret konto
+          </button>
+          <div class="p-3" style="background-color: rgba(255,0,0,0.1); width: 60%;" v-if="addMessage">
+            <!--addMessage en var der er blevet erklæret, så vi kan bruge den til output-->
+            <!--Output is the below-->
+            {{ addMessage }}
+          </div>
       </div>
       <div class="col-sm">
         <!--third col-->
@@ -117,7 +142,7 @@
 
   <div class="row">
     <div class="container">
-        col 12
+        <!-- col 12 -->
     </div>
   </div>
 
@@ -145,8 +170,9 @@
         Privatlivspolitik
       </div>
     </div>
-  </footer>
-  <!-- Footer END -->
-</body>
+  </footer><!-- Footer END -->
 
+</div><!--app close-->
+<script src="/createAccount.js"></script>
+</body>
 </html>
