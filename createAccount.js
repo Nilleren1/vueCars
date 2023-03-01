@@ -7,6 +7,7 @@ const createAccount = Vue.createApp({
             getAccountData: "",
             getMessage: "",
             addMessage: "",
+            deleteMessage: "",
             accountId: 0,
 
             addData: {
@@ -53,6 +54,16 @@ const createAccount = Vue.createApp({
                 }
                 
             }catch(ex){
+                alert(ex.message)
+            }
+        },
+        async deleteAccount(deleteId) {
+            const url = baseUrl + "/Accounts/" + deleteId
+            try {
+                response = await axios.delete(url)
+                this.deleteMessage = response.status + " " + response.statusText
+                this.getAllAccounts()
+            } catch (ex) {
                 alert(ex.message)
             }
         },

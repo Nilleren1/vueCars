@@ -99,13 +99,19 @@
               Brand: {{ car.brand }} <br>
               Model: {{ car.model }} <br>
               Fuel type: {{ car.fuelType }}
+              <div>
+                <button  id="deleteButton" v-on:click="deleteCar(car.carId)" type="button" class="btn btn-outline-danger">Slet</button>
+              </div>
+              
             </p>
           </div>
         </div>
-        <div v-else>
+        <!-- <p v-else>
             Error! No cars
-          </div>
+        </p> -->
       </div>
+        {{deleteMessage}}
+        
           
         </div>
         <div class="col-3">
