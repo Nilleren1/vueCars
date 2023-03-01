@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  <div id="mineBiler">
+  <div id="createAccount">
    <!-- NAVBAR -->
    <nav class="navbar navbar-expand-md navbar-dark navStyling">
     <a class="navbar-brand" href="../index.html">
@@ -77,87 +77,58 @@
       <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
     </div> -->
   </nav><!--NAV SLUT-->
+ <!--NEW ROW WITH DATA-->
+ <div class="row">
+    <div class="col">
+      <!-- col-1 -->
+    </div>
 
-    <!-- Body -->
-    <!--NEW ROW WITH DATA-->
-    <div class="row">
-      <div class="col-3">
-        col-1
+      <div class="col-4 border p-3 frontpageBackStyling">
+          <br>
+            <div v-for="account in accountArray">
+                <h5>
+                  AccountID: {{ account.accountId }}
+                </h5>
+                <p class="card-text">
+                    Username: {{ account.userName }} <br>
+                    Date of birth: {{ account.dateOfBirth }} <br>
+                    User Address: {{ account.userAddress }}
+                    Phone: {{ account.phone }}
+                    Phone: {{ account.email }}
+                </p>
+            </div>
+       </div>
+      <div class="col">
+        col-2
       </div>
-      <div class="col-6 container">
-<h2>Liste over biler</h2>
-      <br>
-        <div v-for="car in cars" class="card cardStyling">
-          <div class="card-body bg-light m-2">
-            <h5 class="card-title">
-              Bil med ID: {{ car.carId }}
-            </h5>
-            <h6>
-              Account Id: {{ car.accountId }}
-            </h6>
-            <p class="card-text">
-              Brand: {{ car.brand }} <br>
-              Model: {{ car.model }} <br>
-              Fuel type: {{ car.fuelType }}
-            </p>
-          </div>
-        </div>
-        <div v-else>
-            Error! No cars
-          </div>
+    </div>
+     <!--FOOTER-->
+  <footer class="footerStyling">
+    <div class="container-fluid p-5 d-flex justify-content-between">
+      <div class="text-white p-3">
+        Kontakt os <br>
+        Â© 2023 Copyright: <br>
+        <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
       </div>
-          
-        </div>
-        <div class="col-3">
-          col-2
-        </div>
-        <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-      <div class="row">
-        <div class="container">
-          col 12
-        </div>
+
+      <!-- Section: Social media section -->
+      <section class="text-center">
+        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+      </section>
+
+      <div class="p-3 text-white">
+        Om os <br>
+        Privatlivspolitik
       </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+    </div>
+  </footer><!-- Footer END -->
 
-      <!--FOOTER-->
-      <footer class="footerStyling">
-        <div class="container-fluid p-5 d-flex justify-content-between">
-          <div class="text-white p-3">
-            Kontakt os <br>
-            Â© 2023 Copyright: <br>
-            <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
-          </div>
-
-          <!-- Section: Social media section -->
-          <section class="text-center">
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-          </section>
-
-          <div class="p-3 text-white">
-            Om os <br>
-            Privatlivspolitik
-          </div>
-        </div>
-      </footer><!-- Footer END -->
-      
-    </div><!--app close-->
-    <script src="/mineBiler.js"></script>
+</div><!--app close-->
+<script src="/createAccount.js"></script>
 </body>
 </html>
