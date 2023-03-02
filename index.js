@@ -3,6 +3,8 @@
 // const carUrl = "https://localhost:44343/Api/Cars"
 // const accountUrl = "https://localhost:44343/Api/Accounts"
 const baseUrl = "https://mitlift.azurewebsites.net/Api"
+const testLoginUrl = "https://localhost:44343/Api/CarShare"
+
 
 const home = Vue.createApp({
     data() {
@@ -92,6 +94,12 @@ const home = Vue.createApp({
             } catch (ex) {
                 alert(ex.message)
             }
+        },
+
+        logud(){
+            axios.post(testLoginUrl + "/Signout")
+            .then(result => location.href="/Pages/login.html")
+            .catch(error => console.error(error))
         },
 
         //POST METODER
