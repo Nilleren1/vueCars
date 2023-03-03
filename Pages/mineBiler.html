@@ -93,10 +93,10 @@
         <div v-for="car in cars" class="card">
           <div class="card-body bg-light m-2">
             <h5 class="card-title">
-              Bil med ID: {{ car.carId }}
+              Bil: {{ car.carId }} - {{car.model}}
             </h5>
             <h6>
-              Account Id: {{ car.accountId }}
+               Account: {{ car.accountId }} <!-- {{car.account}} <- få email herind -->
             </h6>
             <p class="card-text">
               Brand: {{ car.brand }} <br>
@@ -158,7 +158,7 @@
           </section>
 
           <div class="p-3 text-white">
-            Om os <br>
+            <a href="/Pages/omOs.html">Om os</a> <br>
             Privatlivspolitik
           </div>
         </div>
