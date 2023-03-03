@@ -1,4 +1,4 @@
-const baseUrl = "https://mitlift.azurewebsites.net/Api"
+const baseUrl = "https://mitlift.azurewebsites.net/Api/CarShare"
 const testLoginUrl = "https://localhost:44343/Api/CarShare"
 
 const login = Vue.createApp({
@@ -49,7 +49,7 @@ const login = Vue.createApp({
             //bodyFormData.append('userName', this.addData.userName);
             axios({
                 method: "post",
-                url: testLoginUrl,
+                url: baseUrl,
                 data: bodyFormData,
                 headers: { "Content-Type": "multipart/form-data" },
               })

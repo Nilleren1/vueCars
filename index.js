@@ -2,7 +2,7 @@
 // const carRidesUrl = "https://localhost:44343/Api/CarRides"
 // const carUrl = "https://localhost:44343/Api/Cars"
 // const accountUrl = "https://localhost:44343/Api/Accounts"
-const baseUrl = "https://mitlift.azurewebsites.net/Api"
+const baseUrl = "https://mitlift.azurewebsites.net/Api/CarShare"
 const testLoginUrl = "https://localhost:44343/Api/CarShare"
 
 
@@ -97,7 +97,7 @@ const home = Vue.createApp({
         },
 
         logud(){
-            axios.post(testLoginUrl + "/Signout")
+            axios.post(baseUrl + "/Signout")
             .then(result => location.href="/Pages/login.html")
             .catch(error => console.error(error))
         },
