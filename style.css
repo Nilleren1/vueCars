@@ -13,8 +13,6 @@ label{
 }
 .form-control{
     border-radius: 30px;
-
-
 }
 
 .btn.logindBtnStyle{
@@ -82,11 +80,7 @@ card.styleTextIndex{
   font-weight: 100;
   font-size: larger;
 }
-/* .datetime-{
-  padding: 1%;
-  display: flex;
-  justify-content: center;
-} */
+
 .datetime{
   cursor: pointer;
   background-color: rgb(29, 28, 36);
@@ -141,8 +135,5 @@ text-align: center;
   color: gold;
   font-size: xx-large;
 }
-/* .justify-content-around{
-text-align: center;
-} */
 
 
