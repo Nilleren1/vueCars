@@ -88,17 +88,7 @@
         </div>
         <div class="col-6 p-3 mb-2 frontpageBackStyling border">
           <h3 class="">Opret en konto</h3>
-          <!-- Facebook -->
-          <a class="btn btn-primary btn-lg btn-block p-0" href="#!" role="button">
-            <i class="fab fa-facebook mr-1"></i><span style="font-size:smaller;">Facebook</span></a>
-          <!-- Apple -->
-          <a class="btn btn-dark btn-lg btn-block p-0" href="#!" role="button">
-            <i class="fab fa-apple mr-1"></i><span style="font-size:smaller;">Apple</span></a>
-          <!-- Google -->
-          <a class="btn btn-warning  btn-lg btn-block p-0" href="#!" role="button">
-            <i class="fab fa-google mr-1"></i><span style="font-size:smaller;">Google</span></a>
-          <br>
-
+      
           <!-- <p>{{ addData }}</p> -->
           <div class="form-group">
             <label for="userName">Username</label>
@@ -125,7 +115,6 @@
             <input v-model="addData.email" type="email" class="form-control" id="email" aria-describedby="emailHelp"
               placeholder="Enter email">
           </div>
-          <br>
           <button type="button" v-on:click="postAccount()" class="btn logindBtnStyle">
             Opret konto
           </button>
@@ -134,6 +123,18 @@
             <!--Output is the below-->
             {{ addMessage }}
           </div>
+          <br>
+          <br>
+           <!-- Facebook -->
+           <a class="btn btn-primary btn-lg btn-block p-0" href="#!" role="button">
+            <i class="fab fa-facebook mr-1"></i><span style="font-size:smaller;">Facebook</span></a>
+          <!-- Apple -->
+          <a class="btn btn-dark btn-lg btn-block p-0" href="#!" role="button">
+            <i class="fab fa-apple mr-1"></i><span style="font-size:smaller;">Apple</span></a>
+          <!-- Google -->
+          <a class="btn btn-warning  btn-lg btn-block p-0" href="#!" role="button">
+            <i class="fab fa-google mr-1"></i><span style="font-size:smaller;">Google</span></a>
+          <br>
         </div>
         <div class="col-3">
           <!--third col-->
