@@ -61,12 +61,12 @@
       </div>
       <div class="navbar position-relative top-0 end-0">
         <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="styleNavDropdown" href="/Pages/login.html">Log ind</a> <br>
-          <button class="styleNavDropdown" @click="logud">Log ud</button> 
-          <br>
-          <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
-        </li>
+          <li class="nav-item">
+            <a class="styleNavDropdown" href="/Pages/login.html">Log ind</a> <br>
+            <button class="styleNavDropdown" @click="logud">Log ud</button>
+            <br>
+            <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
+          </li>
         </ul>
         <!-- Dropdown -->
         <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
@@ -113,34 +113,34 @@
 
     <!-- SØG LIFT -->
 
-    <div  class="row" style="margin: auto">
+    <div class="row" style="margin: auto">
       <div class="col-1">
       </div>
-      <div style="background-color: rgb(224, 224, 224);" class="col-10 border p-3 frontpageBackStyling">
+      <div style="background-color: rgb(240, 240, 240);" class="col-10 border p-3 frontpageBackStyling">
         <form>
           <div class="form-row">
-            <div class="col-sm-4 mb-3 d-flex justify-content-start">
+            <div class="col-sm-3 mb-2 ml-5 d-flex justify-content-start">
               <!-- <label for="validationServer01">Fra</label> -->
 
-              <input type="text" class="form-control text-white datetime" id="fra" placeholder="Fra..."
-                value="Fra" required style="max-width: 200px;">
+              <input type="text" class="form-control text-white datetime" id="fra" placeholder="Fra..." value="Fra"
+                required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
-            <div class="col-sm-4 mb-3 d-flex justify-content-start">
+            <div class="col-sm-5 mb-2 d-flex justify-content-start">
               <!-- <label for="validationServer01">Til</label> -->
 
-              <input type="text" class="form-control text-white datetime" id="til" placeholder="Til..."
-                value="Til" required style="max-width: 200px;">
+              <input type="text" class="form-control text-white datetime" id="til" placeholder="Til..." value="Til"
+                required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
 
 
-            <div class="col-md-4 mb-3 d-flex justify-content-end">
+            <div class="col-md-3 mb-2 d-flex justify-content-end">
               <!-- <label for="validationServer01">Dato</label> -->
-              <input type="datetime-local" class="form-control text-white datetime" id="dato"
-                placeholder="Dato" value="Dato" required style="max-width: 200px;">
+              <input type="datetime-local" class="form-control text-white datetime" id="dato" placeholder="Dato"
+                value="Dato" required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
@@ -148,13 +148,81 @@
         </form>
         <br>
 
-        <br>
-        <a style="background-color: #B4F0B4; color: black; border: 1px solid black" class="container btn btn-primary btn-md btn-block p-1" href="#!" role="button">
+        <a class="container btn btn-primary mainButton btn-md btn-block p-1" href="#!" role="button">
           <span style="font-size:larger;">Søg Lift</span></a>
       </div>
       <div class="col-1">
       </div>
     </div>
+    <br>
+    <br>
+
+    <div class="row">
+
+      <div class="col-1"></div>
+
+      <div class="col-4">
+        <div class="card" style="width: 100%;">
+          <img class="card-img-top img-fluid" src="/img/bestilLift.png" alt="Card image cap">
+          <div style="background-color: rgb(240, 240, 240);" class="card-body">
+            <!-- <a href="#" class="btn btn-primary mainButton">Bestil Lift</a> -->
+            <a class="container btn btn-primary mainButton btn-md btn-block p-1" href="" role="button">
+              <span style="font-size:larger;">Bestil Lift</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-2"></div>
+
+      <div class="col-4">
+        <div class="card" style="width: 100%;">
+          <img class="card-img-top img-fluid" src="/img/givLift.png" alt="Card image cap">
+          <div style="background-color: rgb(240, 240, 240);" class="card-body">
+            <!-- <a href="#" class="btn btn-primary mainButton">Giv Lift</a> -->
+            <a class="container btn btn-primary mainButton btn-md btn-block p-1" href="" role="button">
+              <span style="font-size:larger;">Giv Lift</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-1"></div>
+
+    </div>
+
+
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-sm-6">
+        <div class="embed-responsive embed-responsive-16by9">
+          <video playsinline="playsinline" loop autoplay width="1100" height="600" name="Video Name">
+            <source src="/img/AdobeStock_237737792.mov">
+          </video>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <br>
+        <h2><span><strong>Vision</strong></span></h2>
+        <p>Vores vision er at skabe et stort netv&aelig;rk gennem hele Danmark af folk som hj&aelig;lper hinanden til at
+          komme fra A til B.</p>
+        <p>Vi h&aring;ber ved at reducerer den massive brug af privat k&oslash;rsel, at vi kan leve i et gr&oslash;nnere
+          milj&oslash;.</p>
+        <p><br></p>
+        <h2><span><strong>Mission</strong></span></h2>
+        <p><span style="font-size: 16px;">Vi vil med vores organisation, s&oslash;rge for at Roskilde Kommune har gode
+            forhold til nemt at kunne skaffe sig et lift. Det skal v&aelig;re nemt for b&aring;de uddeler og modtager af
+            lift. Og vi vil opererer med b&aring;de sikkerhed og trov&aelig;rdighed, s&aring; ingen skal v&aelig;re
+            bekymret for d&aring;rlige oplevelser gennem vores service.</span></p>
+
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+
+    <br>
+    <br>
     <br>
 
     <!--NEW ROW WITH CARDS-->
@@ -162,13 +230,12 @@
       <div class="col-1">
         <!--col-2-->
       </div>
-      <div class="col-sm p-3 frontpageBackStyling">
-        <div class="card" v-for="car in carArray">
-          <div class="card-body">
+      <div class="col-10 p-3  frontpageBackStyling">
+        <div class="card mb-2" v-for="car in carArray">
+          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
             <div class="card-text d-flex justify-content-between">
               <div class="card-text m-1">
-                <img class="card-img" 
-                src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
+                <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
                 <h5 class="card-title text-center">Bruger</h5>
                 <h6 class="text-center">
                   <!-- <span class="fa fa-star checked"></span>
@@ -201,7 +268,8 @@
                 <br>
                 <div class="col-sm text-center">
                   <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
-                </div>              </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -259,7 +327,7 @@
                   </div>
                 </div>
               </div>
-            </div><!--CARD SLUT-->
+            </div> 
 
 
           </div>
@@ -267,9 +335,6 @@
       </div>
     </div>ROW SLUT -->
 
-    <div class="col-1">
-      <!-- col-2 -->
-    </div>
     <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
     <br>
     <br>
