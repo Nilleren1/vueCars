@@ -50,12 +50,12 @@
           <!-- Dropdown -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Opret
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="/Pages/AddCar.html">Opret bil</a>
-            <a class="dropdown-item" href="/Pages/addLift.html">Opret lift</a>
-          </div>
+              Opret
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/Pages/AddCar.html">Opret bil</a>
+              <a class="dropdown-item" href="/Pages/addLift.html">Opret lift</a>
+            </div>
           </li>
         </ul>
       </div>
@@ -83,6 +83,17 @@
     </nav><!--NAV SLUT-->
 
 
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center">
+            <!-- <h1 class="fw-light">Vertically Centered Masthead Content</h1>
+            <p class="lead">A great starter layout for a landing page</p> -->
+          </div>
+        </div>
+      </div>
+    </header>
+
 
     <!-- <div class="nav-item d-flex justify-content-between"> -->
     <!--div class="nav-link text-white" href="">Mit Lift</div-->
@@ -93,34 +104,31 @@
       </div> -->
 
     <!-- SØG LIFT -->
-    <div class="row" style="margin: auto">
-      <div class="col-3">
-        <!-- 1 -->
+    <div  class="row" style="margin: auto">
+      <div class="col-1">
       </div>
-      <div class="col-6 border p-3 frontpageBackStyling">
+      <div style="background-color: rgb(224, 224, 224);" class="col-10 border p-3 frontpageBackStyling">
         <form>
           <div class="form-row">
             <div class="col-md-4 mb-3 d-flex justify-content-start">
               <!-- <label for="validationServer01">Fra</label> -->
-              <input type="text" class="form-control text-white datetime" 
-              id="validationServer01" placeholder="Fra..." 
-              value="Fra" required style="max-width: 200px;">
+              <input type="text" class="form-control text-white datetime" id="fra" placeholder="Fra..."
+                value="Fra" required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
             <div class="col-md-4 mb-3 d-flex justify-content-start">
               <!-- <label for="validationServer01">Til</label> -->
-              <input type="text" class="form-control text-white datetime" 
-              id="validationServer01" placeholder="Til" value="Til"
-                required style="max-width: 200px;">
+              <input type="text" class="form-control text-white datetime" id="til" placeholder="Til..."
+                value="Til" required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
-          
+
             <div class="col-md-4 mb-3 d-flex justify-content-end">
               <!-- <label for="validationServer01">Dato</label> -->
-              <input type="datetime-local" class="form-control text-white datetime" id="validationServer01" placeholder="Dato"
-                value="Dato" required style="max-width: 200px;">
+              <input type="datetime-local" class="form-control text-white datetime" id="dato"
+                placeholder="Dato" value="Dato" required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
@@ -128,20 +136,18 @@
         </form>
         <br>
         <br>
-        <a class="container btn btn-primary btn-md btn-block p-1" href="#!" role="button">
-          <span style="font-size:smaller;">Søg Lift</span></a>
+        <a style="background-color: #B4F0B4; color: black; border: 1px solid black" class="container btn btn-primary btn-md btn-block p-1" href="#!" role="button">
+          <span style="font-size:larger;">Søg Lift</span></a>
       </div>
-      <div class="col-3">
-        <!-- 2 -->
+      <div class="col-1">
       </div>
     </div>
 
     <!--NEW ROW WITH CARDS-->
     <div class="row" style="margin: auto">
-      <div class="col-3">
-        <!-- col-1 -->
+      <div class="col-1">
       </div>
-      <div class="col-6 mt-3 p-3 frontpageBackStyling">
+      <div style="background-color: rgb(224, 224, 224);" class="col-10 mt-3 p-3 frontpageBackStyling">
         <div class="row">
           <div class="container col">
             <!--CARD START-->
@@ -156,7 +162,7 @@
                       class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
                       class="fa fa-star"></span></h6>
                 </div>
-    
+
                 <div class="card-text m-3" style="font-size: large;">
                   <!-- ID: {{ car.carId }} <br> -->
                   <b>Dato: </b> {{ car.driveDate }} <br>
@@ -170,7 +176,7 @@
                     </div>
                   </b>
                 </div>
-    
+
                 <!--FIX: LAST DIV NOT RESPONSIVE-->
                 <div class="m-4">
                   <br>
@@ -187,13 +193,13 @@
                 </div>
               </div>
             </div><!--CARD SLUT-->
-         
+
           </div>
         </div>
       </div>
     </div><!--ROW SLUT-->
 
-    <div class="col-3">
+    <div class="col-1">
       <!-- col-2 -->
     </div>
     <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
@@ -205,7 +211,7 @@
     <br>
     <br>
     <br>
-   
+
     <!--FOOTER-->
     <footer class="footerStyling">
       <div class="container-fluid p-5 d-flex justify-content-between">
