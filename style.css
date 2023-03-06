@@ -33,6 +33,15 @@ label{
 
 }
 
+.colStyling{
+  background-color: #F2F4F2;
+}
+
+.colStyling1{
+  background-color: white;
+
+}
+
 .cardStyling{
   border-radius: 25px;
   border: 0.1em solid rgb(163, 163, 163);
