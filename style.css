@@ -42,8 +42,12 @@ label{
 
 .frontpageBackStyling{
   background-color: #ffffff;
-  border: 0.1em solid rgb(209, 208, 208);
+  /* border: 0.1em solid rgb(209, 208, 208); */
 
+}
+
+.mainButton{
+  background-color: #B4F0B4; color: black; border: 1px solid black
 }
 
 .search{
