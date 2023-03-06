@@ -1,10 +1,19 @@
 
 body.centerImg {
-    background-image: url('/img/road.jpeg');
+    background-image: url('');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+  }
+
+  .masthead {
+    width: 100%;
+    min-height: 200px;
+    background-image: url('/img/carpooling-banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
 label{

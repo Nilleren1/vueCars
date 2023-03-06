@@ -91,6 +91,17 @@
     </nav><!--NAV SLUT-->
 
 
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center">
+            <!-- <h1 class="fw-light">Vertically Centered Masthead Content</h1>
+            <p class="lead">A great starter layout for a landing page</p> -->
+          </div>
+        </div>
+      </div>
+    </header>
+
 
     <!-- <div class="nav-item d-flex justify-content-between"> -->
     <!--div class="nav-link text-white" href="">Mit Lift</div-->
@@ -101,31 +112,34 @@
       </div> -->
 
     <!-- SØG LIFT -->
-    <div class="row">
-      <div class="col-2">
-        <!-- 1 -->
+
+    <div  class="row" style="margin: auto">
+      <div class="col-1">
       </div>
-      <div class="col-sm-8 border p-3 frontpageBackStyling">
+      <div style="background-color: rgb(224, 224, 224);" class="col-10 border p-3 frontpageBackStyling">
         <form>
           <div class="form-row">
             <div class="col-sm-4 mb-3 d-flex justify-content-start">
               <!-- <label for="validationServer01">Fra</label> -->
-              <input type="text" class="form-control text-white datetime" id="validationServer01" placeholder="Fra..."
+
+              <input type="text" class="form-control text-white datetime" id="fra" placeholder="Fra..."
                 value="Fra" required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
             <div class="col-sm-4 mb-3 d-flex justify-content-start">
               <!-- <label for="validationServer01">Til</label> -->
-              <input type="text" class="form-control text-white datetime" id="validationServer01" placeholder="Til"
+
+              <input type="text" class="form-control text-white datetime" id="til" placeholder="Til..."
                 value="Til" required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
 
-            <div class="col-sm-4 mb-3 d-flex justify-content-end">
+
+            <div class="col-md-4 mb-3 d-flex justify-content-end">
               <!-- <label for="validationServer01">Dato</label> -->
-              <input type="datetime-local" class="form-control text-white datetime" id="validationServer01"
+              <input type="datetime-local" class="form-control text-white datetime" id="dato"
                 placeholder="Dato" value="Dato" required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
@@ -133,18 +147,19 @@
           </div>
         </form>
         <br>
-        <a class="container-fluid btn btn-primary btn-md btn-block p-1" href="#!" role="button">
-          <span style="font-size:smaller;">Søg Lift</span></a>
+
+        <br>
+        <a style="background-color: #B4F0B4; color: black; border: 1px solid black" class="container btn btn-primary btn-md btn-block p-1" href="#!" role="button">
+          <span style="font-size:larger;">Søg Lift</span></a>
       </div>
-      <div class="col-2">
-        <!-- 2 -->
+      <div class="col-1">
       </div>
     </div>
     <br>
 
     <!--NEW ROW WITH CARDS-->
     <div class="row">
-      <div class="col-2">
+      <div class="col-1">
         <!--col-2-->
       </div>
       <div class="col-sm p-3 frontpageBackStyling">
@@ -191,7 +206,7 @@
           </div>
         </div>
       </div>
-      <div class="col-2">
+      <div class="col-1">
         <!--col-2-->
       </div>
     </div>
@@ -200,6 +215,7 @@
       <div class="col-sm-3">
       </div>
       <div class="col-sm-6 mt-3 p-3 frontpageBackStyling">
+
         <div class="row">
           <div class="col-sm-12">
             <div v-for="car in carArray" class="card mb-3 cardStyling">
@@ -243,14 +259,15 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div><!--CARD SLUT-->
+
 
           </div>
         </div>
       </div>
     </div>ROW SLUT -->
 
-    <div class="col-3">
+    <div class="col-1">
       <!-- col-2 -->
     </div>
     <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
