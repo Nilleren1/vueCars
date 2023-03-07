@@ -64,7 +64,7 @@ const addCar = Vue.createApp({
                 response = await axios.post(baseUrl + "/Cars", this.addData)
                 this.addMessage="Response: " + response.status + " " + response.statusText
                 if (response.status == 200) {
-                    location.href="/Pages/mineBiler.html"
+                    location.href="/Pages/mineKonto.html"
                 }
                 else{
                     alert("Der er noget galt her " + response.status)
