@@ -47,7 +47,7 @@ const createAccount = Vue.createApp({
                 response = await axios.post(baseUrl + "/Accounts", this.addData)
                 this.addMessage="Response: " + response.status + " " + response.statusText
                 if (response.status == 200) {
-                    location.href="/Pages/mineKontoOplysninger.html"
+                    location.href="/Pages/mineKonto.html"
                 }
                 else{
                     alert("Der er noget galt her " + response.status)

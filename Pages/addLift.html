@@ -43,22 +43,6 @@
             <li class="nav-item">
               <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Pages/addLift.html">Opret lift</a>
-            </li> -->
-            <!-- Dropdown -->
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              Opret
-            </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="/Pages/AddCar.html">Opret bil</a>
-              <a class="dropdown-item" href="/Pages/addLift.html">Opret lift</a>
-            </div>
-            </li> -->
           </ul>
         </div>
         <div class="navbar position-relative top-0 end-0">
@@ -90,27 +74,78 @@
                 <div class="col-sm">
                     <!--one col-->
                 </div>
-                <div class="col-sm-6 p-3 mb-2 bg-light border">
-                    <h3>Opret et lift</h3>
-                    <!-- <p>{{ addData }}</p> -->
-                    <div class="form-group">
-                        <label for="carId">Vælg bil model</label>
-                        <br>
-                        <select name="carId" v-model="addData.carId">
-                            <option v-bind:value="car.carId" v-for="car in carArray">{{car.model}}</option>
-                          </select>
-                          <br>
-                        <!-- <input class="form-control" v-model="addData.carId" placeholder="carId" type="number" min="0" />
-                        <br> -->
+                <div class="col-sm-8 p-3 mb-2 border formStyling">
+                    <h1 class="font-weight-light text-center">Opret et lift</h1>
+                    &nbsp;
+
+                    <p>{{ addData }}</p>
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="Pris">Pris</label>
+                        <input type="number" class="form-control" 
+                        v-model="addData.price" type="number" min="0"
+                        placeholder="Indtast Pris">
+                      </div>
+                      <div class="col-sm">
+                        <label for="DatoForAfkørsel">Afkørsel & Tidspunkt</label>
+                        <input class="form-control" 
+                        v-model="addData.driveDate" placeholder="driveDate"
+                            type="datetime-local"
+                        placeholder="Dato for afkørsel">
+                      </div>
                     </div>
-                    <div class="form-group">
+                    &nbsp;
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="start destination">Start destination</label>
+                        <input type="text" class="form-control" v-model="addData.startDestination"
+                        placeholder="Start destination">
+                      </div>
+                      <div class="col-sm">
+                        <label for="slut destination">Slut destination</label>
+                        <input type="text" class="form-control" v-model="addData.endDestination"
+                        placeholder="Slut destination">
+                      </div>
+                    </div>
+                    &nbsp;
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="availableSeats">Sæder tilbage</label>
+                        <input class="form-control" 
+                        type="number" v-model="addData.availableSeats" 
+                        id="quantity" name="quantity" min="1" max="8"
+                        placeholder="Antal ledige sæder">
+                      </div>
+                     
+                    <div class="col-sm-6 form-group">
+                      <label for="carId">Vælg bil model</label>
+                      <select class="form-control" 
+                      name="carId" v-model="addData.carId">
+                      <option v-bind:value="car.carId" v-for="car in carArray">{{car.model}}</option>
+                      </select>
+                      <!-- <input class="form-control" v-model="addData.carId" placeholder="carId" type="number" min="0" />
+                      <br> -->
+                  </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm form-check">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="checkbox" v-model="addData.isFull" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          &nbsp;IsFull
+                        </label>
+                    </div> 
+                    </div>
+
+                    <!-- <div class="form-group">
                         <label for="Price">Pris</label>
-                        <input class="form-control" v-model="addData.price" placeholder="Price" type="number" min="0" />
+                        <input class="form-control" 
+                        v-model="addData.price" placeholder="Price" type="number" min="0" />
                         <br>
                     </div>
                     <div class="form-group">
                         <label for="model">Dato for afkørsel</label>
-                        <input class="form-control" v-model="addData.driveDate" placeholder="driveDate"
+                        <input class="form-control" 
+                        v-model="addData.driveDate" placeholder="driveDate"
                             type="datetime-local" /> <br>
                     </div>
                     <div class="form-group">
@@ -127,7 +162,7 @@
                         <label for="model">Ledige sæder</label>
                         <br>
                         <input type="number" v-model="addData.availableSeats" id="quantity" name="quantity" min="1" max="8"><br>
-                    </div>
+                    </div> -->
                     <!-- <div class="form-check">
                         <input class="form-check-input" type="checkbox" v-model="addData.isFull" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
@@ -136,8 +171,14 @@
                         <br>
                     </div> -->
                     <br>
-                    <button type="button" v-on:click="postCarRides()" class="btn logindBtnStyle">Opret lift</button>
-                </div>
+                    <br>
+                    <br>
+                    <div class="d-flex justify-content-end">
+                    <button type="button" v-on:click="postCarRides()" class="btn logindBtnStyle">Opret</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" v-on:click="postCarRides()" class="btn backBtnStyle">Tilbage</button>
+                   </div>
+                 </div>
                 <div class="col-sm">
                     <!--third col-->
                 </div>
@@ -150,7 +191,11 @@
             </div>
         </div>
         <br>
-       
+        <br>
+        <br>
+        <br>
+        <br>
+      
       <!--FOOTER-->
     <footer id="footer" class="footerStyling">
       <div class="container-fluid p-1">
