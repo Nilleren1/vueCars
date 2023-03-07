@@ -122,24 +122,24 @@
             <div class="col-sm-3 mb-2 ml-5 d-flex justify-content-start">
               <!-- <label for="validationServer01">Fra</label> -->
 
-              <input type="text" class="form-control text-white datetime" id="fra" placeholder="Fra..." value="Fra"
+              <input style="background-color: rgb(0, 0, 0);" type="text" class="form-control text-white datetime" id="fra" placeholder="Fra..." value="Fra"
                 required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
-            <div class="col-sm-5 mb-2 d-flex justify-content-start">
+            <div class="col-sm-3 mb-2 mr-5 d-flex justify-content-start">
               <!-- <label for="validationServer01">Til</label> -->
 
-              <input type="text" class="form-control text-white datetime" id="til" placeholder="Til..." value="Til"
+              <input style="background-color: rgb(0, 0, 0);" type="text" class="form-control text-white datetime" id="til" placeholder="Til..." value="Til"
                 required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
             </div>
 
 
-            <div class="col-md-3 mb-2 d-flex justify-content-end">
+            <div class="col-md-3 mb-2 ml-5 d-flex justify-content-end">
               <!-- <label for="validationServer01">Dato</label> -->
-              <input type="datetime-local" class="form-control text-white datetime" id="dato" placeholder="Dato"
+              <input style="background-color: rgb(0, 0, 0);" type="datetime-local" class="form-control text-white datetime" id="dato" placeholder="Dato"
                 value="Dato" required style="max-width: 200px;">
               <div class="valid-feedback">
               </div>
@@ -162,27 +162,31 @@
       <div class="col-1"></div>
 
       <div class="col-4">
-        <div class="card" style="width: 100%;">
+        <a href="/Pages/mineLift.html"> 
+        <div class="card zoom2" style="width: 100%;">
           <img class="card-img-top img-fluid" src="/img/bestilLift.png" alt="Card image cap">
-          <div style="background-color: rgb(240, 240, 240);" class="card-body">
+          <div style="background-color: #B4F0B4;" class="card-body">
             <!-- <a href="#" class="btn btn-primary mainButton">Bestil Lift</a> -->
-            <a class="container btn btn-primary mainButton btn-md btn-block p-1" href="" role="button">
-              <span style="font-size:larger;">Bestil Lift</span></a>
+            <p style="font-size: 1.5rem; color:black" class="text-center">Bestil Lift</p>
+            
           </div>
         </div>
+      </a>
       </div>
 
       <div class="col-2"></div>
 
       <div class="col-4">
-        <div class="card" style="width: 100%;">
+        <a href="/Pages/addLift.html"> 
+        <div class="card zoom2 shadow1" style="width: 100%;">
           <img class="card-img-top img-fluid" src="/img/givLift.png" alt="Card image cap">
-          <div style="background-color: rgb(240, 240, 240);" class="card-body">
-            <!-- <a href="#" class="btn btn-primary mainButton">Giv Lift</a> -->
-            <a class="container btn btn-primary mainButton btn-md btn-block p-1" href="" role="button">
-              <span style="font-size:larger;">Giv Lift</span></a>
+          <div style="background-color: #B4F0B4;" class="card-body">
+            <!-- <a href="#" class="btn btn-primary mainButton">Bestil Lift</a> -->
+            <p style="font-size: 1.5rem; color:black" class="text-center ">Giv Lift</p>
+            
           </div>
         </div>
+        </a>
       </div>
 
       <div class="col-1"></div>
@@ -225,59 +229,7 @@
     <br>
     <br>
 
-    <!--NEW ROW WITH CARDS-->
-    <div class="row">
-      <div class="col-1">
-        <!--col-2-->
-      </div>
-      <div class="col-10 p-3  frontpageBackStyling">
-        <div class="card mb-2" v-for="car in carArray">
-          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
-            <div class="card-text d-flex justify-content-between">
-              <div class="card-text m-1">
-                <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
-                <h5 class="card-title text-center">Bruger</h5>
-                <h6 class="text-center">
-                  <!-- <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span> -->
-                  <span class="red-star checked">★</span>
-                  <span class="red-star checked">★</span>
-                  <span class="red-star checked">★</span>
-                  <span class="red-star">★</span>
-                  <span class="red-star">★</span>
-                </h6>
-              </div>
-              <div class="mr-2">
-                {{ car.driveDate }} <br>
-                {{ car.price }} kr. <br>
-                <div class="text-secondary">
-                  {{car.startDestination}} <br>
-                </div>
-                <div class="text-secondary">
-                  {{car.endDestination}} <br>
-                </div>
-              </div>
-              <div class="mr-2">
-                <div class="col-sm text-center">
-                  <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
-                    class="btn btn-danger">Slet</button>
-                  {{deleteMessage}}
-                </div>
-                <br>
-                <div class="col-sm text-center">
-                  <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-1">
-        <!--col-2-->
-      </div>
-    </div>
+    
 
     <!-- <div class="row" style="margin: auto">
       <div class="col-sm-3">
