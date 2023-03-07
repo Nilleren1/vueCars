@@ -15,12 +15,20 @@ const home = Vue.createApp({
             accountArray: [],
             getAccountData: "",
             getMessage: "",
-            accountId: 0,
 
             cars: [],
             carId: "",
             addMessage: "",
-            deleteMessage: ""
+            deleteMessage: "",
+
+            addData: {
+                accountId: 0,
+                userName: "",
+                dateOfBirth: "",
+                userAddress: "",
+                phone:"",
+                email:""
+              },
 
            
 
@@ -82,6 +90,22 @@ const home = Vue.createApp({
                 console.log("Get the FK accountId")
             }catch(ex){
                 alert(ex.message) 
+            }
+        },
+          //POST METODER
+          async postAccount(){
+            try{
+                response = await axios.post(baseUrl + "/Accounts", this.addData)
+                this.addMessage="Response: " + response.status + " " + response.statusText
+                if (response.status == 200) {
+                    location.href="/Pages/mineKonto.html"
+                }
+                else{
+                    alert("Der er noget galt her " + response.status)
+                }
+                
+            }catch(ex){
+                alert(ex.message)
             }
         },
 
