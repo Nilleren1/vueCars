@@ -24,146 +24,145 @@
 
 <body>
   <div id="login">
-   <!-- NAVBAR -->
-   <nav class="navbar navbar-expand-md navbar-dark navStyling">
-    <a class="navbar-brand" href="../index.html">
-      <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
-    </a>
-    <a href="../index.html" class="text-white">MitLift</a>&nbsp;
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark navStyling">
+      <a class="navbar-brand" href="../index.html">
+        <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+      </a>
+      <a href="../index.html" class="text-white">MitLift</a>&nbsp;
 
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="../index.html">Find et lift</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Pages/addLift.html">Opret lift</a>
-        </li> -->
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../index.html">Find et lift</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar position-relative top-0 end-0">
         <!-- Dropdown -->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          Opret
+        <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
+          animation-name="example">
+          <img src="/img/Profile Pic Icon.png" width="45" height="50">
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="/Pages/AddCar.html">Opret bil</a>
-          <a class="dropdown-item" href="/Pages/addLift.html">Opret lift</a>
+          <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+          <a class="dropdown-item" href="/index.html">Mine Lift</a>
+          <a class="dropdown-item" href="/Pages/mineKonto.html">Min Konto</a>
+          <a class="dropdown-item" href="#">Instillinger</a>
+          <a class="dropdown-item" href="#">Log ud</a>
         </div>
-        </li> -->
-      </ul>
-    </div>
-    <div class="navbar position-relative top-0 end-0">
-      <!-- Dropdown -->
-      <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
-        animation-name="example">
-        <img src="/img/Profile Pic Icon.png" width="45" height="50">
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-        <a class="dropdown-item" href="/index.html">Mine Lift</a>
-        <a class="dropdown-item" href="/Pages/mineKonto.html">Min Konto</a>
-        <a class="dropdown-item" href="#">Instillinger</a>
-        <a class="dropdown-item" href="#">Log ud</a>
       </div>
-    </div>
-    <!-- <div class="nav-item d-flex justify-content-between"> -->
-    <!--div class="nav-link text-white" href="">Mit Lift</div-->
-    <!-- <div class="nav-link text-white" href="">Login</div>
+      <!-- <div class="nav-item d-flex justify-content-between"> -->
+      <!--div class="nav-link text-white" href="">Mit Lift</div-->
+      <!-- <div class="nav-link text-white" href="">Login</div>
   </div> -->
-    <!-- <div class="d-flex justify-content-between text-white">
+      <!-- <div class="d-flex justify-content-between text-white">
     <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
   </div> -->
-  </nav><!--NAV SLUT-->
+    </nav><!--NAV SLUT-->
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <!--one col-->
-      </div>
-      <div class="col-sm-6 p-3 mb-2 frontpageBackStyling border">
-        <h3>Log ind</h3>
-        <form>
+    <div class="container">
+      <h2 class="font-weight-light text-center">Log ind eller opret en konto</h2>
+
+      <div class="row">
+        <div class="col-sm">
+          <!--one col-->
+        </div>
+        <div class="col-sm-6 p-3 mb-2 border formStyling">
           <div class="form-group">
             <label for="brugernavn">Brugernavn</label>
-            <input v-model="addData.userName" type="text" class="form-control" placeholder="Username" style="border-radius: 15px;">
+            <input v-model="addData.userName" type="text" class="form-control" placeholder="Username"
+              style="border-radius: 15px;">
             <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small-->
           </div>
           <div class="form-group">
             <label for="Email">Email</label>
-            <input v-model="addData.email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+            <input v-model="addData.email" type="email" class="form-control" id="email" aria-describedby="emailHelp"
+              placeholder="Email">
             <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small-->
           </div>
           <!-- <div class="form-group">
             <label for="Password">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password">
           </div> -->
-          <br>
-          <button type="button" @click="postLogin()" class="btn logindBtnStyle">Log ind</button>
-        </form>
-      </div>
-      <div class="col-sm">
-        <!--third col-->
+          <!-- <button type="button" @click="postLogin()" 
+          class="btn btn-lg logindBtnStyle">Log ind</button> -->
+          <div class="d-flex justify-content-center">
+            <a class="btn btn-dark btn-lg btn-block p-0 logindBtnStyle" @click="postLogin()" href="#!" role="button">
+              <span style="font-size:smaller;">Log ind</span></a>
+          </div>
+          &nbsp;
+          <div class="d-flex justify-content-center">
+            <a class="btn btn-dark btn-lg btn-block p-0 createAccountBtnStyle" @click="postLogin()" href="#!"
+              role="button">
+              <span style="font-size:smaller;">Opret en konto</span></a>
+          </div>
+
+        </div>
+        <div class="col-sm">
+          <!--third col-->
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col">
-        <!-- col 12 -->
-    </div>
-  </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
- <!--FOOTER-->
- <footer id="footer" class="footerStyling">
-  <div class="container-fluid p-1">
     <div class="row">
-    <div class="text-white p-3">
-      Kontakt os <br>
-      © 2023 Copyright: <br>
-      <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
+      <div class="col">
+        <!-- col 12 -->
+      </div>
     </div>
-    <!-- Section: Social media section -->
-    <section class="col text-center">
-      <a class="btn btn-outline-light btn-floating m-3" 
-      href="#!" role="button"><i
-          class="fab fa-facebook-f"></i></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-      <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-      <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-          class="fab fa-linkedin-in"></i></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" 
-      role="button"><i class="fab fa-github"></i></a>
-    </section>
-    <div class="p-3 text-white">
-      <a class="text-white" href="/Pages/omOs.html">Om os</a> <br>
-      Privatlivspolitik
-    </div>
-  </div>
-</div>
-</footer>
-<!-- Footer END -->
-  <!-- Footer END -->
-  <script src="/login.js"></script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--FOOTER-->
+    <footer id="footer" class="footerStyling">
+      <div class="container-fluid p-1">
+        <div class="row">
+          <div class="text-white p-3">
+            Kontakt os <br>
+            © 2023 Copyright: <br>
+            <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
+          </div>
+          <!-- Section: Social media section -->
+          <section class="col text-center">
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+                class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+          </section>
+          <div class="p-3 text-white">
+            <a class="text-white" href="/Pages/omOs.html">Om os</a> <br>
+            Privatlivspolitik
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer END -->
+    <!-- Footer END -->
+    <script src="/login.js"></script>
   </div>
 </body>
+
 </html>
