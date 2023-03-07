@@ -18,10 +18,35 @@ const createAccount = Vue.createApp({
                 phone:"",
                 email:""
               },
+             //Car - egne biler
+              cars: [],
+              carId: "",
+              carData: {
+                accountId: 0,
+                brand: "",
+                model: "",
+                fuelType: ""
+              },
+              //CarRides - egne bookninger
+              carArray: [],
+              error: null,
+              addCarRide: {
+                carRideId: 0,
+                driveDate: "",
+                startDestination: "",
+                endDestination: "",
+                price: 0,
+                availableSeats: 0,
+                isFull: false,
+              },
         }
     },
     created() { // life cycle method. Called when browser reloads page
         this.getAllAccounts()
+        this.getAllCars()
+        this.getAllRides()
+
+
     },
     methods: {
        //istedet for at genskrive koden, gør jeg den mere dry ved at lave en helper
@@ -35,11 +60,39 @@ const createAccount = Vue.createApp({
                 alert(ex.message) 
             }
         },
+        async getAllCarsHelper(url){
+            try {//fejl håndtering 
+                const result = await axios.get(url)
+                this.cars= result.data
+                console.log(this.cars)
+                //console.writeline udskriver nogle
+            } catch (ex) {//exception
+                alert(ex.message) 
+            }
+        },
+        async getAllCarRidesHelper(url){
+            try {//fejl håndtering 
+                const result = await axios.get(url)
+                this.carArray= result.data
+                console.log(this.carArray)
+                //console.writeline udskriver nogle
+            } catch (ex) {//exception
+                alert(ex.message) 
+            }
+        },
        
         //GET ALL METODER
         getAllAccounts(){
             console.log("Getting the account get method")
             this.getAllAccountsHelper(baseUrl + "/Accounts")
+        },
+         getAllCars(){
+            console.log("Getting the car get method")
+            this.getAllCarsHelper(baseUrl+"/Cars")
+        },
+        getAllRides(){
+            console.log("Getting the car ride get method")
+            this.getAllCarRidesHelper(baseUrl+"/CarRides")
         },
         //POST METODER
         async postAccount(){
