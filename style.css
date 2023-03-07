@@ -39,6 +39,12 @@ label{
     font-weight: 600;
 
 }
+
+.formStyling{
+  background-color: #F2F4F2;
+
+}
+
 .form-control{
     border-radius: 30px;
 }
@@ -46,10 +52,15 @@ label{
 .btn.logindBtnStyle{
     border-radius: 20px;
     font-weight: 600;
-    color: white;
-    background-color: rgb(63, 108, 255);
+    color: black;
+    background-color: #B4F0B4;
     border: 0.5px solid rgb(36, 36, 36);
 
+}
+.btn.backBtnStyle{
+  border-radius: 20px;
+  background-color: grey;
+  color: white;
 }
 
 .colStyling{
