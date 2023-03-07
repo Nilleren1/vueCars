@@ -1,37 +1,109 @@
 
 body.centerImg {
-    background-image: url('/img/backgroundMaps.jpg');
+    background-image: url('');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
   }
 
+  .masthead {
+    width: 100%;
+    min-height: 200px;
+    background-image: url('/img/carpooling-banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .zoom {
+    transition: transform .5s; /* Animation */
+  }
+  
+  .zoom:hover {
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    filter: brightness(90%);
+  }
+
+  .zoom2 {
+    transition: transform .5s; /* Animation */
+  }
+  
+  .zoom2:hover {
+    transform: scale(1.08); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    filter: brightness(90%);
+    box-shadow: 5px 10px #0042072c;
+  }
+
 label{
     font-weight: 600;
 
 }
-.form-control{
-    border-radius: 30px;
 
+.formStyling{
+  background-color: #F2F4F2;
 
 }
 
+.form-control{
+    border-radius: 30px;
+}
+
 .btn.logindBtnStyle{
-    border-radius: 25px;
-    border-color: darkgray;
-    background-color: rgb(176, 188, 190);
+    max-width: 400px;
+    border-radius: 20px;
     font-weight: 600;
+    color: black;
+    background-color: #B4F0B4;
+    border: 0.5px solid rgb(194, 194, 194);
+    box-shadow: 1px 1px #888888;
+
+  }
+.btn.createAccountBtnStyle{
+  max-width: 300px;
+  border-radius: 20px;
+  background-color: #BFD2C4;
+  font-weight: 600;
+  color: black;
+  border: 0.5px solid rgb(194, 194, 194);
+  box-shadow: 1px 1px #888888;
+
+}
+
+.btn.backBtnStyle{
+  border-radius: 20px;
+  background-color: grey;
+  color: white;
+}
+
+.colStyling{
+  background-color: #F2F4F2;
+}
+
+.colStyling1{
+  background-color: white;
+
 }
 
 .cardStyling{
   border-radius: 25px;
-  border: 0.5px solid rgb(71, 71, 71);
+  border: 0.1em solid rgb(163, 163, 163);
+  background-color: rgb(235, 235, 235);
 
 }
 
 .frontpageBackStyling{
-  background-color: #cecece;
+  background-color: #ffffff;
+  /* border: 0.1em solid rgb(209, 208, 208); */
+
+}
+
+.shadow1{
+  
+}
+
+.mainButton{
+  background-color: #B4F0B4; color: black; border: 1px solid black
 }
 
 .search{
@@ -73,11 +145,11 @@ label{
   cursor: pointer;
 
 }
-/* .datetime-{
-  padding: 1%;
-  display: flex;
-  justify-content: center;
-} */
+card.styleTextIndex{
+  font-weight: 100;
+  font-size: larger;
+}
+
 .datetime{
   cursor: pointer;
   background-color: rgb(29, 28, 36);
@@ -109,6 +181,28 @@ nav.navStyling{
 
 .dropdown:hover .dropbtn{
   background-color: transparent;
+}
+
+.justify-content-center{
+text-align: center;
+}
+
+.yourtext{
+  color: rgba(0, 0, 0, 0.295);
+  font-weight: bolder;
+  font-size: large;
+}
+.car{
+  color: rgb(255, 0, 0);
+  font-size: xx-large;
+}
+.tree{
+  color: rgb(0, 255, 55);
+  font-size: xx-large;
+}
+.star{
+  color: gold;
+  font-size: xx-large;
 }
 
 

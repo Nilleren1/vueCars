@@ -24,144 +24,146 @@
 
 <body>
   <div id="mineBiler">
-   <!-- NAVBAR -->
-   <nav class="navbar navbar-expand-md navbar-dark navStyling">
-    <a class="navbar-brand" href="../index.html">
-      <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/Pages/login.html">Log ind</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Pages/createAccount.html">Opret konto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
-        </li>
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Konto Relateret
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-md navbar-dark navStyling">
+        <a class="navbar-brand" href="../index.html">
+          <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+        </a>
+        <a href="../index.html" class="text-white">MitLift</a>&nbsp;
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="../index.html">Find et lift</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Pages/addLift.html">Opret lift</a>
+            </li> -->
+            <!-- Dropdown -->
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Opret
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/Pages/AddCar.html">Opret bil</a>
+              <a class="dropdown-item" href="/Pages/addLift.html">Opret lift</a>
+            </div>
+            </li> -->
+          </ul>
+        </div>
+        <div class="navbar position-relative top-0 end-0">
+          <!-- Dropdown -->
+          <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
+            animation-name="example">
+            <img src="/img/Profile Pic Icon.png" width="45" height="50">
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-            <a class="dropdown-item" href="#">Mine Lift</a>
-            <a class="dropdown-item" href="#">Link 3</a>
+            <a class="dropdown-item" href="/index.html">Mine Lift</a>
+            <a class="dropdown-item" href="/Pages/mineKonto.html">Min Konto</a>
+            <a class="dropdown-item" href="#">Instillinger</a>
+            <a class="dropdown-item" href="#">Log ud</a>
           </div>
-        </li>
-      </ul>
-    </div>
-    <div class="navbar position-relative top-0 end-0">
-    <!-- Dropdown -->
-      <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown" animation-name="example">
-        <img src="/img/Profile Pic Icon.png" width="45" height="50">
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-        <a class="dropdown-item" href="/index.html">Mine Lift</a>
-        <a class="dropdown-item" href="/Pages/mineKontoOplysninger.html">Min Konto</a>
-        <a class="dropdown-item" href="#">Indstiller</a>
-        <a class="dropdown-item" href="#">Log ud</a>
-      </div>
-    </div>
-    <!-- <div class="nav-item d-flex justify-content-between"> -->
-      <!--div class="nav-link text-white" href="">Mit Lift</div-->
-      <!-- <div class="nav-link text-white" href="">Login</div>
-    </div> -->
-    <!-- <div class="d-flex justify-content-between text-white">
-      <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
-    </div> -->
-  </nav><!--NAV SLUT-->
+        </div>
+        <!-- <div class="nav-item d-flex justify-content-between"> -->
+        <!--div class="nav-link text-white" href="">Mit Lift</div-->
+        <!-- <div class="nav-link text-white" href="">Login</div>
+      </div> -->
+        <!-- <div class="d-flex justify-content-between text-white">
+        <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
+      </div> -->
+      </nav><!--NAV SLUT-->
 
     <!-- Body -->
     <!--NEW ROW WITH DATA-->
     <div class="row">
-      <div class="col-3">
-        col-1
+      <div class="col-4">
+        <!-- col-1 -->
       </div>
-      <div class="col-6 container">
-<h2>Liste over biler</h2>
+      <div class="col-4 container">
+     <h3>Mine biler</h3>
       <br>
-        <div v-for="car in cars" class="card cardStyling">
+        <div v-for="car in cars" class="card">
           <div class="card-body bg-light m-2">
             <h5 class="card-title">
-              Bil med ID: {{ car.carId }}
+              Bil: {{ car.carId }} - {{car.model}}
             </h5>
             <h6>
-              Account Id: {{ car.accountId }}
+               Account: {{ car.accountId }} <!-- {{car.account}} <- få email herind -->
             </h6>
             <p class="card-text">
               Brand: {{ car.brand }} <br>
               Model: {{ car.model }} <br>
               Fuel type: {{ car.fuelType }}
               <div>
-                <button  id="deleteButton" v-on:click="deleteCar(car.carId)" type="button" class="btn btn-outline-danger">Slet</button>
-              </div>
-              
+                <button id="deleteButton" v-on:click="deleteCar(car.carId)" 
+                type="button" class="btn btn-outline-danger mr-2">Slet</button>
+              <button id="" v-on:click="" type="button" 
+                class="btn btn-outline-primary">Ret</button>
+              </div>           
             </p>
           </div>
         </div>
         <!-- <p v-else>
             Error! No cars
         </p> -->
-      </div>
         {{deleteMessage}}
+      </div>
         
-          
+        
+            <div class="col-4">
+          <!-- col-2 -->
         </div>
-        <div class="col-3">
-          col-2
         </div>
+      
         <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
       <div class="row">
         <div class="container">
-          col 12
+          <!-- col 12 -->
         </div>
       </div>
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
       <!--FOOTER-->
-      <footer class="footerStyling">
-        <div class="container-fluid p-5 d-flex justify-content-between">
-          <div class="text-white p-3">
-            Kontakt os <br>
-            Â© 2023 Copyright: <br>
-            <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
-          </div>
-
-          <!-- Section: Social media section -->
-          <section class="text-center">
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-          </section>
-
-          <div class="p-3 text-white">
-            Om os <br>
-            Privatlivspolitik
-          </div>
+    <footer id="footer" class="footerStyling">
+      <div class="container-fluid p-1">
+        <div class="row">
+        <div class="text-white p-3">
+          Kontakt os <br>
+          © 2023 Copyright: <br>
+          <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
         </div>
-      </footer><!-- Footer END -->
+        <!-- Section: Social media section -->
+        <section class="col text-center">
+          <a class="btn btn-outline-light btn-floating m-3" 
+          href="#!" role="button"><i
+              class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" 
+          role="button"><i class="fab fa-github"></i></a>
+        </section>
+        <div class="p-3 text-white">
+          <a class="text-white" href="/Pages/omOs.html">Om os</a> <br>
+          Privatlivspolitik
+        </div>
+      </div>
+    </div>
+    </footer>
+    <!-- Footer END -->
       
     </div><!--app close-->
     <script src="/mineBiler.js"></script>
