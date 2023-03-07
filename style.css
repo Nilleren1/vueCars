@@ -50,13 +50,26 @@ label{
 }
 
 .btn.logindBtnStyle{
+    max-width: 400px;
     border-radius: 20px;
     font-weight: 600;
     color: black;
     background-color: #B4F0B4;
-    border: 0.5px solid rgb(36, 36, 36);
+    border: 0.5px solid rgb(194, 194, 194);
+    box-shadow: 1px 1px #888888;
+
+  }
+.btn.createAccountBtnStyle{
+  max-width: 300px;
+  border-radius: 20px;
+  background-color: #BFD2C4;
+  font-weight: 600;
+  color: black;
+  border: 0.5px solid rgb(194, 194, 194);
+  box-shadow: 1px 1px #888888;
 
 }
+
 .btn.backBtnStyle{
   border-radius: 20px;
   background-color: grey;
