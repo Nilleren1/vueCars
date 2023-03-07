@@ -7,7 +7,9 @@ const baseUrl = "https://mitlift.azurewebsites.net/Api"
 const home = Vue.createApp({
     data() {
         return {
-            carArray: [],
+            carrideArray: [],
+            filteredData: [],
+            addData: { carRideId: 0, driveDate: "", startDestination: "", endDestination: "", price: 0, availableSeats: 0, isFull: false, cars: null },
             error: null,
             
             accountArray: [],
@@ -33,8 +35,8 @@ const home = Vue.createApp({
         async getAllCarRidesHelper(url){
             try {//fejl håndtering 
                 const result = await axios.get(url)
-                this.carArray= result.data
-                console.log(this.carArray)
+                this.carrideArray= result.data
+                console.log(this.carrideArray)
                 //console.writeline udskriver nogle
             } catch (ex) {//exception
                 alert(ex.message) 
@@ -44,7 +46,7 @@ const home = Vue.createApp({
             try {//fejl håndtering 
                 const result = await axios.get(url)
                 this.accountArray= result.data
-                console.log(this.carArray)
+                console.log(this.carrideArray)
                 //console.writeline udskriver til konsollen
             } catch (ex) {//exception
                 alert(ex.message) 
@@ -94,6 +96,10 @@ const home = Vue.createApp({
             }
         },
 
+        async Filter(){
+            this.filteredData = this.carrideArray.filter((c) => c.startDestination < this.filter)
+        },
+
         //POST METODER
 
 
@@ -106,6 +112,16 @@ const home = Vue.createApp({
         //         alert(ex.message)
         //     }
         // },
+
+        async add() {
+            try {
+                response = await axios.post(baseUrl, this.addData)
+                this.addMessage = "response " + response.status + " " + response.statusText
+                this.getAllCars()
+            } catch (ex) {
+                alert(ex.message)
+            }
+        },
 
     }
 })
