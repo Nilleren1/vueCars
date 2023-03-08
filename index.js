@@ -13,7 +13,8 @@ const home = Vue.createApp({
             filteredData: [],
             addData: { carRideId: 0, driveDate: "", startDestination: "", endDestination: "", price: 0, availableSeats: 0, isFull: false, cars: null },
             error: null,
-            
+            // filter: [],
+
             accountArray: [],
             getAccountData: "",
             getMessage: "",
@@ -24,7 +25,7 @@ const home = Vue.createApp({
             addMessage: "",
             deleteMessage: ""
 
-           
+
 
         }
     },
@@ -33,57 +34,57 @@ const home = Vue.createApp({
         this.getAllAccounts()
     },
     methods: {
-       //istedet for at genskrive koden, gør jeg den mere dry ved at lave en helper
-        async getAllCarRidesHelper(url){
+        //istedet for at genskrive koden, gør jeg den mere dry ved at lave en helper
+        async getAllCarRidesHelper(url) {
             try {//fejl håndtering 
                 const result = await axios.get(url)
-                this.carrideArray= result.data
-                console.log(this.carrideArray)
+                this.carrideArray = result.data
+                console.log(this.accountArray)
                 //console.writeline udskriver nogle
             } catch (ex) {//exception
-                alert(ex.message) 
+                alert(ex.message)
             }
         },
-        async getAllAccountsHelper(url){
+        async getAllAccountsHelper(url) {
             try {//fejl håndtering 
                 const result = await axios.get(url)
-                this.accountArray= result.data
+                this.accountArray = result.data
                 console.log(this.carrideArray)
                 //console.writeline udskriver til konsollen
             } catch (ex) {//exception
-                alert(ex.message) 
+                alert(ex.message)
             }
         },
-        async getAllCarsHelper(url){
+        async getAllCarsHelper(url) {
             try {//fejl håndtering 
                 const result = await axios.get(url)
-                this.cars= result.data
+                this.cars = result.data
                 console.log(this.cars)
                 //console.writeline udskriver nogle
             } catch (ex) {//exception
-                alert(ex.message) 
+                alert(ex.message)
             }
         },
         //GET ALL METODER
-        getAllRides(){
+        getAllRides() {
             console.log("Getting the car ride get method")
-            this.getAllCarRidesHelper(baseUrl+"/CarRides")
+            this.getAllCarRidesHelper(baseUrl + "/CarRides")
         },
-        getAllAccounts(){
+        getAllAccounts() {
             console.log("Getting the account get method")
-            this.getAllAccountsHelper(baseUrl+"/Accounts")
+            this.getAllAccountsHelper(baseUrl + "/Accounts")
         },
 
         //GET BY ID METODER
-        async getAccountsId(){
+        async getAccountsId() {
             const url = baseUrl + this.accountId
-            try{
+            try {
                 const response = await axios.get(url)
                 this.getAccountData = response.data //her bliver getAccountData fyldt ud med data
                 this.getMessage = response.status + " " + response.statusText
                 console.log("Get the FK accountId")
-            }catch(ex){
-                alert(ex.message) 
+            } catch (ex) {
+                alert(ex.message)
             }
         },
 
@@ -99,14 +100,15 @@ const home = Vue.createApp({
         },
 
 
-        async Filter(){
-            this.filteredData = this.carrideArray.filter((c) => c.startDestination < this.filter)
-            },
+        async Filter() {
+            this.carrideArray.filter((c) => c.startDestination == this.filter)
+            
+        },
 
-        logud(){
+        logud() {
             axios.post(baseUrl + "/Signout")
-            .then(result => location.href="/Pages/login.html")
-            .catch(error => console.error(error))
+                .then(result => location.href = "/Pages/login.html")
+                .catch(error => console.error(error))
         },
 
         //POST METODER

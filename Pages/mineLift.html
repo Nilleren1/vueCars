@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
@@ -17,9 +18,11 @@
   <!--Vue.js-->
   <script src="https://unpkg.com/vue@next"></script>
   <!--Own CSS link-->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
     <title>Mine Lift</title>
+
 </head>
+
 <body>
     <div id="app">
    <!-- NAVBAR -->
@@ -36,7 +39,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white" href="../index.html">Find et lift</a>
+        <a class="nav-link text-white" href="../index.html">Find et lift</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
@@ -82,13 +85,60 @@
       </div> -->
       </nav><!--NAV SLUT-->
 
+
+      <!-- SØG LIFT -->
+
+    <div class="row" style="margin: auto">
+      <div class="col-1">
+      </div>
+      <div style="background-color: rgb(240, 240, 240);" class="col-10 border p-3 frontpageBackStyling">
+        <form>
+          <div class="form-row">
+            <div class="col-sm-3 mb-2 ml-5 d-flex justify-content-start">
+              <!-- <label for="validationServer01">Fra</label> -->
+              <!-- v-model="filter" -->
+              <input style="background-color: rgb(0, 0, 0);" type="text" class="form-control text-white datetime" id="fra" placeholder="Fra..."
+                required style="max-width: 200px;">
+              <div class="valid-feedback">
+              </div>
+            </div>
+
+            <div class="col-sm-3 mb-2 mr-5 d-flex justify-content-start">
+              <!-- <label for="validationServer01">Til</label> -->
+              <input style="background-color: rgb(0, 0, 0);" type="text" class="form-control text-white datetime" id="til" placeholder="Til..."
+                required style="max-width: 200px;">
+              <div class="valid-feedback">
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-2 ml-5 d-flex justify-content-end">
+              <!-- <label for="validationServer01">Dato</label> -->
+              <input style="background-color: rgb(0, 0, 0);" type="datetime-local" class="form-control text-white datetime" id="dato" placeholder="Dato"
+                value="Dato" required style="max-width: 200px;">
+              <div class="valid-feedback">
+              </div>
+            </div>
+          </div>
+        </form>
+        <br>
+
+        <!-- v-on:click="Filter()" -->
+        <a class="container btn btn-primary mainButton btn-md btn-block p-1" role="button">
+          <span style="font-size:larger;">Søg Lift</span></a>
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
+    <br>
+    <br>
+
+
       <!--NEW ROW WITH CARDS-->
     <div class="row">
         <div class="col-1">
-          <!--col-2-->
         </div>
         <div class="col-10 p-3  frontpageBackStyling">
-          <div class="card mb-2 zoom" v-for="car in carArray">
+          <div class="card mb-2 zoom" v-if="car in carrideArray">
             <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
               <div class="card-text d-flex justify-content-between">
                 <div class="card-text m-1">
@@ -130,12 +180,14 @@
               </div>
             </div>
           </div>
+          
+
+          </div>
         </div>
         <div class="col-1">
-          <!--col-2-->
         </div>
       </div>
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
     <!--FOOTER-->
     <footer id="footer" class="footerStyling">
       <div class="container-fluid p-1">
