@@ -158,6 +158,28 @@ const home = Vue.createApp({
             }
         },
 
+        async FilteredGetAllCarRides(startDestination, endDestination){
+            if(startDestination != undefined && endDestination == undefined){
+                newUrl = baseUrl + "/CarRides?" + ("startdestination=" + startDestination)
+                const response = await axios.get(newUrl)  
+                console.log(newUrl, "startdestination only")
+                this.cars = await response.data
+            } else if(startDestination == undefined && endDestination != undefined){
+                const newUrl = baseUrl + "/CarRides?" + ("enddestination=" + endDestination)
+                const response = await axios.get(newUrl)
+                console.log(newUrl + "enddestination only")
+                this.cars = await response.data
+            } else if (startDestination != undefined && endDestination != undefined){
+                const newUrl = baseUrl + "/CarRides?" + ("startdestination=" + startDestination + "&" + "enddestination=" + endDestination)
+                const response = await axios.get(newUrl)
+                console.log(newUrl + " start and enddestination")
+                this.cars = await response.data
+            } else{
+            const response = await axios.get(baseUrl+"/CarRides")
+            this.cars = await response.data
+            }
+        }
+
     }
 })
 home.mount("#app")

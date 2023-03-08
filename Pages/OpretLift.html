@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <!-- Add further Bootstrap links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <!--Vue.js-->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!--Own CSS link-->
+    <link rel="stylesheet" href="../style.css">
+    <title>Opret Lift</title>
+</head>
+
+<body>
+    <div id="addLift">
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-md navbar-dark navStyling">
+        <a class="navbar-brand" href="../index.html">
+          <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+        </a>
+        <a href="../index.html" class="text-white">MitLift</a>&nbsp;
+    
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="../index.html">Find et lift</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar position-relative top-0 end-0">
+          <!-- Dropdown -->
+          <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
+            animation-name="example">
+            <img src="/img/Profile Pic Icon.png" width="45" height="50">
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+            <a class="dropdown-item" href="/index.html">Mine Lift</a>
+            <a class="dropdown-item" href="/Pages/mineKonto.html">Min Konto</a>
+            <a class="dropdown-item" href="#">Instillinger</a>
+            <a class="dropdown-item" href="#">Log ud</a>
+          </div>
+        </div>
+        <!-- <div class="nav-item d-flex justify-content-between"> -->
+        <!--div class="nav-link text-white" href="">Mit Lift</div-->
+        <!-- <div class="nav-link text-white" href="">Login</div>
+      </div> -->
+        <!-- <div class="d-flex justify-content-between text-white">
+        <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
+      </div> -->
+      </nav><!--NAV SLUT-->
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <!--one col-->
+                </div>
+                <div class="col-sm-8 p-3 mb-2 border formStyling">
+                    <h1 class="font-weight-light text-center">Opret et lift</h1>
+                    &nbsp;
+
+                    <p>{{ addData }}</p>
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="Pris">Pris</label>
+                        <input type="number" class="form-control" 
+                        v-model="addData.price" type="number" min="0"
+                        placeholder="Indtast Pris">
+                      </div>
+                      <div class="col-sm">
+                        <label for="DatoForAfkørsel">Afkørsel & Tidspunkt</label>
+                        <input class="form-control" 
+                        v-model="addData.driveDate" placeholder="driveDate"
+                            type="datetime-local"
+                        placeholder="Dato for afkørsel">
+                      </div>
+                    </div>
+                    &nbsp;
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="start destination">Start destination</label>
+                        <input type="text" class="form-control" v-model="addData.startDestination"
+                        placeholder="Start destination">
+                      </div>
+                      <div class="col-sm">
+                        <label for="slut destination">Slut destination</label>
+                        <input type="text" class="form-control" v-model="addData.endDestination"
+                        placeholder="Slut destination">
+                      </div>
+                    </div>
+                    &nbsp;
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="availableSeats">Sæder tilbage</label>
+                        <input class="form-control" 
+                        type="number" v-model="addData.availableSeats" 
+                        id="quantity" name="quantity" min="1" max="8"
+                        placeholder="Antal ledige sæder">
+                      </div>
+                     
+                    <div class="col-sm-6 form-group">
+                      <label for="carId">Vælg bil model</label>
+                      <select class="form-control" 
+                      name="carId" v-model="addData.carId">
+                      <option v-bind:value="car.carId" v-for="car in carArray">{{car.model}}</option>
+                      </select>
+                      <!-- <input class="form-control" v-model="addData.carId" placeholder="carId" type="number" min="0" />
+                      <br> -->
+                  </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm form-check">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="checkbox" v-model="addData.isFull" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          &nbsp;IsFull
+                        </label>
+                    </div> 
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="Price">Pris</label>
+                        <input class="form-control" 
+                        v-model="addData.price" placeholder="Price" type="number" min="0" />
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Dato for afkørsel</label>
+                        <input class="form-control" 
+                        v-model="addData.driveDate" placeholder="driveDate"
+                            type="datetime-local" /> <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDestination">Start destination</label>
+                        <input class="form-control" v-model="addData.startDestination" placeholder="Start destination"
+                            type="text" /> <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Slut destination</label>
+                        <input class="form-control" v-model="addData.endDestination" placeholder="Slut destination"
+                            type="text" /> <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Ledige sæder</label>
+                        <br>
+                        <input type="number" v-model="addData.availableSeats" id="quantity" name="quantity" min="1" max="8"><br>
+                    </div> -->
+                    <!-- <div class="form-check">
+                        <input class="form-check-input" type="checkbox" v-model="addData.isFull" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            IsFull
+                        </label>
+                        <br>
+                    </div> -->
+                    <br>
+                    <br>
+                    <br>
+                    <div class="d-flex justify-content-end">
+                    <button type="button" v-on:click="postCarRides()" class="btn logindBtnStyle">Opret</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" v-on:click="postCarRides()" class="btn backBtnStyle">Tilbage</button>
+                   </div>
+                 </div>
+                <div class="col-sm">
+                    <!--third col-->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container">
+                <!-- col 12 -->
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+      <!--FOOTER-->
+    <footer id="footer" class="footerStyling">
+      <div class="container-fluid p-1">
+        <div class="row">
+        <div class="text-white p-3">
+          Kontakt os <br>
+          © 2023 Copyright: <br>
+          <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
+        </div>
+        <!-- Section: Social media section -->
+        <section class="col text-center">
+          <a class="btn btn-outline-light btn-floating m-3" 
+          href="#!" role="button"><i
+              class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" 
+          role="button"><i class="fab fa-github"></i></a>
+        </section>
+        <div class="p-3 text-white">
+          <a class="text-white" href="/Pages/omOs.html">Om os</a> <br>
+          Privatlivspolitik
+        </div>
+      </div>
+    </div>
+    </footer>
+    <!-- Footer END -->
+    
+
+    </div><!--mount app end-->
+    <script src="/addLift.js"></script>
+</body>
+
+</html>
