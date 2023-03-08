@@ -124,10 +124,10 @@ const home = Vue.createApp({
         },
 
 
-        async Filter() {
-            this.carrideArray.filter((c) => c.startDestination == this.filter)
+        // async Filter() {
+        //     this.carrideArray.filter((c) => c.startDestination == this.filter)
             
-        },
+        // },
 
         logud() {
             axios.post(baseUrl + "/Signout")
