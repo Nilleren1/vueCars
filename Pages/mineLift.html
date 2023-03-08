@@ -91,23 +91,29 @@
 
     <div class="row" style="margin: auto">
       <div class="col-1">
+        
       </div>
       <div style="background-color: rgb(240, 240, 240);" class="col-10 border p-3 frontpageBackStyling">
+        <div class="container mb-4">
+          <button class="sortOrderBtn" v-on:click="SortByPrice">Pris: Lavest-Højest</button>
+          <button class="sortOrderBtn" v-on:click="SortByPriceDesc">Pris: Højest-Lavest</button>
+        </div>
+        
         <form>
           <div class="form-row">
             <div class="col-sm-3 mb-2 ml-5 d-flex justify-content-start">
               <!-- <label for="validationServer01">Fra</label> -->
               <!-- v-model="filter" -->
-              <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="text" class="form-control text-white datetime"
-                id="fra" placeholder="Fra..." required>
+              <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="text" class="form-control text-white"
+                id="fra" placeholder="Fra..." required  v-model="startDestination">
               <div class="valid-feedback">
               </div>
             </div>
 
             <div class="col-sm-3 mb-2 mr-5 d-flex justify-content-start">
               <!-- <label for="validationServer01">Til</label> -->
-              <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="text" class="form-control text-white datetime"
-                id="til" placeholder="Til..." required>
+              <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="text" class="form-control text-white"
+                id="til" placeholder="Til..." required  v-model="endDestination">
               <div class="valid-feedback">
               </div>
             </div>
@@ -124,7 +130,7 @@
         <br>
 
         <!-- v-on:click="Filter()" -->
-        <a class="container btn btn-primary mainButton btn-md btn-block p-1" role="button">
+        <a v-on:click="FilteredGetAllCarRides(startDestination, endDestination)" class="container btn btn-primary mainButton btn-md btn-block p-1" role="button">
           <span style="font-size:larger;">Søg Lift</span></a>
       </div>
       <div class="col-1">

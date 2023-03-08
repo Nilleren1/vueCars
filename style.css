@@ -16,6 +16,20 @@ body.centerImg {
     background-repeat: no-repeat;
   }
 
+  .sortOrderBtn{
+    font-size: 13px;
+    border-radius: 32%;
+    background-color: #131313;
+    color: white;
+    border: solid black 1px;
+    transition-duration: 0.4s;
+    margin-right: 1%;
+}
+.sortOrderBtn:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+  }
+
   .zoom {
     transition: transform .5s; /* Animation */
   }
