@@ -97,16 +97,49 @@
       </div>
     </div>
 
+    <h1 class="font-weight-light text-center">Opret bil</h1>
 
     <div class="row">
       <div class="col-4">
         <!-- col-1 -->
       </div>
-      <div class="col-4 border p-3 mb-2 bg-light">
 
-        <h3>Opret din bil</h3>
-        <!-- <p>{{ addData }}</p> -->
-        <div class="form-group">
+      <div class="col-4 border p-3 mb-2 border formStyling">
+        <p>{{ addData }}</p>
+        <div class="row">
+          <div class="col-sm">
+            <label for="model">Vælg brugernavn</label>
+            <br>
+            <select class="form-control" name="accountId" v-model="addData.accountId">
+              <option v-bind:value="account.accountId" v-for="account in accountArray">
+                {{ account.userName }}
+              </option>
+            </select>
+          </div>
+          <div class="col-sm">
+            <label for="model">Bil mærke</label>
+            <input class="form-control" v-model="addData.brand" placeholder="bil mærke..." type="text" /> <br>
+          </div>
+        </div>
+        &nbsp;
+        <div class="row">
+          <div class="col-sm">
+            <label for="model">Bil model</label>
+            <input class="form-control" v-model="addData.model" placeholder="bil model..." type="text" /> <br>
+          </div>
+          <div class="col-sm">
+            <label for="model">Vælg brændstof</label> <br>
+            <select class="form-control" name="fuelType" v-model="addData.fuelType">
+              <option>Gas</option>
+              <option>Diesel</option>
+              <option>El</option>
+              <option>Hybrid</option>
+            </select>
+          </div>
+        </div>
+        &nbsp;
+
+        <!-- <div class="form-group">
           <label for="model">Brugernavn </label>
           <br>
           <select name="accountId" v-model="addData.accountId">
@@ -131,10 +164,16 @@
           <option>El</option>
           <option>Hybrid</option>
         </select>
-        <br>
+        <br> -->
         <!--input class="form-control" v-model="addData.fuelType" placeholder="fuelType..." type="text" /--> <br>
-        <button type="button" v-on:click="postCar()" class="btn logindBtnStyle">Opret
-        </button>
+        <div class="d-flex justify-content-end">
+          <button type="button" v-on:click="postCarRides()" class="btn backBtnStyle">Tilbage</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" v-on:click="postCar()" class="btn logindBtnStyle">Opret</button>
+
+        </div>
+        <!-- <button type="button" v-on:click="postCar()" class="btn logindBtnStyle">Opret
+        </button> -->
 
         <div class="p-3" style="background-color: rgba(255,0,0,0.1); width: 60%;" v-if="addMessage">
           <!--addMessage en var der er blevet erklæret, så vi kan bruge den til output-->
@@ -146,6 +185,11 @@
         <!-- col-2 -->
       </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>

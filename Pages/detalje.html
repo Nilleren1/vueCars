@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-        <!-- Add further Bootstrap links-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-        <!--Bootstrap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <!-- Axios -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
-        <!--Vue.js-->
-        <script src="https://unpkg.com/vue@next"></script>
-        <!--Own CSS link-->
-        <link rel="stylesheet" href="../style.css">
-        <title>Om person og lift</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <!-- Add further Bootstrap links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <!--Vue.js-->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!--Own CSS link-->
+    <link rel="stylesheet" href="../style.css">
+    <title>Om person og lift</title>
+</head>
+
 <body>
     <div id="addLift">
         <!-- NAVBAR -->
@@ -27,53 +29,88 @@
             <a class="navbar-brand" href="../index.html">
                 <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
             </a>
+            <a href="../index.html" class="text-white">MitLift</a>&nbsp;
+
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Pages/login.html">Log ind</a>
+                        <a class="nav-link text-white" href="../index.html">Find et lift</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Pages/createAccount.html">Opret konto</a>
+                        <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Pages/addLift.html">Opret Lift</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Pages/detalje.html">Om Person og Lift</a>
-                    </li>
+                    <!-- <li class="nav-item">
+              <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Pages/addLift.html">Opret lift</a>
+            </li> -->
                     <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Konto Relateret
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
-                            <a class="dropdown-item" href="#">Mine Lift</a>
-                            <a class="dropdown-item" href="#">Om Os</a>
-                        </div>
-                    </li>
+                    <!-- <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                          Opret
+                      </a>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" href="/Pages/AddCar.html">Opret bil</a>
+                          <a class="dropdown-item" href="/Pages/addLift.html">Opret lift</a>
+                      </div>
+                  </li> -->
                 </ul>
             </div>
-            <div class="nav-item d-flex justify-content-between">
-                <!--div class="nav-link text-white" href="">Mit Lift</div-->
-                <div class="nav-link text-white" href="">Login</div>
+            <div class="navbar position-relative top-0 end-0">
+                <!-- Dropdown -->
+                <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
+                    animation-name="example">
+                    <img src="/img/Profile Pic Icon.png" width="45" height="50">
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
+                    <a class="dropdown-item" href="/index.html">Mine Lift</a>
+                    <a class="dropdown-item" href="/Pages/mineKonto.html">Min Konto</a>
+                    <a class="dropdown-item" href="#">Instillinger</a>
+                    <a class="dropdown-item" href="#">Log ud</a>
+                </div>
             </div>
-            <div class="d-flex justify-content-between text-white">
-                <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
-            </div>
-        </nav>
-        
+            <!-- <div class="nav-item d-flex justify-content-between"> -->
+            <!--div class="nav-link text-white" href="">Mit Lift</div-->
+            <!-- <div class="nav-link text-white" href="">Login</div>
+      </div> -->
+            <!-- <div class="d-flex justify-content-between text-white">
+        <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
+      </div> -->
+        </nav><!--NAV SLUT-->
+        <div class="row">
+            <div class="col-sm text-center">
+                <img class="rounded-circle responsive m-4" src="/img/nico.jfif"
+                    style="max-height: 120px; width: auto;" />
 
-        
+            </div>
+            <div class="col-sm m-1">
+                <!-- <span class="star checked starStyling">★</span> -->
+                <span class="d-flex justify-content-center" style="font-size:400%; color:yellow;">&bigstar;</span>
+                <p class="font-weight-bold text-center">1</p>
+                <p class="font-weight-bold text-center">Anbefalinger</p>
+            </div>
+            <div class="col-sm m-4">
+                <i class="fa fa-car fa-4x text-danger d-flex justify-content-center"></i>
+                <p class="font-weight-bold text-center">2</p>
+                <p class="font-weight-bold text-center">Antal lift</p>
+            </div>
+            <div class="col-sm m-4">
+                <i class="fa fa-tree fa-4x text-success d-flex justify-content-center"></i>
+                <p class="font-weight-bold text-center">3</p>
+                <p class="font-weight-bold text-center">CO2 besparelse i kg</p>
+            </div>
+        </div><!--ROW END-->
+
+
         <!-- <div class="d-flex justify-content-around"> -->
-           
-            <br>
+
+        <!-- <br>
             <div class="d-flex justify-content-around">
             <img src="/img/Profile Pic Icon.png" class="rounded-circle" alt="car" style="height: 100px; width:auto;"> 
             <div class="yourtext">Anbefaling</div>
@@ -95,37 +132,117 @@
                     margin-right: auto;
                     background-color: #0c0c0c;
                 }
-            </style>
-             <hr />
-            
-            <div class="d-flex justify-content-between">
-         <div class="d-flex flex-column">
-            <h5>Om person</h5>
-            <div class="p-2">Rating:</div>
-            <div class="p-2">Beskrivelse:</div>
-            <br>
-            <br>
-            <div class="p-2">Telefon:</div>
-            <div class="p-2">Mail:</div>
+            </style> -->
+        <hr>
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="font-weight-light p-2">Om person</h2>
+                <div class="d-flex justify-content-between">
+                    <!-- Første del -->
+                    <div>
+                    <div class="p-2 font-weight-bold">Rating &nbsp;&nbsp;
+                    </div>
+                    <div class="p-2 font-weight-bold">Beskrivelse &nbsp;&nbsp;
+                    </div>
+                    <div class="p-2 font-weight-bold">Telefon &nbsp;
+                    </div>
+                    <div class="p-2 font-weight-bold">Mail &nbsp;
+                    </div>
+                   </div>
+                   <!-- Anden del -->
+                   <div>
+                    <div class="p-2">
+                        4.5
+                    </div>
+                    <div class="p-2">
+                        Sød fyr, som kan lide at høre Dua Lipa,
+                        hvis du står og mangler et billigt lift, så vælg mig.
+                    </div>
+                    <div class="p-2">
+                        45785896
+                    </div>
+                    <div class="p-2">
+                        nico@gmail.com
+                    </div>
+                   </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h2 class="font-weight-light p-2">Om lift</h2>
+                <div class="d-flex justify-content-between">
+                <!-- Første del -->
+                <div>
+                <div class="p-2 font-weight-bold">Tidspunkt &nbsp;
+                </div>
+                <div class="p-2 font-weight-bold">Fra &nbsp;
+                </div>
+                <div class="p-2 font-weight-bold">Til &nbsp;
+                </div>
+                <div class="p-2 font-weight-bold">pris &nbsp;
+                </div>
+                </div>
+                <!-- Anden del -->
+                <div>
+                    <div class="p-2">
+                        Imorgen kl 14.00
+                    </div>
+                    <div class="p-2">
+                        Roskilde, st.
+                    </div>
+                    <div class="p-2">
+                        Århus, Banegård.
+                    </div>
+                    <div class="p-2">
+                        250 kr.
+                    </div>
+                </div>
+                </div>
+                <div class="d-flex justify-content-end m-4">
+                    <a type="button" href="../index.html" class="btn backBtnStyle">Tilbage til
+                        forsiden</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a type="button" href="/Pages/login.html" class="btn logindBtnStyle">Book</a>
+                </div>
+                <p class="d-flex justify-content-end">Log ind eller opret konto for at booke en plads</p>
+            </div>
         </div>
-            
-            
-            <div class="d-flex justify-content-center">
-                <div class="d-flex flex-column">
-            <h5>Om lift</h5>
-            
-            <div class="p-2">Tidspunkt:</div>
-            <div class="p-2">fra:</div>
-            <div class="p-2">til:</div>
-            <div class="p-2">pris:</div>
-            </div> 
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--FOOTER-->
+        <footer id="footer" class="footerStyling">
+            <div class="container-fluid p-1">
+                <div class="row">
+                    <div class="text-white p-3">
+                        Kontakt os <br>
+                        © 2023 Copyright: <br>
+                        <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
+                    </div>
+                    <!-- Section: Social media section -->
+                    <section class="col text-center">
+                        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+                                class="fab fa-google"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                class="fab fa-github"></i></a>
+                    </section>
+                    <div class="p-3 text-white">
+                        <a class="text-white" href="/Pages/omOs.html">Om os</a> <br>
+                        Privatlivspolitik
+                    </div>
+                </div>
             </div>
-             <div class="d-flex justify-content-center">
-            </div> 
-            </div>
-            
-
-    </div>
-    <script src="/detalje.js"></script>
+        </footer>
+        <!-- Footer END -->
+        <script src="/detalje.js"></script>
 </body>
+
 </html>
