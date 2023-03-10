@@ -1,4 +1,4 @@
-const baseUrl = "https://mitlift.azurewebsites.net/Api/CarShare"
+const baseUrl = "https://apiformitlift69.azurewebsites.net/Api/CarShare"
 const testLoginUrl = "https://localhost:44343/Api/CarShare"
 
 const login = Vue.createApp({
