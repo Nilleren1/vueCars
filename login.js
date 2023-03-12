@@ -42,6 +42,15 @@ const login = Vue.createApp({
             console.log("Getting the account method")
             this.getAllAccountsHelper(baseUrl + "/Accounts")
         },
+        async getLogin(){
+            try {//fejl håndtering 
+                const result = await axios.get(baseUrl + "/Login")
+                this.email= result.data
+                console.log(this.email)
+            } catch (ex) { //exception
+                alert(ex.message) 
+            }
+        },
         //POST METODER
         postLogin(){
             let bodyFormData = new FormData();
@@ -49,7 +58,7 @@ const login = Vue.createApp({
             //bodyFormData.append('userName', this.addData.userName);
             axios({
                 method: "post",
-                url: baseUrl,
+                url: baseUrl + "/Login",
                 data: bodyFormData,
                 headers: { "Content-Type": "multipart/form-data" },
               })
