@@ -73,6 +73,7 @@
           <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a>
           <a class="dropdown-item" href="/Pages/mineLift.html">Mine Lift</a>
           <a class="dropdown-item" href="/Pages/mineKonto.html">Min Konto</a>
+          <a class="dropdown-item" href="/Pages/AddCar.html">Tilføj ny Bil</a>
           <a class="dropdown-item" href="#">Instillinger</a>
           <a class="dropdown-item" href="#">Log ud</a>
         </div>
@@ -146,6 +147,7 @@
       </div>
       <div class="col-10 p-3  frontpageBackStyling">
         <div class="card mb-2 zoom" v-for="car in carrideArray">
+          <a href="/Pages/detalje.html" style="color:black">
           <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
             <div class="card-text d-flex justify-content-between">
               <div class="card-text m-1">
@@ -184,12 +186,13 @@
                   <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
                 </div>
                 <br>
-                <div class="col-sm text-center">
+                <!-- <div class="col-sm text-center">
                   <button id="bookButton" v-on:click="" type="button" class="btn btn-info">Book</button>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
+        </a>
         </div>
 
 
