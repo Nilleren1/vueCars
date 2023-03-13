@@ -143,8 +143,10 @@
     <!--NEW ROW WITH CARDS-->
     <div class="row">
       <div class="col-1">
+        <!--col 1-->
       </div>
-      <div class="col-10 p-3  frontpageBackStyling">
+    <!--COL 5 card-->
+      <div class="col-5 p-3  frontpageBackStyling">
         <div class="card mb-2 zoom" v-for="car in carrideArray">
           <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
             <div class="card-text d-flex justify-content-between">
@@ -191,8 +193,55 @@
             </div>
           </div>
         </div>
-
-
+      </div>
+      <!--COL 5 card-->
+      <div class="col-5 p-3  frontpageBackStyling">
+        <div class="card mb-2 zoom" v-for="car in carrideArray">
+          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
+            <div class="card-text d-flex justify-content-between">
+              <div class="card-text m-1">
+                <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
+                <h5 class="card-title text-center">Bruger</h5>
+                <h6 class="text-center">
+                  <!-- <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span> -->
+                  <span class="red-star checked">★</span>
+                  <span class="red-star checked">★</span>
+                  <span class="red-star checked">★</span>
+                  <span class="red-star">★</span>
+                  <span class="red-star">★</span>
+                </h6>
+              </div>
+              <div class="mr-2">
+                {{ car.driveDate }} <br>
+                {{ car.price }} kr. <br>
+                <div class="text-secondary">
+                  {{car.startDestination}} <br>
+                </div>
+                <div class="text-secondary">
+                  {{car.endDestination}} <br>
+                </div>
+              </div>
+              <div class="mr-2">
+                <div class="col-sm text-center">
+                  <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
+                    class="btn btn-danger">Slet</button>
+                  {{deleteMessage}}
+                </div>
+                <br>
+                <div class="col-sm text-center">
+                  <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
+                </div>
+                <br>
+                <div class="col-sm text-center">
+                  <button id="bookButton" v-on:click="" type="button" class="btn btn-info">Book</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-1">
