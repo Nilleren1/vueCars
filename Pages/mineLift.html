@@ -64,6 +64,37 @@
         </ul>
       </div>
       <div class="navbar position-relative top-0 end-0">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <div v-if="!email">
+              <script>
+                function myFunction() { 
+                  document.getElementById("mainFrameOne").style.display="none"; 
+                  document.getElementById("mainFrameTwo").style.display="block"; 
+                  
+                }
+                </script>
+              
+                  
+                <a id="mainFrameOne" onclick="myFunction()" href="#">
+                    log ind
+                </a>
+                <a id="mainFrameTwo" onclick="myFunction()" href="/index.html" style="display:none;">
+                    log ud
+                </a>
+                
+
+                
+            <!-- <a class="styleNavDropdown" href="/Pages/login.html">Log ind</a> <br>
+            </div>
+              <div v-if="email">
+            <button class="styleNavDropdown" @click="logud">Log ud</button>
+            </div> -->
+            <br>
+            <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
+            </div> 
+          </li>
+        </ul>
         <!-- Dropdown -->
         <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
           animation-name="example">
