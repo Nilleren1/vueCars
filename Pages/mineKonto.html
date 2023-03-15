@@ -146,44 +146,54 @@
         <p class="font-weight-bold text-center">CO2 besparelse i kg</p>
       </div>
     </div><!--ROW END-->
-
     <hr>
-    <div class="container">
-    <div class="row" style="margin: auto">
-      &nbsp;
-      <div class="col-sm-12 colStyling">
+    <div class="row"> 
+      <div class="col-sm col-md-3 col-lg-2 ml-3 colStyling">
+      <h5 class="fw-semibold">Min Info</h5>
+      <hr class="">
+      <!-- <div style="border-bottom: 1px solid black;"></div> -->
+      <span class="fa fa-phone fa-1x"> &nbsp;+ 45 45258596</span> <br>
+      <span class="fa fa-envelope fa-1x">&nbsp; Kasper00@gmail.com</span>
+      <br>
+      <span class="fa fa-user fa-1x">
+        &nbsp;Lidt om mig&nbsp;
+      </span>
+      <div class="text-center border bg-white">
+        Jeg er en fyr på 23 år, der giver et lift fra tid til anden
+      </div>
+      <br>
+      <br>
+    </div>
+    &nbsp;
+      <div class="col-sm col-md-4 col-lg-5 colStyling">
+        <h5 class="fw-semibold">Egne biler</h5>
+        <hr class="">
 
-        <h5 class="font-weight-bold">Egne biler</h5>
         <div class="card mb-2 zoom" v-for="car in cars">
-          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
+          <div class="card-body border">
             <div class="card-text d-flex justify-content-between">
-            
               <div class="col-sm">
-                Car ID: <br>
-                Car Model: <br>
-                Car Mærke: <br>
+                Bil Model: <br>
+                Bil Mærke: <br>
                 Brændstof: <br>
               </div>
               <div class="col-sm">
-                {{ car.carId }} <br>
                 {{ car.model }} <br>
                 {{car.brand}} <br>
                 {{car.fuelType}} <br>
-              
-
               </div>
               <div class="mr-2">
                 <div class="col-sm text-center">
                   <a class="btn btn-primary border btn-sm" href="#!" role="button"
                   style="background-color: rgb(180, 240, 180); color: black;">
-                  <span style="font-size:smaller;">Info om bil</span>
+                  <span style="font-size:smaller;">Mere info</span>
                 </a>
                   {{deleteMessage}}
                 </div>
                 <br>
                 <div class="col-sm text-center">
                   <a class="btn btn-danger btn-sm" href="#!" role="button">
-                    <span style="font-size:smaller;">Slet en bil</span>
+                    <span style="font-size:smaller;">Slet</span>
                   </a>
                 </div>
                 <br>
@@ -191,42 +201,14 @@
             </div>
           </div>
         </div>
-
     </div>
-  </div>
-  <br><br>
-    <!--ROW END-->
-    <div class="row" style="margin:auto;">
-      
-        <div class="col-sm-4 ml-1">
-          <h5 class="font-weight-bold">Min Info</h5>
-          <div style="border-bottom: 1px solid black;"></div>
-          <span class="fa fa-phone fa-1x"> &nbsp;+ 45 45258596</span> <br>
-          <span class="fa fa-envelope fa-1x">&nbsp; Kasper00@gmail.com</span>
-          <br>
-          <span class="fa fa-user fa-1x">
-            &nbsp;Lidt om mig
-          </span>
-          <div class="text-center colStyling">
-            Jeg er en fyr på 23 år, der giver et lift fra tid til anden
-          </div>
-        </div>
-        <div class="col-6">
-        <div v-for="a in accountArray">
-          &nbsp; &nbsp; ID:  {{ a.accountId}}
-          &nbsp; &nbsp; User:  {{ a.userName}}
-        </div>
-        <br><br>
-      </div>
-      
-
-      <div class="col-sm-12 colStyling">
-
-        <h5 class="font-weight-bold">Bookninger</h5>
+    &nbsp;
+      <div class="col-sm col-md-4 colStyling">
+        <h5 class="fw-semibold">Bookninger</h5>
+        <hr class="">
         <div class="card mb-2 zoom" v-for="car in carArray">
-          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
+          <div class="card-body border">            
             <div class="card-text d-flex justify-content-between">
-            
               <div class="col-sm">
                 Dato: <br>
                 Start: <br>
@@ -244,7 +226,7 @@
                 <div class="col-sm text-center">
                   <a class="btn btn-primary border btn-sm" href="#!" role="button"
                   style="background-color: rgb(180, 240, 180); color: black;">
-                  <span style="font-size:smaller;">Info</span>
+                  <span style="font-size:smaller;">Mere info</span>
                 </a>
                   {{deleteMessage}}
                 </div>
@@ -257,17 +239,12 @@
                 <br>
               </div>
             </div>
-          </div>
-        </div>
-          
+        </div><!--ROW END-->
+          </div> 
         <!-- </div> -->
       </div>
     </div>
 
-    </div>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <br>
@@ -282,15 +259,12 @@
             <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
           </div>
           <!-- Section: Social media section -->
-          <section class="col text-center">
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                class="fab fa-facebook-f"></i></a>
+          <section class="col-sm text-center">
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
             <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
           </section>
           <div class="p-3 text-white">
@@ -301,7 +275,7 @@
         </div>
       </div>
     </footer>
-    <!-- Footer END -->
+    <!-- FOOTER END -->
 
   </div><!--app close-->
   <script src="/createAccount.js"></script>
