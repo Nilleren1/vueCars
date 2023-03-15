@@ -116,9 +116,17 @@
     </div> -->
     </nav><!--NAV SLUT-->
 
-    <div class="row">
+    <div class="row" style="margin: auto">
       <div class="col-sm text-center">
         <img class="rounded-circle responsive m-4" src="/img/RandomPerson.png" style="max-height: 120px; width: auto;" />
+        <h6 class="text-center">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+        </h6>
+        <h6 class="text-center">Kasper Øland</h6> <br>
 
       </div>
       <div class="col-sm m-1">
@@ -140,116 +148,122 @@
     </div><!--ROW END-->
 
     <hr>
-    <div class="row">
-      <div class="col-sm-2 col-md-2 border-right ml-1">
-        <h6 class="text-center">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-        </h6>
-        <h6 class="text-center">Kasper Øland</h6> <br>
-        <span class="fa fa-phone fa-1x"> &nbsp;+ 45 45258596</span> <br>
-        <span class="fa fa-envelope fa-1x">&nbsp; Kasper00@gmail.com</span>
-        <br>
-        <span class="fa fa-user fa-1x">
-          &nbsp;Lidt om mig
-        </span>
-        <div class="col-sm-10 colStyling">
-          Jeg er en fyr på 23 år, der giver et lift fra tid til anden
-        </div>
-      </div>
+    <div class="container">
+    <div class="row" style="margin: auto">
       &nbsp;
-      <div class="col-sm-5 col-md-5 mr-1 colStyling">
-        <h6 class="font-weight-bold">Egne biler</h6>
-        <div class="col-sm border table-responsive colStyling1">
-          <table class="table table table-sm" v-for="car in cars">
-            <thead>
-              <th>Id</th>
-              <th>Model</th>
-              <th>Mærke</th>
-              <th>Brændstof</th>
-              <th>Info</th>
-              <th>Slet</th>
-            </thead>
-            <tbody>
-              <td>{{ car.carId }}</td>
-              <td>{{ car.model }}</td>
-              <td>{{ car.brand }}</td>
-              <td>{{ car.fuelType }}</td>
-              <td> <a class="btn btn-primary border btn-sm" href="#!" role="button"
+      <div class="col-sm-12 colStyling">
+
+        <h5 class="font-weight-bold">Egne biler</h5>
+        <div class="card mb-2 zoom" v-for="car in cars">
+          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
+            <div class="card-text d-flex justify-content-between">
+            
+              <div class="col-sm">
+                Car ID: <br>
+                Car Model: <br>
+                Car Mærke: <br>
+                Brændstof: <br>
+              </div>
+              <div class="col-sm">
+                {{ car.carId }} <br>
+                {{ car.model }} <br>
+                {{car.brand}} <br>
+                {{car.fuelType}} <br>
+              
+
+              </div>
+              <div class="mr-2">
+                <div class="col-sm text-center">
+                  <a class="btn btn-primary border btn-sm" href="#!" role="button"
                   style="background-color: rgb(180, 240, 180); color: black;">
                   <span style="font-size:smaller;">Info om bil</span>
                 </a>
-              </td>
-              <td>
-                <a class="btn btn-danger btn-sm" href="#!" role="button">
-                  <span style="font-size:smaller;">Slet en bil</span>
-                </a>
-              </td>
-            </tbody>
-          </table>
-          <div class="m-1">
-            <br>
-            <br>
+                  {{deleteMessage}}
+                </div>
+                <br>
+                <div class="col-sm text-center">
+                  <a class="btn btn-danger btn-sm" href="#!" role="button">
+                    <span style="font-size:smaller;">Slet en bil</span>
+                  </a>
+                </div>
+                <br>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="d-flex justify-content-end m-1">
-          <a href="/Pages/AddCar.html" type="button" class="btn btn-primary btn-sm">
-            <span style="font-size:smaller;">Opret en bil</a>
-        </div>
-        </button>
-      </div>
 
-      <div class="col-sm-5 col-md-4 colStyling">
-        <h6 class="font-weight-bold">Bookninger</h6>
-        <div class="col-sm border table-responsive colStyling1">
-          <table class="table table-sm" v-for="car in carArray">
-            <thead>
-              <th>Dato</th>
-              <th>Start</th>
-              <th>Slut</th>
-              <th>Info</th>
-              <th>Slet</th>
-            </thead>
-            <tbody>
-              <td>{{ car.driveDate }}</td>
-              <td>{{ car.startDestination }}</td>
-              <td>{{ car.endDestination }}</td>
-             
-              <td> <a class="btn border btn-sm" href="#!" role="button"
-                  style="background-color: rgb(180, 240, 180); color: black;">
-                  <span style="font-size:smaller;">Info om book</span>
-                </a>
-              </td>
-              <td>
-                <a class="btn btn-danger btn-sm" 
-                href="#!" role="button">
-                  <span style="font-size:smaller;">
-                    Aflys</span>
-                </a>
-              </td>
-            </tbody>
-          </table>
-          <!-- <div v-else>
-            Error! No cars
-          </div>
-        {{deleteMessage}} -->
-          <div class="m-1">
-            <br>
-            <br>
+    </div>
+  </div>
+  <br><br>
+    <!--ROW END-->
+    <div class="row" style="margin:auto;">
+      
+        <div class="col-sm-4 ml-1">
+          <h5 class="font-weight-bold">Min Info</h5>
+          <div style="border-bottom: 1px solid black;"></div>
+          <span class="fa fa-phone fa-1x"> &nbsp;+ 45 45258596</span> <br>
+          <span class="fa fa-envelope fa-1x">&nbsp; Kasper00@gmail.com</span>
+          <br>
+          <span class="fa fa-user fa-1x">
+            &nbsp;Lidt om mig
+          </span>
+          <div class="text-center colStyling">
+            Jeg er en fyr på 23 år, der giver et lift fra tid til anden
           </div>
         </div>
-      </div>
-    </div><!--ROW END-->
-    <div class="row">
-      <div class="col">
+        <div class="col-6">
         <div v-for="a in accountArray">
           &nbsp; &nbsp; ID:  {{ a.accountId}}
           &nbsp; &nbsp; User:  {{ a.userName}}
         </div>
+        <br><br>
       </div>
+      
+
+      <div class="col-sm-12 colStyling">
+
+        <h5 class="font-weight-bold">Bookninger</h5>
+        <div class="card mb-2 zoom" v-for="car in carArray">
+          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
+            <div class="card-text d-flex justify-content-between">
+            
+              <div class="col-sm">
+                Dato: <br>
+                Start: <br>
+                Slut: <br>
+              </div>
+              <div class="col-sm">
+                {{ car.driveDate }} <br>
+                {{ car.startDestination }} <br>
+                {{ car.endDestination }} <br>
+                {{ car.fuelType }} <br>
+              
+
+              </div>
+              <div class="mr-2">
+                <div class="col-sm text-center">
+                  <a class="btn btn-primary border btn-sm" href="#!" role="button"
+                  style="background-color: rgb(180, 240, 180); color: black;">
+                  <span style="font-size:smaller;">Info</span>
+                </a>
+                  {{deleteMessage}}
+                </div>
+                <br>
+                <div class="col-sm text-center">
+                  <a class="btn btn-danger btn-sm" href="#!" role="button">
+                    <span style="font-size:smaller;">Slet</span>
+                  </a>
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        <!-- </div> -->
+      </div>
+    </div>
+
     </div>
     <br>
     <br>
@@ -261,7 +275,7 @@
     <!--FOOTER-->
     <footer id="footer" class="footerStyling">
       <div class="container-fluid p-1">
-        <div class="row">
+        <div class="row" style="margin:auto">
           <div class="text-white p-3">
             Kontakt os <br>
             © 2023 Copyright: <br>
@@ -281,7 +295,8 @@
           </section>
           <div class="p-3 text-white">
             <a class="text-white" href="/Pages/omOs.html">Om os</a> <br>
-            Privatlivspolitik
+            Privatlivspolitik <br>
+            <a class="text-white" href="/Pages/Regler.html">Regler</a>
           </div>
         </div>
       </div>
