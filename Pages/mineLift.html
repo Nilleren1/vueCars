@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +20,6 @@
   <!--Own CSS link-->
   <link rel="stylesheet" href="../style.css">
   <title>Mine Lift</title>
-
 </head>
 
 <body>
@@ -32,11 +30,7 @@
         <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
       </a>
       <a href="../index.html" class="text-white">MitLift</a>&nbsp;
-
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -45,59 +39,11 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="/Pages/AddCar.html">Opret bil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Pages/addLift.html">Opret lift</a>
-          </li> -->
-          <!-- Dropdown -->
-          <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Opret
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/Pages/AddCar.html">Opret bil</a>
-                        <a class="dropdown-item" href="/Pages/addLift.html">Opret lift</a>
-                    </div>
-                </li> -->
         </ul>
       </div>
       <div class="navbar position-relative top-0 end-0">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <div v-if="!email">
-              <script>
-                function myFunction() { 
-                  document.getElementById("mainFrameOne").style.display="none"; 
-                  document.getElementById("mainFrameTwo").style.display="block"; 
-                  
-                }
-                </script>
-              
-                  
-                <a id="mainFrameOne" onclick="myFunction()" href="#">
-                    log ind
-                </a>
-                <a id="mainFrameTwo" onclick="myFunction()" href="/index.html" style="display:none;">
-                    log ud
-                </a>
-                
-
-                
-            <!-- <a class="styleNavDropdown" href="/Pages/login.html">Log ind</a> <br>
-            </div>
-              <div v-if="email">
-            <button class="styleNavDropdown" @click="logud">Log ud</button>
-            </div> -->
-            <br>
-            <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
-            </div> 
-          </li>
-        </ul>
         <!-- Dropdown -->
-        <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
-          animation-name="example">
+        <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown" animation-name="example">
           <img src="/img/Profile Pic Icon.png" width="45" height="50">
         </a>
         <div class="dropdown-menu">
@@ -105,180 +51,157 @@
           <a class="dropdown-item" href="/Pages/mineLift.html">Mine Lift</a>
           <a class="dropdown-item" href="/Pages/mineKonto.html">Min Konto</a>
           <a class="dropdown-item" href="/Pages/AddCar.html">Tilføj ny Bil</a>
-          <a class="dropdown-item" href="#">Instillinger</a>
           <a class="dropdown-item" href="#">Log ud</a>
         </div>
       </div>
-      <!-- <div class="nav-item d-flex justify-content-between"> -->
-      <!--div class="nav-link text-white" href="">Mit Lift</div-->
-      <!-- <div class="nav-link text-white" href="">Login</div>
-      </div> -->
-      <!-- <div class="d-flex justify-content-between text-white">
-        <img src="/img/CarGenericHero.avif" class="rounded-circle" alt="car" style="height: 50px; width: auto;">
-      </div> -->
-    </nav><!--NAV SLUT-->
+    </nav>
+    <!--NAV END-->
 
-
-    <!-- SØG LIFT -->
-
+    <!-- SØG PÅ LIFT -->
     <div class="row" style="margin: auto">
       <div class="col-1">
-        
+        <!--COL 1-->
       </div>
       <div style="background-color: rgb(240, 240, 240);" class="col-10 border p-3 frontpageBackStyling">
         <div class="container mb-4">
           <button class="sortOrderBtn" v-on:click="SortByPrice">Pris: Lavest-Højest</button>
           <button class="sortOrderBtn" v-on:click="SortByPriceDesc">Pris: Højest-Lavest</button>
         </div>
-        
         <form>
           <div class="form-row" style="margin:auto">
             <div class="col-sm-3 mb-2 ml-5 d-flex justify-content-start">
               <!-- <label for="validationServer01">Fra</label> -->
               <!-- v-model="filter" -->
-              <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="text" class="form-control text-white"
-                id="fra" placeholder="Fra..." required  v-model="startDestination">
-              <div class="valid-feedback">
-              </div>
+              <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="text"
+                class="form-control text-white" id="fra" placeholder="Fra..." required v-model="startDestination">
+              <div class="valid-feedback"></div>
             </div>
-
             <div class="col-sm-3 mb-2 mr-5 d-flex justify-content-start">
               <!-- <label for="validationServer01">Til</label> -->
-              <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="text" class="form-control text-white"
-                id="til" placeholder="Til..." required  v-model="endDestination">
-              <div class="valid-feedback">
-              </div>
+              <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="text"
+                class="form-control text-white" id="til" placeholder="Til..." required v-model="endDestination">
+              <div class="valid-feedback"></div>
             </div>
-
             <div class="col-md-3 mb-2 ml-5 d-flex justify-content-end">
               <!-- <label for="validationServer01">Dato</label> -->
               <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="datetime-local"
                 class="form-control text-white datetime" id="dato" placeholder="Dato" value="Dato" required>
-              <div class="valid-feedback">
-              </div>
+              <div class="valid-feedback"></div>
             </div>
           </div>
         </form>
         <br>
-
         <!-- v-on:click="Filter()" -->
         <a v-on:click="FilteredGetAllCarRides(startDestination, endDestination)" class="container btn btn-primary mainButton btn-md btn-block p-1" role="button">
-          <span style="font-size:larger;">Søg Lift</span></a>
+          <span style="font-size:larger;">Søg Lift</span>
+        </a>
       </div>
       <div class="col-1">
+        <!--COL 3-->
       </div>
     </div>
     <br>
     <br>
-
 
     <!--NEW ROW WITH CARDS-->
     <div class="row" style="margin:auto">
       <div class="col-1">
         <!--col 1-->
       </div>
-    <!--COL 5 card-->
-      <div class="col-5 p-3  frontpageBackStyling">
-        <div class="card mb-2 zoom" v-for="car in carrideArray">
-          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
-            <div class="card-text d-flex justify-content-between">
-              <div class="card-text m-1">
-                <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
-                <h5 class="card-title text-center">Bruger</h5>
-                <h6 class="text-center">
-                  <!-- <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span> -->
-                  <span class="red-star checked">★</span>
-                  <span class="red-star checked">★</span>
-                  <span class="red-star checked">★</span>
-                  <span class="red-star">★</span>
-                  <span class="red-star">★</span>
-                </h6>
-              </div>
-              <div class="mr-2">
-                {{ car.driveDate }} <br>
-                {{ car.price }} kr. <br>
-                <div class="text-secondary">
-                  {{car.startDestination}} <br>
-                </div>
-                <div class="text-secondary">
-                  {{car.endDestination}} <br>
-                </div>
-              </div>
-              <div class="mr-2">
-                <div class="col-sm text-center">
-                  <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
-                    class="btn btn-danger">Slet</button>
-                  {{deleteMessage}}
-                </div>
-                <br>
-                <div class="col-sm text-center">
-                  <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
-                </div>
-                <br>
-                <!-- <div class="col-sm text-center">
-                  <button id="bookButton" v-on:click="" type="button" class="btn btn-info">Book</button>
-                </div> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <!--COL 5 card-->
       <div class="col-5 p-3  frontpageBackStyling">
         <div class="card mb-2 zoom" v-for="car in carrideArray">
-          <a href="/Pages/detalje.html" style="color:black">
-          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
-            <div class="card-text d-flex justify-content-between">
-              <div class="card-text m-1">
-                <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
-                <h5 class="card-title text-center">Bruger</h5>
-                <h6 class="text-center">
-                  <!-- <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span> -->
-                  <span class="red-star checked">★</span>
-                  <span class="red-star checked">★</span>
-                  <span class="red-star checked">★</span>
-                  <span class="red-star">★</span>
-                  <span class="red-star">★</span>
-                </h6>
-              </div>
-              <div class="mr-2">
-                {{ car.driveDate }} <br>
-                {{ car.price }} kr. <br>
-                <div class="text-secondary">
-                  {{car.startDestination}} <br>
+          <!--HER ER REDIRECT TIL DETALJESIDEN-->
+          <!--Data is stored in key/value format - ?id=1-->
+          <a v-on:click="redirectToDetalje(car.carRideId)" style="color:black">
+            <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
+              <div class="card-text d-flex justify-content-between">
+                <div class="card-text m-1">
+                  <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
+                  <h5 class="card-title text-center">Bruger</h5>
+                  <h6 class="text-center">
+                    <span class="red-star checked">★</span><span class="red-star checked">★</span><span class="red-star checked">★</span><span class="red-star">★</span><span class="red-star">★</span>
+                  </h6>
                 </div>
-                <div class="text-secondary">
-                  {{car.endDestination}} <br>
+                <div class="mr-2">
+                  Dato: {{ car.driveDate }} <br> 
+                  Pris: {{ car.price }} kr. <br>
+                  <div class="text-secondary"> {{car.startDestination}} <br> </div>
+                  <div class="text-secondary"> {{car.endDestination}} <br> </div>
                 </div>
-              </div>
-              <div class="mr-2">
-                <div class="col-sm text-center">
-                  <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
-                    class="btn btn-danger">Slet</button>
-                  {{deleteMessage}}
+                <div class="mr-2">
+                    <div class="col-sm text-center">
+                      <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
+                        class="btn btn-danger">Slet</button>
+                      {{deleteMessage}}
+                    </div>
+                    <br>
+                    <div class="col-sm text-center">
+                      <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
+                    </div>
+                    <br>
+                    <!--HER ER DER EN REDIRECT TIL DETALJESIDEN-->
+                    <div class="col-sm text-center">
+                      <!-- <button v-on:click="redirectToDetalje(car.carRideId)" 
+                      type="button">Info</button> -->
+                      <!-- <p>
+                      Test: id'et er = {{car.carRideId}}
+                    </p> -->
+                    </div>
                 </div>
-                <br>
-                <div class="col-sm text-center">
-                  <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
-                </div>
-                <br>
-                <!-- <div class="col-sm text-center">
-                  <button id="bookButton" v-on:click="" type="button" class="btn btn-info">Book</button>
-                </div> -->
               </div>
             </div>
-          </div>
-        </a>
+        </div>
+      </div>
+      <!--COL 5 CARDS - REPEAT-->
+      <div class="col-5 p-3  frontpageBackStyling">
+        <div class="card mb-2 zoom" v-for="car in carrideArray">
+          <!--HER ER DER EN REDIRECT TIL DETALJESIDEN-->
+          <!--CARDS IN A A-TAG START-->
+          <a v-on:click="redirectToDetalje(car.carRideId)" style="color:black"> 
+            <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
+              <div class="card-text d-flex justify-content-between">
+                <div class="card-text m-1">
+                  <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
+                  <h5 class="card-title text-center">Bruger</h5>
+                  <h6 class="text-center">
+                    <span class="red-star checked">★</span>
+                    <span class="red-star checked">★</span>
+                    <span class="red-star checked">★</span>
+                    <span class="red-star">★</span>
+                    <span class="red-star">★</span>
+                  </h6>
+                </div>
+                <div class="mr-2">
+                    Dato: {{ car.driveDate }} <br>
+                    {{ car.price }} kr. <br>
+                    <div class="text-secondary">
+                      {{car.startDestination}} <br>
+                    </div>
+                    <div class="text-secondary">
+                      {{car.endDestination}} <br>
+                    </div>
+                </div>
+                <div class="mr-2">
+                    <div class="col-sm text-center">
+                      <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
+                        class="btn btn-danger">Slet</button> {{deleteMessage}} 
+                      </div> <br>
+                    <div class="col-sm text-center">
+                      <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
+                    </div><br>
+                  <!-- <div class="col-sm text-center">
+                  <button v-on:click="redirectToDetalje(car.carRideId)" type="button">Info</button>
+                </div> -->
+                </div>
+              </div>
+            </div>
+          </a> <!--CARDS IN A A-TAG END-->
         </div>
       </div>
     </div>
     <div class="col-1">
+      <!--col 3-->
     </div>
   <br><br><br><br><br><br><br><br><br><br><br><br>
   <!--FOOTER-->
@@ -291,28 +214,23 @@
           <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
         </div>
         <!-- Section: Social media section -->
-        <section class="col text-center">
-          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-              class="fab fa-facebook-f"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-              class="fab fa-linkedin-in"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-        </section>
+          <section class="col text-center">
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+          </section>
         <div class="p-3 text-white">
           <a class="text-white" href="/Pages/omOs.html">Om os</a> <br>
           Privatlivspolitik <br>
           <a class="text-white" href="/Pages/Regler.html">Regler</a>
         </div>
       </div>
-    </div>
-  </footer>
-  <!-- Footer END -->
-
+    </footer>
+    <!-- FOOTER END -->
   </div> <!--APP CLOSED -->
   <script src="/index.js"></script>
 </body>
-
 </html>
