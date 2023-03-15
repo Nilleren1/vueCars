@@ -82,7 +82,7 @@
                 class="form-control text-white" id="til" placeholder="Til..." required v-model="endDestination">
               <div class="valid-feedback"></div>
             </div>
-            <div class="col-md-3 mb-2 ml-5 d-flex justify-content-end">
+            <div class="col-md-3 mb-2 ml-4 d-flex justify-content-end">
               <!-- <label for="validationServer01">Dato</label> -->
               <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="datetime-local"
                 class="form-control text-white datetime" id="dato" placeholder="Dato" value="Dato" required>
@@ -108,8 +108,8 @@
       <div class="col-1">
         <!--col 1-->
       </div>
-      <!--COL 5 card-->
-      <div class="col-5 p-3  frontpageBackStyling">
+      <!--COL 5 CARDS-->
+      <div class="col-sm-5 p-3 frontpageBackStyling">
         <div class="card mb-2 zoom" v-for="car in carrideArray">
           <!--HER ER REDIRECT TIL DETALJESIDEN-->
           <!--Data is stored in key/value format - ?id=1-->
@@ -123,25 +123,21 @@
                     <span class="red-star checked">★</span><span class="red-star checked">★</span><span class="red-star checked">★</span><span class="red-star">★</span><span class="red-star">★</span>
                   </h6>
                 </div>
-                <div class="mr-2">
+                <div class="col-sm mr-2">
                   Dato: {{ car.driveDate }} <br> 
                   Pris: {{ car.price }} kr. <br>
                   <div class="text-secondary"> {{car.startDestination}} <br> </div>
                   <div class="text-secondary"> {{car.endDestination}} <br> </div>
                 </div>
                 <div class="mr-2">
-                    <div class="col-sm text-center">
-                      <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
-                        class="btn btn-danger">Slet</button>
+                      <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button" class="btn btn-danger">Slet</button>
                       {{deleteMessage}}
-                    </div>
-                    <br>
-                    <div class="col-sm text-center">
+                      <br>
+                      <br>
                       <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
-                    </div>
                     <br>
                     <!--HER ER DER EN REDIRECT TIL DETALJESIDEN-->
-                    <div class="col-sm text-center">
+                    <div class="col-sm">
                       <!-- <button v-on:click="redirectToDetalje(car.carRideId)" 
                       type="button">Info</button> -->
                       <!-- <p>
@@ -154,7 +150,7 @@
         </div>
       </div>
       <!--COL 5 CARDS - REPEAT-->
-      <div class="col-5 p-3  frontpageBackStyling">
+      <div class="col-sm-5 p-3  frontpageBackStyling">
         <div class="card mb-2 zoom" v-for="car in carrideArray">
           <!--HER ER DER EN REDIRECT TIL DETALJESIDEN-->
           <!--CARDS IN A A-TAG START-->
@@ -214,22 +210,23 @@
           <a class="text-white" href="https://mdbootstrap.com/">MitLift.dk</a>
         </div>
         <!-- Section: Social media section -->
-          <section class="col text-center">
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-          </section>
+        <section class="col-sm text-center">
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+        </section>
         <div class="p-3 text-white">
           <a class="text-white" href="/Pages/omOs.html">Om os</a> <br>
           Privatlivspolitik <br>
           <a class="text-white" href="/Pages/Regler.html">Regler</a>
         </div>
       </div>
-    </footer>
-    <!-- FOOTER END -->
+    </div>
+  </footer>
+  <!-- FOOTER END -->
   </div> <!--APP CLOSED -->
   <script src="/index.js"></script>
 </body>
