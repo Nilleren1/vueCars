@@ -226,3 +226,20 @@ text-align: center;
   color: rgba(255, 255, 255, 0.472);
 }
 
+.btn.buttonMobilePay{
+  min-width: 450px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color: #3b2df8;
+  border: 0.5px solid rgb(194, 194, 194);
+  box-shadow: 1px 1px #888888;
+
+}
+
+.MobilePay{
+  border-radius: 20px;
+  margin: 0;
+  border: 2px solid black;
+  padding: 5px;
+}
