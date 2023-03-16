@@ -124,7 +124,7 @@
                   </h6>
                 </div>
                 <div class="col-sm mr-2">
-                  Dato: {{ car.driveDate }} <br> 
+                  Dato: {{ parseDate(car.driveDate) }} <br> 
                   Pris: {{ car.price }} kr. <br>
                   <div class="text-secondary"> {{car.startDestination}} <br> </div>
                   <div class="text-secondary"> {{car.endDestination}} <br> </div>
@@ -169,7 +169,7 @@
                   </h6>
                 </div>
                 <div class="mr-2">
-                    Dato: {{ car.driveDate }} <br>
+                    Dato: {{ parseDate(car.driveDate) }} <br>
                     {{ car.price }} kr. <br>
                     <div class="text-secondary">
                       {{car.startDestination}} <br>
