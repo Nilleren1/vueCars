@@ -220,7 +220,22 @@ const home = Vue.createApp({
             const response = await axios.get(baseUrl+"/CarRides")
             this.carrideArray = await response.data
             }
-        }
+        },
+
+        parseDate(time) {
+            clock = time.slice(11, 16)
+            month = time.slice(5, 7)
+            date = time.slice(8, 10)
+            year = time.slice(0, 4)
+            convertedDate = date + "-" + month + "-" + year + " / " + clock
+            //console.log("Converted date to:" + convertedDate)
+            return convertedDate
+        },
+        // parseTime(time) {
+        //     convertedDate = time.slice(11, 16)
+        //     //console.log("Converted date to:" + convertedDate)
+        //     return convertedDate
+        // },
 
     }
 })
