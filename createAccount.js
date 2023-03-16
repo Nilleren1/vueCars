@@ -110,6 +110,21 @@ const createAccount = Vue.createApp({
                 alert(ex.message)
             }
         },
+        async postCar(){
+            try{
+                response = await axios.post(baseUrl + "/Cars", this.addData)
+                this.addMessage="Response: " + response.status + " " + response.statusText
+                if (response.status == 200) {
+                    location.href="/Pages/mineKonto.html"
+                }
+                else{
+                    alert("Der er noget galt her " + response.status)
+                }
+                
+            }catch(ex){
+                alert(ex.message)
+            }
+        },
         async deleteAccount(deleteId) {
             const url = baseUrl + "/Accounts/" + deleteId
             try {
@@ -119,6 +134,36 @@ const createAccount = Vue.createApp({
             } catch (ex) {
                 alert(ex.message)
             }
+        },
+        async deleteCar(deleteId) {
+            const url = baseUrl + "/Cars/" + deleteId
+            try {
+                response = await axios.delete(url)
+                this.deleteMessage = response.status + " " + response.statusText
+                this.getAllCars()
+            } catch (ex) {
+                alert(ex.message)
+            }
+        },
+        async deleteCarRide(deleteId) {
+            const url = baseUrl + "/CarRides/" + deleteId
+            try {
+                response = await axios.delete(url)
+                this.deleteMessage = response.status + " " + response.statusText
+                this.getAllRides()
+            } catch (ex) {
+                alert(ex.message)
+            }
+        },
+        //FILTERMETODE TIL DATO
+        parseDate(time) {
+            clock = time.slice(11, 16)
+            month = time.slice(5, 7)
+            date = time.slice(8, 10)
+            year = time.slice(0, 4)
+            convertedDate = date + "-" + month + "-" + year + " / " + clock
+            console.log("Converted date to:" + convertedDate)
+            return convertedDate
         },
     }
 })

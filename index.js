@@ -41,33 +41,6 @@ const home = Vue.createApp({
     created() { // life cycle method. Called when browser reloads page
         this.getAllRides()
         this.getAllAccounts()
-        
-        // //Get URL parameters in JS, can be used to get passed values from URL
-        // //window.location obj. can be used to get the current page address (URL) and to redirect the browser to a new page.
-        // console.log("Window location:", window.location)
-        // //myKeyValues bliver sat til window.location.search, search er, som er key/value "?id=1"
-        // const myKeyValues = window.location.search;
-        // console.log("Key and values:", myKeyValues)
-        // //URLSearchParams defines utility methods to work with the query string of a URL.
-        // const urlParams = new URLSearchParams(myKeyValues);
-        // //id is a parameter we get, get will return the first value, associated with the, given parameter, there are other methods for urlsearchparams
-        // const param1 = urlParams.get('id');
-        // console.log("Id in url:", param1)
-
-        //window.location obj. can be used to get the current page 
-        //address (URL) and to redirect the browser to a new page.
-        // substring() method returns the part of the string from the start index 
-        //up to and excluding the end index, or to the end of 
-        //the string if no end index is supplied.
-        // let uri = window.location.search.substring(1);
-        // let urlParameters = new URLSearchParams(uri);
-        // this.id = urlParameters.get('id')
-        // console.log("Er den her? " + this.id);
-        //created, kalder dem, istedet for this.id, så 
-        //let uri = window.location.search.substring(1);        
-        //let urlParameters = new URLSearchParams(uri);        
-        //let id = urlParameters.get('id')        
-        //helperGetCarDetalje(id)
     },
    
     methods: {
@@ -141,28 +114,12 @@ const home = Vue.createApp({
             }
         },
 
-        async deleteCarRide(deleteId) {
-            const url = baseUrl + "/CarRides/" + deleteId
-            try {
-                response = await axios.delete(url)
-                this.deleteMessage = response.status + " " + response.statusText
-                this.getAllRides()
-            } catch (ex) {
-                alert(ex.message)
-            }
-        },
-
         //REDIRCT TIL DETALJE SIDEN
         redirectToDetalje(carRideId){
             location.href="/Pages/detalje.html?id=" + carRideId
         },
 
-
-        // async Filter() {
-        //     this.carrideArray.filter((c) => c.startDestination == this.filter)
-            
-        // },
-
+        //LOGUD
         logud() {
             axios.post(baseUrl + "/Signout")
                 .then(result => location.href = "/Pages/login.html")
@@ -170,19 +127,6 @@ const home = Vue.createApp({
         },
 
         //POST METODER
-
-
-        // async postCar(){
-        //     try{
-        //         response = await axios.post(carUrl, this.addData)
-        //         this.addMessage="Response: " + response.status + " " + response.statusText
-        //         this.getAllCars()
-        //     }catch(ex){
-        //         alert(ex.message)
-        //     }
-        // },
-
-
         async add() {
             try {
                 response = await axios.post(baseUrl, this.addData)
@@ -193,6 +137,7 @@ const home = Vue.createApp({
             }
         },
 
+        //FILTER
         SortByPrice() {
             this.carrideArray.sort((data1, data2) => data1.price - data2.price)
         },
