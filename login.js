@@ -63,7 +63,7 @@ const login = Vue.createApp({
                 headers: { "Content-Type": "multipart/form-data" },
               })
                 .then(function (response) {
-                    location.href="/index.html"
+                    location.href="/Pages/mineKonto.html"
                   //handle success
                   console.log(response);
                 })

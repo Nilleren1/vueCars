@@ -31,7 +31,8 @@
       </a>
       <a href="../index.html" class="text-white">MitLift</a>&nbsp;
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
-          class="navbar-toggler-icon"></span></button>
+          class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -42,8 +43,13 @@
           </li>
         </ul>
       </div>
+      <div class="nav-item">
+        <a class="styleNavDropdown mr-3" href="/Pages/login.html"> Log ind </a> <br>
+        <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
+      </div>
+     
       <!--NAV SHOW/HIDE BTN-->
-      <div class="navbar position-relative top-0 end-0">
+      <!-- <div class="navbar position-relative top-0 end-0">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
@@ -57,14 +63,14 @@
               </script>
               <a id="mainFrameOne" onclick="myFunction()" href="/Pages/login.html"> Log ind </a> <br>
               <a id="mainFrameTwo" onclick="myFunction()" href="index.html" style="display:none;"> Log ud </a>
-              <!-- <a class="styleNavDropdown" href="/Pages/login.html">Log ind</a> <br> -->
-            </div>
+              <a class="styleNavDropdown" href="/Pages/login.html">Log ind</a> <br> -->
+            <!--/div>
             <div v-if="email">
               <button class="styleNavDropdown" @click="logud">Log ud</button>
             </div>
           </li>
         </ul>
-      </div>
+      </div--> 
       <div class="navbar position-relative top-0 end-0">
         <!-- Dropdown -->
         <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
@@ -81,6 +87,7 @@
         </div>
       </div>
     </nav>
+
     <!--HEADER-->
     <header class="masthead">
       <div class="container h-100">
