@@ -36,19 +36,13 @@
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
-          <!-- <li class="nav-item">
-            <a class="nav-link text-white" href="/Pages/mineLift.html">Find et lift</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
-          </li> -->
         </ul>
       </div>
       <div class="nav-item">
         <a class="styleNavDropdown mr-3" href="/Pages/login.html"> Log ind </a> <br>
         <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
       </div>
-     
+
       <div class="navbar position-relative top-0 end-0">
         <!-- Dropdown -->
         <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
@@ -56,9 +50,6 @@
           <img src="/img/Profile Pic Icon.png" width="45" height="50">
         </a>
         <div class="dropdown-menu dropdown-menu-right">
-          <!-- <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a> -->
-          <!-- <a class="dropdown-item" href="/Pages/mineLift.html">Mine Lift</a> -->
-          <!-- <a class="dropdown-item" href="/Pages/AddCar.html">Tilføj ny Bil</a> -->
           <a class="dropdown-item" href="/Pages/mineKonto.html">Min side</a>
           <a class="dropdown-item" href="#">Log ud</a>
           <a class="dropdown-item" href="#">Hjælp</a>
@@ -68,7 +59,8 @@
 
     <div class="row" style="margin: auto">
       <div class="col-sm text-center">
-        <img class="rounded-circle responsive m-4" src="/img/RandomPerson.png" style="max-height: 120px; width: auto;" />
+        <img class="rounded-circle responsive m-4" src="/img/RandomPerson.png"
+          style="max-height: 120px; width: auto;" />
         <h6 class="text-center">
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star checked"></span>
@@ -80,7 +72,6 @@
 
       </div>
       <div class="col-sm m-1">
-        <!-- <span class="star checked starStyling">★</span> -->
         <span class="d-flex justify-content-center" style="font-size:400%; color:yellow;">&bigstar;</span>
         <p class="font-weight-bold text-center">1</p>
         <p class="font-weight-bold text-center">Anbefalinger</p>
@@ -97,24 +88,23 @@
       </div>
     </div><!--ROW END-->
     <hr>
-    <div class="row"> 
+    <div class="row">
       <div class="col-sm col-md-3 col-lg-2 ml-3 colStyling">
-      <h5 class="fw-semibold">Min Info</h5>
-      <hr class="">
-      <!-- <div style="border-bottom: 1px solid black;"></div> -->
-      <span class="fa fa-phone fa-1x"> &nbsp;+ 45 45258596</span> <br>
-      <span class="fa fa-envelope fa-1x">&nbsp; Kasper00@gmail.com</span>
-      <br>
-      <span class="fa fa-user fa-1x">
-        &nbsp;Lidt om mig&nbsp;
-      </span>
-      <div class="text-center border bg-white">
-        Jeg er en fyr på 23 år, der giver et lift fra tid til anden
+        <h5 class="fw-semibold">Min Info</h5>
+        <hr class="">
+        <span class="fa fa-phone fa-1x"> &nbsp;+ 45 45258596</span> <br>
+        <span class="fa fa-envelope fa-1x">&nbsp; Kasper00@gmail.com</span>
+        <br>
+        <span class="fa fa-user fa-1x">
+          &nbsp;Lidt om mig&nbsp;
+        </span>
+        <div class="text-center border bg-white">
+          Jeg er en fyr på 23 år, der giver et lift fra tid til anden
+        </div>
+        <br>
+        <br>
       </div>
-      <br>
-      <br>
-    </div>
-    &nbsp;
+      &nbsp;
       <div class="col-sm col-md-4 col-lg-5 colStyling">
         <h5 class="fw-semibold">Egne biler</h5>
         <hr class="">
@@ -133,21 +123,17 @@
               </div>
               <div class="mr-2">
                 <div class="col-sm text-center">
-                  <button id="" 
-                  type="button" class="btn mr-2" 
-                  style="background-color: rgb(163, 247, 163); color: black;">
-                  <i class="fa fa-solid fa-info"></i>
-                  <!-- <span style="font-size:smaller;">Slet</span> -->
-                </button>
-                </div> 
+                  <button id="" type="button" class="btn mr-2"
+                    style="background-color: rgb(163, 247, 163); color: black;">
+                    <i class="fa fa-solid fa-info"></i>
+                  </button>
+                </div>
                 <br>
                 <div class="col-sm text-center">
-                  <button id="deleteButton" v-on:click="deleteCar(car.carId)" 
-                  type="button" class="btn btn-danger mr-2">
-                  <i class="fa fa-sharp fa-solid fa-trash"></i>
-                  <!-- <span style="font-size:smaller;">Slet</span> -->
-                </button>
-                </div>  
+                  <button id="deleteButton" v-on:click="deleteCar(car.carId)" type="button" class="btn btn-danger mr-2">
+                    <i class="fa fa-sharp fa-solid fa-trash"></i>
+                  </button>
+                </div>
                 {{ deleteMessage }}
                 <br>
               </div>
@@ -157,15 +143,15 @@
         <div class="col-sm pb-3 d-flex justify-content-end">
           <a href="/Pages/AddCar.html" type="button" class="btn btn-secondary ml-4">
             <i class="fa fa-plus"> Opret bil</i>
-        </a>
-        </div>  
-    </div>
-    &nbsp;
+          </a>
+        </div>
+      </div>
+      &nbsp;
       <div class="col-sm col-md-4 colStyling">
         <h5 class="fw-semibold">Bookninger</h5>
         <hr class="">
         <div class="card mb-2 zoom" v-for="car in carArray">
-          <div class="card-body border">            
+          <div class="card-body border">
             <div class="card-text d-flex justify-content-between">
               <div class="col-sm">
                 Dato: <br>
@@ -173,42 +159,40 @@
                 Slut: <br>
               </div>
               <div class="col-sm">
-                {{  parseDate(car.driveDate) }} <br>
+                {{ parseDate(car.driveDate) }} <br>
                 {{ car.startDestination }} <br>
                 {{ car.endDestination }} <br>
                 {{ car.fuelType }} <br>
               </div>
-              
+
               <div class="mr-2">
                 <div class="col-sm text-center">
-                  <button id="" 
-                  type="button" class="btn mr-2" 
-                  style="background-color: rgb(163, 247, 163); color: black;">
-                  <i class="fa fa-solid fa-info"></i>
-                  <!-- <span style="font-size:smaller;">Slet</span> -->
-                </button>
+                  <button id="" type="button" class="btn mr-2"
+                    style="background-color: rgb(163, 247, 163); color: black;">
+                    <i class="fa fa-solid fa-info"></i>
+                  </button>
                   {{deleteMessage}}
                 </div>
                 <br>
                 <div class="col-sm text-center">
-                  <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" 
-                  type="button" class="btn btn-danger mr-2">
-                  <!-- <span style="font-size:smaller;">Slet</span> -->
-                  <i class="fa fa-sharp fa-solid fa-trash"></i>
-                </button>
-                </div>  
+                  <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
+                    class="btn btn-danger mr-2">
+                    <i class="fa fa-sharp fa-solid fa-trash"></i>
+                  </button>
+                </div>
                 {{deleteMessage}}
                 <br>
               </div>
             </div>
-        </div><!--ROW END-->
-          </div> 
-          <div class="col-sm pb-3 d-flex justify-content-end">
-            <a href="/Pages/mineLift.html" type="button" class="btn btn-secondary ml-4">
-              <i class="fa fa-arrow"> < Gå til bookinger</i>
-            </span>
+          </div><!--ROW END-->
+        </div>
+        <div class="col-sm pb-3 d-flex justify-content-end">
+          <a href="/Pages/mineLift.html" type="button" class="btn btn-secondary ml-4">
+            <i class="fa fa-arrow">
+              < Gå til bookinger</i>
+                </span>
           </a>
-          </div> 
+        </div>
         <!-- </div> -->
       </div>
     </div>
@@ -228,11 +212,14 @@
           </div>
           <!-- Section: Social media section -->
           <section class="col-sm text-center">
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+                class="fab fa-facebook-f"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
             <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+                class="fab fa-linkedin-in"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
           </section>
           <div class="p-3 text-white">
@@ -248,4 +235,5 @@
   </div><!--app close-->
   <script src="/createAccount.js"></script>
 </body>
+
 </html>
