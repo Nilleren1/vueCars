@@ -176,12 +176,6 @@ const home = Vue.createApp({
             //console.log("Converted date to:" + convertedDate)
             return convertedDate
         },
-        // parseTime(time) {
-        //     convertedDate = time.slice(11, 16)
-        //     //console.log("Converted date to:" + convertedDate)
-        //     return convertedDate
-        // },
-
     }
 })
 home.mount("#app")

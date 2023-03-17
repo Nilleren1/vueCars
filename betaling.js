@@ -1,29 +1,20 @@
+// const carRidesUrl = "https://localhost:44343/Api/CarRides"
+// const carUrl = "https://localhost:44343/Api/Cars"
 // const accountUrl = "https://localhost:44343/Api/Accounts"
 const baseUrl = "https://apiformitlift69.azurewebsites.net/Api/CarShare"
 
 
-const mineBiler = Vue.createApp({
-    name: '#mineBiler',
+const betaling = Vue.createApp({
+    name: '#betaling',
     data() {
         return {
             cars: [],
-            carId: "",
             addMessage: "",
             deleteMessage: "",
-
-            carData: {
-                accountId: 0,
-                brand: "",
-                model: "",
-                fuelType: ""
-              },
-              accountArray: [],
         }
     },
     created() { // life cycle method. Called when browser reloads page
-       
         this.getAllCars()
-        this.getAllAccounts()
     },
     methods: {
        //istedet for at genskrive koden, gør jeg den mere dry ved at lave en helper
@@ -38,26 +29,13 @@ const mineBiler = Vue.createApp({
                 alert(ex.message) 
             }
         },
-        async getAllAccountsHelper(url){
-            try {//fejl håndtering 
-                const result = await axios.get(url)
-                this.accountArray= result.data
-                console.log(this.accountArray)
-                //console.writeline udskriver til konsollen
-            } catch (ex) {//exception
-                alert(ex.message) 
-            }
-        },
+
         //GET ALL METODER
         getAllCars(){
             console.log("Getting the car get method")
             this.getAllCarsHelper(baseUrl+"/Cars")
         },
-        getAllAccounts(){
-            console.log("Getting the account get method")
-            this.getAllAccountsHelper(baseUrl+"/Accounts")
-        },
-
+       
         async deleteCar(deleteId) {
             const url = baseUrl + "/Cars/" + deleteId
             try {
@@ -72,4 +50,4 @@ const mineBiler = Vue.createApp({
         //GET BY ID METODER
     }
 })
-mineBiler.mount('#mineBiler')
+betaling.mount('#betaling')

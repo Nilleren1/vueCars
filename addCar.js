@@ -1,5 +1,3 @@
-// const carRidesUrl = "https://localhost:44343/Api/CarRides"
-// const carUrl = "https://localhost:44343/Api/Cars"
 // const accountUrl = "https://localhost:44343/Api/Accounts"
 const baseUrl = "https://apiformitlift69.azurewebsites.net/Api/CarShare"
 
