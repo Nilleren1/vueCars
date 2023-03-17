@@ -1,156 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="icon" type="image/x-icon" href="/img/mit lift-logos_black fav_icon.png">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <!-- Add further Bootstrap links-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
-    <!--Vue.js-->
-    <script src="https://unpkg.com/vue@next"></script>
-    <!--Own CSS link-->
-    <link rel="stylesheet" href="../style.css">
-    <title>Betaling</title>
+  <link rel="icon" type="image/x-icon" href="/img/mit lift-logos_black fav_icon.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <!-- Add further Bootstrap links-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+  <!--Vue.js-->
+  <script src="https://unpkg.com/vue@next"></script>
+  <!--Own CSS link-->
+  <link rel="stylesheet" href="../style.css">
+  <title>Betaling</title>
 </head>
+
 <body>
-    <div id="login">
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-md navbar-dark navStyling">
-          <a class="navbar-brand" href="../index.html">
-            <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
-          </a>
-          <a href="../index.html" class="styleNavDropdown">MitLift</a>&nbsp;
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
-              class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-              <!-- <li class="nav-item">
-                <a class="nav-link text-white" href="/Pages/mineLift.html">Find et lift</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
-              </li> -->
-            </ul>
-          </div>
-          <div class="nav-item">
-            <a class="styleNavDropdown mr-3" href="/Pages/login.html"> Log ind </a> <br>
-            <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
-          </div>
-         
-          <div class="navbar position-relative top-0 end-0">
-            <!-- Dropdown -->
-            <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
-              animation-name="example">
-              <img src="/img/Profile Pic Icon.png" width="45" height="50">
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <!-- <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a> -->
-              <!-- <a class="dropdown-item" href="/Pages/mineLift.html">Mine Lift</a> -->
-              <!-- <a class="dropdown-item" href="/Pages/AddCar.html">Tilføj ny Bil</a> -->
-              <a class="dropdown-item" href="/Pages/mineKonto.html">Min side</a>
-              <a class="dropdown-item" href="#">Log ud</a>
-              <a class="dropdown-item" href="#">Hjælp</a>
-            </div>
-          </div>
-        </nav>
-        <style>
-            h1, h4{
-                text-align: center;
-            }
-        </style>
-      <body>
-        <h1>
-            Betalingsform
-        </h1>
-        <div>
-            
-        </div>
-        <div class="container">
-            <h2 class="font-weight-light text-center">Betaling </h2>
-            <div class="form-check">
-              
-                <div class="d-flex justify-content-center">
-                    <input type="checkbox">
-                    <label class="MobilePay" type="checkbox"> Mobilepay  <span class="fa fa-car"></label>
-      
-              </div> 
-            </body>
-      
-            <div class="row">
-              <div class="col-sm">
-                <!--one col-->
-              </div>
-              
-              <div class="col-sm-6 p-3 mb-2 border formStyling">
-                
-                <div class="form-group">
-                    <div class="d-flex justify-content-between">
-                  <label for="MobilePay">Bestilinger -//- </label>
-                  <p>250 kr</p>
-                  
-                  </div>
-                  <label for="phone">TelefonNr: +45</label>
-                  <input type="tel" id="phone" name="phone" pattern="[0-8]{3}-[0-8]{2}-[0-8]{3}">
-            
-                </div>
-                <div class="d-flex justify-content-center">
-                <a type="button" href="" class="btn btn-lg buttonMobilePay">Betal med MobilePay</a>
-                </div>
-                <div class="d-flex justify-content-center">
-                <a type="button" href="../index.html" class="btn backBtnStyle" style="display:flexbox;">Tilbage til booking</a>
-                </div>
-                
-                    
-              </div>
-              <div class="col-sm">
-                <!--third col-->
-              </div>
-            </div>
-    </div>
+  <div id="login">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark navStyling">
+      <a class="navbar-brand" href="../index.html">
+        <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+      </a>
+      <a href="../index.html" class="styleNavDropdown">MitLift</a>&nbsp;
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
+          class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+        </ul>
+      </div>
+      <div class="nav-item">
+        <a class="styleNavDropdown mr-3" href="/Pages/login.html"> Log ind </a> <br>
+        <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
+      </div>
 
-          
-
-
-            
-     
-     
-
-    </div>
-
-
-    <div class="row">
-        <div class="container">
-          <!-- col 12 -->
+      <div class="navbar position-relative top-0 end-0">
+        <!-- Dropdown -->
+        <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
+          animation-name="example">
+          <img src="/img/Profile Pic Icon.png" width="45" height="50">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="/Pages/mineKonto.html">Min side</a>
+          <a class="dropdown-item" href="#">Log ud</a>
+          <a class="dropdown-item" href="#">Hjælp</a>
         </div>
       </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br><br>
-      <br>
-      <br><br>
-      <br>
-      <br><br>
-      <br>
-      <br><br>
-      <br>
-      
-      <!--FOOTER-->
-    <footer id="footer" class="footerStyling">
-      <div class="container-fluid p-1">
-        <div class="row">
+    </nav>
+    <style>
+      h1,
+      h4 {
+        text-align: center;
+      }
+    </style>
+
+    <body>
+      <h1>
+        Betalingsform
+      </h1>
+      <div>
+
+      </div>
+      <div class="container">
+        <h2 class="font-weight-light text-center">Betaling </h2>
+        <div class="form-check">
+
+          <div class="d-flex justify-content-center">
+            <input type="checkbox">
+            <label class="MobilePay" type="checkbox"> Mobilepay <span class="fa fa-car"></label>
+
+          </div>
+    </body>
+
+    <div class="row">
+      <div class="col-sm">
+      </div>
+
+      <div class="col-sm-6 p-3 mb-2 border formStyling">
+
+        <div class="form-group">
+          <div class="d-flex justify-content-between">
+            <label for="MobilePay">Bestilinger -//- </label>
+            <p>250 kr</p>
+
+          </div>
+          <label for="phone">TelefonNr: +45</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-8]{3}-[0-8]{2}-[0-8]{3}">
+
+        </div>
+        <div class="d-flex justify-content-center">
+          <a type="button" href="" class="btn btn-lg buttonMobilePay">Betal med MobilePay</a>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a type="button" href="../index.html" class="btn backBtnStyle" style="display:flexbox;">Tilbage til
+            booking</a>
+        </div>
+
+
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  </div>
+
+
+  <div class="row">
+    <div class="container">
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br><br>
+  <br>
+  <br><br>
+  <br>
+  <br><br>
+  <br>
+  <br><br>
+  <br>
+
+  <!--FOOTER-->
+  <footer id="footer" class="footerStyling">
+    <div class="container-fluid p-1">
+      <div class="row">
         <div class="text-white p-3">
           Kontakt os <br>
           © 2023 Copyright: <br>
@@ -158,16 +151,14 @@
         </div>
         <!-- Section: Social media section -->
         <section class="col text-center">
-          <a class="btn btn-outline-light btn-floating m-3" 
-          href="#!" role="button"><i
+          <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
               class="fab fa-facebook-f"></i></a>
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
           <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
           <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
               class="fab fa-linkedin-in"></i></a>
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" 
-          role="button"><i class="fab fa-github"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
         </section>
         <div class="p-3 text-white">
           <a class="text-white" href="/Pages/omOs.html">Om os</a> <br>
@@ -175,13 +166,11 @@
         </div>
       </div>
     </div>
-    </footer>
-    <!-- Footer END -->
-      
-    </div><!--app close-->
-    <script src=""></script>
+  </footer>
+  <!-- Footer END -->
+
+  </div><!--app close-->
+  <script src=""></script>
 </body>
+
 </html>
-
-
-

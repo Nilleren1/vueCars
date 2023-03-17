@@ -25,69 +25,36 @@
 
 <body>
   <div id="mineBiler">
-      <!-- NAVBAR -->
-      <nav class="navbar navbar-expand-md navbar-dark navStyling">
-        <a class="navbar-brand" href="../index.html">
-          <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark navStyling">
+      <a class="navbar-brand" href="../index.html">
+        <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
+      </a>
+      <a href="../index.html" class="styleNavDropdown">MitLift</a>&nbsp;
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
+          class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+        </ul>
+      </div>
+      <div class="nav-item">
+        <a class="styleNavDropdown mr-3" href="/Pages/login.html"> Log ind </a> <br>
+        <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
+      </div>
+      <div class="navbar position-relative top-0 end-0">
+        <!-- Dropdown -->
+        <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
+          animation-name="example">
+          <img src="/img/Profile Pic Icon.png" width="45" height="50">
         </a>
-        <a href="../index.html" class="styleNavDropdown">MitLift</a>&nbsp;
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
-            class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <!-- <li class="nav-item">
-              <a class="nav-link text-white" href="/Pages/mineLift.html">Find et lift</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="/Pages/addLift.html">Opret et lift</a>
-            </li> -->
-          </ul>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="/Pages/mineKonto.html">Min side</a>
+          <a class="dropdown-item" href="#">Log ud</a>
+          <a class="dropdown-item" href="#">Hjælp</a>
         </div>
-        <div class="nav-item">
-          <a class="styleNavDropdown mr-3" href="/Pages/login.html"> Log ind </a> <br>
-          <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
-        </div>
-       
-        <!--NAV SHOW/HIDE BTN-->
-        <!-- <div class="navbar position-relative top-0 end-0">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
-  
-              <div v-if="!email">
-                <script>
-                  function myFunction() {
-                    document.getElementById("mainFrameOne").style.display = "none";
-                    document.getElementById("mainFrameTwo").style.display = "block";
-                  }
-                </script>
-                <a id="mainFrameOne" onclick="myFunction()" href="/Pages/login.html"> Log ind </a> <br>
-                <a id="mainFrameTwo" onclick="myFunction()" href="index.html" style="display:none;"> Log ud </a>
-                <a class="styleNavDropdown" href="/Pages/login.html">Log ind</a> <br> -->
-              <!--/div>
-              <div v-if="email">
-                <button class="styleNavDropdown" @click="logud">Log ud</button>
-              </div>
-            </li>
-          </ul>
-        </div--> 
-        <div class="navbar position-relative top-0 end-0">
-          <!-- Dropdown -->
-          <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
-            animation-name="example">
-            <img src="/img/Profile Pic Icon.png" width="45" height="50">
-          </a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <!-- <a class="dropdown-item" href="/Pages/mineBiler.html">Mine Biler</a> -->
-            <!-- <a class="dropdown-item" href="/Pages/mineLift.html">Mine Lift</a> -->
-            <!-- <a class="dropdown-item" href="/Pages/AddCar.html">Tilføj ny Bil</a> -->
-            <a class="dropdown-item" href="/Pages/mineKonto.html">Min side</a>
-            <a class="dropdown-item" href="#">Log ud</a>
-            <a class="dropdown-item" href="#">Hjælp</a>
-          </div>
-        </div>
-      </nav><!--NAV SLUT-->
+      </div>
+    </nav><!--NAV SLUT-->
 
     <!-- Body -->
     <!--NEW ROW WITH DATA-->
@@ -96,52 +63,45 @@
         <!-- col-1 -->
       </div>
       <div class="col-4 container">
-     <h3>Mine biler</h3>
-      <br>
+        <h3>Mine biler</h3>
+        <br>
         <div v-for="car in cars" class="card">
           <div class="card-body bg-light m-2">
             <h5 class="card-title">
               Bil: {{ car.carId }} - {{car.model}}
             </h5>
             <h6>
-               Account: {{ car.accountId }} <!-- {{car.account}} <- få email herind -->
+              Account: {{ car.accountId }} <!-- {{car.account}} <- få email herind -->
             </h6>
             <p class="card-text">
               Brand: {{ car.brand }} <br>
               Model: {{ car.model }} <br>
               Fuel type: {{ car.fuelType }}
-              <div>
-                <button id="deleteButton" v-on:click="deleteCar(car.carId)" 
-                type="button" class="btn btn-outline-danger mr-2">Slet</button>
-              <button id="" v-on:click="" type="button" 
-                class="btn btn-outline-primary">Ret</button>
-              </div>           
+            <div>
+              <button id="deleteButton" v-on:click="deleteCar(car.carId)" type="button"
+                class="btn btn-outline-danger mr-2">Slet</button>
+              <button id="" v-on:click="" type="button" class="btn btn-outline-primary">Ret</button>
+            </div>
             </p>
           </div>
         </div>
-        <!-- <p v-else>
-            Error! No cars
-        </p> -->
         {{deleteMessage}}
       </div>
-        
-        
-            <div class="col-4">
-          <!-- col-2 -->
-        </div>
-        </div>
-      
-        <!-- <iframe style="border: 1px solid black;" class="margin3" width="560" height="315" src="https://www.youtube.com/embed/vZmCJv2cjN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-      <div class="row" style="margin:auto">
-        <div class="container">
-          <!-- col 12 -->
-        </div>
+
+
+      <div class="col-4">
       </div>
-      <br>
-      <br>
-      <br>
-     <!--FOOTER-->
-     <footer id="footer" class="footerStyling">
+    </div>
+
+    <div class="row" style="margin:auto">
+      <div class="container">
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!--FOOTER-->
+    <footer id="footer" class="footerStyling">
       <div class="container-fluid p-1">
         <div class="row" style="margin:auto">
           <div class="text-white p-3">
@@ -151,11 +111,14 @@
           </div>
           <!-- Section: Social media section -->
           <section class="col-sm text-center">
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+                class="fab fa-facebook-f"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
             <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
+                class="fab fa-linkedin-in"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
           </section>
           <div class="p-3 text-white">
@@ -167,8 +130,9 @@
       </div>
     </footer>
     <!-- FOOTER END -->
-      
-    </div><!--app close-->
-    <script src="/mineBiler.js"></script>
+
+  </div><!--app close-->
+  <script src="/mineBiler.js"></script>
 </body>
+
 </html>
