@@ -63,7 +63,7 @@ const login = Vue.createApp({
                 headers: { "Content-Type": "multipart/form-data" },
               })
                 .then(function (response) {
-                    location.href="/Pages/mineKonto.html"
+                    location.href="/Pages/betaling.html"
                   //handle success
                   console.log(response);
                 })
@@ -72,16 +72,6 @@ const login = Vue.createApp({
                   console.error(response);
                 });
         },
-        // async deleteAccount(deleteId) {
-        //     const url = baseUrl + "/Accounts/" + deleteId
-        //     try {
-        //         response = await axios.delete(url)
-        //         this.deleteMessage = response.status + " " + response.statusText
-        //         this.getAllAccounts()
-        //     } catch (ex) {
-        //         alert(ex.message)
-        //     }
-        // },
     }
 })
 login.mount("#login")
