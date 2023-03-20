@@ -164,7 +164,7 @@
                   </button>
                 </div>
                 <br> 
-                <!-- {{ car.carId }} -->
+                {{ car.carId }}
                 <!-- Button Triggers Modal -->
                 <div class="col-sm text-center">
                   <button id="deleteButton" 
@@ -177,6 +177,7 @@
                 </div>
                 <!-- {{ deleteMessage }} -->
                 <br>
+
               </div>
             </div>
           </div>
@@ -188,18 +189,6 @@
         </div>
       </div>
       &nbsp;
-       <!-- Modal V2 Bookinger -->
-       <div class="deletemodal" ref="deleteModal">
-        <div class="modal-content">
-          <h5 class="fw-semibold">Er du sikker på at den skal slettes?</h5>
-          <button type="button" 
-          class="btn btn-danger" style="margin: 5px;"
-          v-on:click="deleteCarRide(); hideDeleteModal()">Ja</button>
-            <button type="button" class="btn btn-dark" style="margin: 5px;"
-             v-on:click="hideDeleteModal()">Anuller</button>
-        </div>
-      </div>
-
       <div class="col-sm col-md-4 colStyling">
         <h5 class="fw-semibold">Bookninger</h5>
         <hr class="">
@@ -226,19 +215,19 @@
                   </button>
                 </div>
                 <br>
-                <!--Button show modal trigger
-                v-on:click="deleteCarRide(car.carRideId)" type="button"
-                -->
                 {{ car.carRideId }}
+                <!-- Button Triggers Modal -->
+              
                 <div class="col-sm text-center">
                   <button id="deleteButton" 
-                  v-on:click="showDeleteModal(); this.deleteCarRideId = car.carRideId" 
+                  v-on:click="showDeleteModal();
+                  this.deleteCarRideId = car.carRideId" 
                   type="button"
-                  class="btn btn-danger mr-2">
+                    class="btn btn-danger mr-2">
                     <i class="fa fa-sharp fa-solid fa-trash"></i>
                   </button>
                 </div>
-                <!-- {{deleteMessage}} -->
+                {{deleteMessage}}
                 <br>
                 
               </div>
