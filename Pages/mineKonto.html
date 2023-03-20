@@ -106,7 +106,7 @@
       </div>
       &nbsp;
        <!-- Modal -->
-       <div class="modal" id="exampleModal">
+       <!-- <div class="modal" id="exampleModal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -118,30 +118,27 @@
               </button>
             </div>
             {{ carData }}
-
-            <div class="modal-body" v-for="car in cars">
-              {{ car.accountId }} <br>
-              {{ car.model }} <br>
-              {{ car.brand }} <br>
-            </div>
             <div class="modal-footer">
-              <button id="deleteButton" 
-              v-on:click="deleteCar(car.carId)" 
-              type="button" 
-              class="btn btn-primary"
-              data-dismiss="modal">
+              <button class="btn btn-primary"
+              v-on:click="deleteCar(carId); hideDeleteModal()">
                 Slet den bil
               </button>
             </div>
           </div>
         </div>
+      </div> -->
+      <!-- Modal V2 -->
+      <div class="deletemodal" ref="deleteModal">
+        <div class="modal-content">
+          <h5 class="fw-semibold">Er du sikker på at den skal slettes?</h5>
+          <button type="button" 
+          class="btn btn-danger" style="margin: 5px;"
+          v-on:click="deleteCar(); hideDeleteModal()">Ja</button>
+            <button type="button" class="btn btn-dark" style="margin: 5px;"
+             v-on:click="hideDeleteModal()">Anuller</button>
+        </div>
       </div>
-      <script>
-        $(document).ready(function () {
-        $("#exampleModal").modal({ backdrop: "static" });
-        $("#exampleModal").modal('show');
-        });
-      </script>
+     
       <div class="col-sm col-md-4 col-lg-5 colStyling">
         <h5 class="fw-semibold">Egne biler</h5>
         <hr class="">
@@ -166,27 +163,20 @@
                     <i class="fa fa-solid fa-info"></i>
                   </button>
                 </div>
-                <br>
-                <div class="col-sm text-center">
-                  <button id="deleteButton" v-on:click="deleteCar(car.carId)" type="button" class="btn btn-danger mr-2">
-                    <i class="fa fa-sharp fa-solid fa-trash"></i>
-                  </button>
-                </div>
-                {{ deleteMessage }}
-                <br>
-                <!--MODAL-->
+                <br> 
+                <!-- {{ car.carId }} -->
                 <!-- Button Triggers Modal -->
                 <div class="col-sm text-center">
                   <button id="deleteButton" 
-                  data-toggle="modal" 
-                  data-target="#exampleModal" 
-                  type="button"
-                    class="btn btn-primary mr-2">
-                    Slet
+                  v-on:click="showDeleteModal();
+                  this.carToDeleteId = car.carId"  
+                  type="button" 
+                  class="btn btn-danger mr-2">
+                    <i class="fa fa-sharp fa-solid fa-trash"></i>
                   </button>
-                 
                 </div>
-                <!--MODAL SLUT-->
+                <!-- {{ deleteMessage }} -->
+                <br>
               </div>
             </div>
           </div>
@@ -198,6 +188,18 @@
         </div>
       </div>
       &nbsp;
+       <!-- Modal V2 Bookinger -->
+       <div class="deletemodal" ref="deleteModal">
+        <div class="modal-content">
+          <h5 class="fw-semibold">Er du sikker på at den skal slettes?</h5>
+          <button type="button" 
+          class="btn btn-danger" style="margin: 5px;"
+          v-on:click="deleteCarRide(); hideDeleteModal()">Ja</button>
+            <button type="button" class="btn btn-dark" style="margin: 5px;"
+             v-on:click="hideDeleteModal()">Anuller</button>
+        </div>
+      </div>
+
       <div class="col-sm col-md-4 colStyling">
         <h5 class="fw-semibold">Bookninger</h5>
         <hr class="">
@@ -222,17 +224,23 @@
                     style="background-color: rgb(163, 247, 163); color: black;">
                     <i class="fa fa-solid fa-info"></i>
                   </button>
-                  {{deleteMessage}}
                 </div>
                 <br>
+                <!--Button show modal trigger
+                v-on:click="deleteCarRide(car.carRideId)" type="button"
+                -->
+                {{ car.carRideId }}
                 <div class="col-sm text-center">
-                  <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
-                    class="btn btn-danger mr-2">
+                  <button id="deleteButton" 
+                  v-on:click="showDeleteModal(); this.deleteCarRideId = car.carRideId" 
+                  type="button"
+                  class="btn btn-danger mr-2">
                     <i class="fa fa-sharp fa-solid fa-trash"></i>
                   </button>
                 </div>
-                {{deleteMessage}}
+                <!-- {{deleteMessage}} -->
                 <br>
+                
               </div>
             </div>
           </div><!--ROW END-->
