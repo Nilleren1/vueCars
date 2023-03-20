@@ -40,6 +40,8 @@ const createAccount = Vue.createApp({
                 availableSeats: 0,
                 isFull: false,
               },
+              carRideToDelete: null,
+              carToDeleteId: null,
         }
     },
     created() { // life cycle method. Called when browser reloads page
@@ -90,6 +92,7 @@ const createAccount = Vue.createApp({
          getAllCars(){
             console.log("Getting the car get method")
             this.getAllCarsHelper(baseUrl+"/Cars")
+            console.log(this.cars)
         },
         getAllRides(){
             console.log("Getting the car ride get method")
@@ -136,8 +139,9 @@ const createAccount = Vue.createApp({
                 alert(ex.message)
             }
         },
-        async deleteCar(deleteId) {
-            const url = baseUrl + "/Cars/" + deleteId
+        async deleteCar() {
+            console.log(this.carToDeleteId)
+            const url = baseUrl + "/Cars/" + this.carToDeleteId
             try {
                 response = await axios.delete(url)
                 this.deleteMessage = response.status + " " + response.statusText
@@ -146,8 +150,9 @@ const createAccount = Vue.createApp({
                 alert(ex.message)
             }
         },
-        async deleteCarRide(deleteId) {
-            const url = baseUrl + "/CarRides/" + deleteId
+        async deleteCarRide() {
+            console.log(this.deleteCarRideId)
+            const url = baseUrl + "/CarRides/" + this.deleteCarRideId
             try {
                 response = await axios.delete(url)
                 this.deleteMessage = response.status + " " + response.statusText
@@ -169,7 +174,16 @@ const createAccount = Vue.createApp({
         
         modalId(i) {
             return 'modal' + i;
-        }
+        }, 
+        showDeleteModal(){
+            this.$refs.deleteModal.style.display = "block"
+            console.log(this.carToDelete)
+            
+        },
+        hideDeleteModal(){
+            this.$refs.deleteModal.style.display = "none"
+        },
+
     }
 })
 createAccount.mount("#createAccount")
