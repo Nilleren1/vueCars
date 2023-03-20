@@ -42,6 +42,7 @@ const createAccount = Vue.createApp({
               },
               carRideToDelete: null,
               carToDeleteId: null,
+              deleteCarRideId: null,
         }
     },
     created() { // life cycle method. Called when browser reloads page
@@ -97,6 +98,7 @@ const createAccount = Vue.createApp({
         getAllRides(){
             console.log("Getting the car ride get method")
             this.getAllCarRidesHelper(baseUrl+"/CarRides")
+            console.log(this.carArray)
         },
         //POST METODER
         async postAccount(){
