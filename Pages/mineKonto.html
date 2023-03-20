@@ -105,9 +105,47 @@
         <br>
       </div>
       &nbsp;
+       <!-- Modal -->
+       <div class="modal" id="exampleModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="titel">
+                Er du helt sikker på at du vil slette bilen?</h5>
+              <button type="button" class="close" 
+              data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {{ carData }}
+
+            <div class="modal-body" v-for="car in cars">
+              {{ car.accountId }} <br>
+              {{ car.model }} <br>
+              {{ car.brand }} <br>
+            </div>
+            <div class="modal-footer">
+              <button id="deleteButton" 
+              v-on:click="deleteCar(car.carId)" 
+              type="button" 
+              class="btn btn-primary"
+              data-dismiss="modal">
+                Slet den bil
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $(document).ready(function () {
+        $("#exampleModal").modal({ backdrop: "static" });
+        $("#exampleModal").modal('show');
+        });
+      </script>
       <div class="col-sm col-md-4 col-lg-5 colStyling">
         <h5 class="fw-semibold">Egne biler</h5>
         <hr class="">
+        
         <div class="card mb-2 zoom" v-for="car in cars">
           <div class="card-body border">
             <div class="card-text d-flex justify-content-between">
@@ -136,6 +174,19 @@
                 </div>
                 {{ deleteMessage }}
                 <br>
+                <!--MODAL-->
+                <!-- Button Triggers Modal -->
+                <div class="col-sm text-center">
+                  <button id="deleteButton" 
+                  data-toggle="modal" 
+                  data-target="#exampleModal" 
+                  type="button"
+                    class="btn btn-primary mr-2">
+                    Slet
+                  </button>
+                 
+                </div>
+                <!--MODAL SLUT-->
               </div>
             </div>
           </div>

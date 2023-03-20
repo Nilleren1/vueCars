@@ -21,6 +21,7 @@ const createAccount = Vue.createApp({
              //Car - egne biler
               cars: [],
               carId: "",
+
               carData: {
                 accountId: 0,
                 brand: "",
@@ -165,6 +166,10 @@ const createAccount = Vue.createApp({
             console.log("Converted date to:" + convertedDate)
             return convertedDate
         },
+        
+        modalId(i) {
+            return 'modal' + i;
+        }
     }
 })
 createAccount.mount("#createAccount")
