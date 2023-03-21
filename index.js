@@ -11,7 +11,16 @@ const home = Vue.createApp({
         return {
             carrideArray: [],
             filteredData: [],
-            addData: { carRideId: 0, driveDate: "", startDestination: "", endDestination: "", price: 0, availableSeats: 0, isFull: false, cars: null },
+            addData: { 
+                carRideId: 0, 
+                driveDate: "", 
+                startDestination: "", 
+                endDestination: "", 
+                price: 0, 
+                availableSeats: 0, 
+                isFull: false, 
+                cars: null 
+            },
             error: null,
             // filter: [],
             carRideId: 0,
