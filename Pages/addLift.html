@@ -27,7 +27,7 @@
   <div id="addLift">
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md navbar-dark navStyling">
-      <a class="navbar-brand" href="../index.html">
+      <a id="Logo" class="navbar-brand" href="../index.html">
         <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
       </a>
       <a href="../index.html" class="styleNavDropdown">MitLift</a>&nbsp;
@@ -67,12 +67,12 @@
           <div class="row" style="margin:auto">
             <div class="col-sm">
               <label for="Pris">Pris</label>
-              <input type="number" class="form-control" v-model="addData.price" type="number" min="0"
+              <input id="Pris" type="number" class="form-control" v-model="addData.price" type="number" min="0"
                 placeholder="Indtast Pris">
             </div>
             <div class="col-sm">
               <label for="DatoForAfkørsel">Afkørsel & Tidspunkt</label>
-              <input class="form-control" v-model="addData.driveDate" placeholder="driveDate" type="datetime-local"
+              <input id="Dato" class="form-control" v-model="addData.driveDate" placeholder="driveDate" type="datetime-local"
                 placeholder="Dato for afkørsel">
             </div>
           </div>
@@ -80,12 +80,12 @@
           <div class="row" style="margin:auto">
             <div class="col-sm">
               <label for="start destination">Start destination</label>
-              <input type="text" class="form-control" v-model="addData.startDestination"
+              <input id="startDestination" type="text" class="form-control" v-model="addData.startDestination"
                 placeholder="Start destination">
             </div>
             <div class="col-sm">
               <label for="slut destination">Slut destination</label>
-              <input type="text" class="form-control" v-model="addData.endDestination" placeholder="Slut destination">
+              <input id="endDestination" type="text" class="form-control" v-model="addData.endDestination" placeholder="Slut destination">
             </div>
           </div>
           &nbsp;
@@ -98,7 +98,7 @@
 
             <div class="col-sm-6 form-group">
               <label for="carId">Vælg bil model</label>
-              <select class="form-control" name="carId" v-model="addData.carId">
+              <select id="vælgBil" class="form-control" name="carId" v-model="addData.carId">
                 <option v-bind:value="car.carId" v-for="car in carArray">{{car.model}}</option>
               </select>
             </div>
@@ -111,9 +111,9 @@
           <br>
           <br>
           <div class="d-flex justify-content-end">
-            <button type="button" v-on:click="postCarRides()" class="btn logindBtnStyle">Opret</button>
+            <button id="opretBil" href="/index.html" type="button" v-on:click="postCarRides()" class="btn logindBtnStyle">Opret</button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="/index.html"><button type="button" class="btn backBtnStyle">Tilbage</button></a>
+            <a  href="/index.html"><button type="button" class="btn backBtnStyle">Tilbage</button></a>
           </div>
         </div>
         <div class="col-sm">
