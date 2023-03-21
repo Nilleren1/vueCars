@@ -177,11 +177,20 @@ const createAccount = Vue.createApp({
         }, 
         showDeleteModal(){
             this.$refs.deleteModal.style.display = "block"
-            console.log(this.carToDelete)
+            console.log(this.carRideToDelete)
             
         },
         hideDeleteModal(){
             this.$refs.deleteModal.style.display = "none"
+        },
+        //CAR
+        showCarDeleteModal(){
+            this.$refs.deleteCarModal.style.display = "block"
+            console.log(this.carToDelete)
+            
+        },
+        hideCarDeleteModal(){
+            this.$refs.deleteCarModal.style.display = "none"
         },
 
     }
