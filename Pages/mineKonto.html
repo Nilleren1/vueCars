@@ -128,22 +128,22 @@
         </div>
       </div> -->
       <!-- Modal V2 -->
-      <div class="deletemodal" ref="deleteModal">
+      <div class="deleteCarModal" ref="deleteCarModal">
         <div class="modal-content">
-          <h5 class="fw-semibold">Er du sikker på at den skal slettes?</h5>
+          <h5 class="fw-semibold">Er du sikker på at bilen skal slettes?</h5>
           <button type="button" 
           class="btn btn-danger" style="margin: 5px;"
-          v-on:click="deleteCar(); hideDeleteModal()">Ja</button>
+          v-on:click="deleteCar(); hideCarDeleteModal()">Ja</button>
             <button type="button" class="btn btn-dark" style="margin: 5px;"
-             v-on:click="hideDeleteModal()">Anuller</button>
+             v-on:click="hideCarDeleteModal()">Annuller</button>
         </div>
       </div>
      
       <div class="col-sm col-md-4 col-lg-5 colStyling">
         <h5 class="fw-semibold">Egne biler</h5>
         <hr class="">
-        
-        <div class="card mb-2 zoom" v-for="car in cars">
+        <div class="card mb-2 zoom" 
+        v-for="car in cars">
           <div class="card-body border">
             <div class="card-text d-flex justify-content-between">
               <div class="col-sm">
@@ -164,11 +164,11 @@
                   </button>
                 </div>
                 <br> 
-                <!-- {{ car.carId }} -->
+                {{ car.carId }}
                 <!-- Button Triggers Modal -->
                 <div class="col-sm text-center">
                   <button id="deleteButton" 
-                  v-on:click="showDeleteModal();
+                  v-on:click="showCarDeleteModal();
                   this.carToDeleteId = car.carId"  
                   type="button" 
                   class="btn btn-danger mr-2">
@@ -191,7 +191,7 @@
        <!-- Modal V2 Bookinger -->
        <div class="deletemodal" ref="deleteModal">
         <div class="modal-content">
-          <h5 class="fw-semibold">Er du sikker på at den skal slettes?</h5>
+          <h5 class="fw-semibold">Er du sikker på at din booking skal slettes?</h5>
           <button type="button" 
           class="btn btn-danger" style="margin: 5px;"
           v-on:click="deleteCarRide(); hideDeleteModal()">Ja</button>
@@ -203,7 +203,8 @@
       <div class="col-sm col-md-4 colStyling">
         <h5 class="fw-semibold">Bookninger</h5>
         <hr class="">
-        <div class="card mb-2 zoom" v-for="car in carArray">
+        <div class="card mb-2 zoom" 
+        v-for="carRide in carArray">
           <div class="card-body border">
             <div class="card-text d-flex justify-content-between">
               <div class="col-sm">
@@ -212,10 +213,10 @@
                 Slut: <br>
               </div>
               <div class="col-sm">
-                {{ parseDate(car.driveDate) }} <br>
-                {{ car.startDestination }} <br>
-                {{ car.endDestination }} <br>
-                {{ car.fuelType }} <br>
+                {{ parseDate(carRide.driveDate) }} <br>
+                {{ carRide.startDestination }} <br>
+                {{ carRide.endDestination }} <br>
+                {{ carRide.fuelType }} <br>
               </div>
 
               <div class="mr-2">
@@ -229,10 +230,10 @@
                 <!--Button show modal trigger
                 v-on:click="deleteCarRide(car.carRideId)" type="button"
                 -->
-                {{ car.carRideId }}
+                {{ carRide.carRideId }}
                 <div class="col-sm text-center">
                   <button id="deleteButton" 
-                  v-on:click="showDeleteModal(); this.deleteCarRideId = car.carRideId" 
+                  v-on:click="showDeleteModal(); this.deleteCarRideId = carRide.carRideId" 
                   type="button"
                   class="btn btn-danger mr-2">
                     <i class="fa fa-sharp fa-solid fa-trash"></i>
