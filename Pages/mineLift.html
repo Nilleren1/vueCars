@@ -30,7 +30,7 @@
       <a class="navbar-brand" href="../index.html">
         <img style="height: 60px; width: auto;" src="/img/mit lift-logos_transparent.png" alt="png">
       </a>
-      <a href="../index.html" class="styleNavDropdown">MitLift</a>&nbsp;
+      <a id="MitLift" href="../index.html" class="styleNavDropdown">MitLift</a>&nbsp;
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
           class="navbar-toggler-icon"></span>
       </button>
@@ -67,10 +67,6 @@
         <!--COL 1-->
       </div>
       <div style="background-color: rgb(240, 240, 240);" class="col-10 border p-3 frontpageBackStyling">
-        <div class="container mb-4">
-          <button class="sortOrderBtn" v-on:click="SortByPrice">Pris: Lavest-Højest</button>
-          <button class="sortOrderBtn" v-on:click="SortByPriceDesc">Pris: Højest-Lavest</button>
-        </div>
         <form>
           <div class="form-row" style="margin:auto">
             <div class="col-sm-3 mb-2 ml-5 d-flex justify-content-start">
@@ -83,17 +79,31 @@
                 class="form-control text-white" id="til" placeholder="Til..." required v-model="endDestination">
               <div class="valid-feedback"></div>
             </div>
-            <div class="col-md-3 mb-2 ml-4 d-flex justify-content-end">
+            <div class="col-md-3 ml-3 ">
               <input style="background-color: rgb(0, 0, 0); max-width: 200px;" type="datetime-local"
                 class="form-control text-white datetime" id="dato" placeholder="Dato" value="Dato" required>
               <div class="valid-feedback"></div>
             </div>
+
+            <div class="col-sm">
+              <div class="btn-group dropdown">
+                <button style="background-color: black; border-radius: 30%;" type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sorter
+                </button>
+                <div class="dropdown-menu">
+                  <!-- Dropdown menu items -->
+                  <p class="orderBtn" v-on:click="SortByPrice">Pris: Lavest-Højest</p>
+                  <p class="orderBtn" v-on:click="SortByPriceDesc">Pris: Højest-Lavest</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </form>
         <br>
         <a v-on:click="FilteredGetAllCarRides(startDestination, endDestination)"
-          class="container btn btn-primary mainButton btn-md btn-block p-1" role="button">
-          <span style="font-size:larger;">Søg Lift</span>
+          class="container btn zoom mainButton btn-md btn-block p-1" role="button">
+          <span style="font-size:larger; font-weight: 500;">Søg Lift</span>
         </a>
       </div>
       <div class="col-1">
@@ -104,7 +114,7 @@
     <br>
 
     <!--NEW ROW WITH CARDS-->
-    <div class="row" style="margin:auto">
+    <div id="Card" class="row" style="margin:auto">
       <div class="col-1">
         <!--col 1-->
       </div>
@@ -113,7 +123,7 @@
         <div class="card mb-2 zoom" v-for="car in carrideArray">
           <!--HER ER REDIRECT TIL DETALJESIDEN-->
           <!--Data is stored in key/value format - ?id=1-->
-          <a v-on:click="redirectToDetalje(car.carRideId)" style="color:black">
+          <a id="CardInfo" v-on:click="redirectToDetalje(car.carRideId)" style="color:black">
             <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
               <div class="card-text d-flex justify-content-between">
                 <div class="card-text m-1">
@@ -225,5 +235,4 @@
   </div>
   <script src="/index.js"></script>
 </body>
-
 </html>
