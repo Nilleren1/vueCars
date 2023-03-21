@@ -146,6 +146,19 @@ const home = Vue.createApp({
             }
         },
 
+        //DELETE METODER
+        async deleteCarRide(deleteCarRideId) {
+            console.log(this.deleteCarRideId)
+            const url = baseUrl + "/CarRides/" + deleteCarRideId
+            try {
+                response = await axios.delete(url)
+                this.deleteMessage = response.status + " " + response.statusText
+                this.getAllRides()
+            } catch (ex) {
+                alert(ex.message)
+            }
+        },
+
         //FILTER
         SortByPrice() {
             this.carrideArray.sort((data1, data2) => data1.price - data2.price)
