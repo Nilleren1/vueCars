@@ -42,7 +42,6 @@
         <a class="styleNavDropdown mr-3" href="/Pages/login.html"> Log ind </a> <br>
         <a class="styleNavDropdown mr-3" href="/Pages/createAccount.html">Opret konto</a>
       </div>
-
       <div class="navbar position-relative top-0 end-0">
         <!-- Dropdown -->
         <a class="dropdown-toggle styleNavDropdown" href="#" id="navbardrop2" data-toggle="dropdown"
@@ -55,8 +54,9 @@
           <a class="dropdown-item" href="#">Hjælp</a>
         </div>
       </div>
-    </nav>
+    </nav><!--NAV SLUT-->
 
+    <!--HEADER COL-->
     <div class="row" style="margin: auto">
       <div class="col-sm text-center">
         <img class="rounded-circle responsive m-4" src="/img/RandomPerson.png"
@@ -69,7 +69,6 @@
           <span class="fa fa-star"></span>
         </h6>
         <h6 class="text-center">Kasper Øland</h6> <br>
-
       </div>
       <div class="col-sm m-1">
         <span class="d-flex justify-content-center" style="font-size:400%; color:yellow;">&bigstar;</span>
@@ -86,8 +85,10 @@
         <p class="font-weight-bold text-center">3</p>
         <p class="font-weight-bold text-center">CO2 besparelse i kg</p>
       </div>
-    </div><!--ROW END-->
+    </div>
+    <!--HEADER ROW END-->
     <hr>
+    <!--HEADER ROW 2 -->
     <div class="row">
       <div class="col-sm col-md-3 col-lg-2 ml-3 colStyling">
         <h5 class="fw-semibold">Min Info</h5>
@@ -105,29 +106,7 @@
         <br>
       </div>
       &nbsp;
-       <!-- Modal -->
-       <!-- <div class="modal" id="exampleModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="titel">
-                Er du helt sikker på at du vil slette bilen?</h5>
-              <button type="button" class="close" 
-              data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            {{ carData }}
-            <div class="modal-footer">
-              <button class="btn btn-primary"
-              v-on:click="deleteCar(carId); hideDeleteModal()">
-                Slet den bil
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- Modal V2 -->
+      <!-- Modal Car Delete -->
       <div class="deleteCarModal" ref="deleteCarModal">
         <div class="modal-content">
           <h5 class="fw-semibold">Er du sikker på at bilen skal slettes?</h5>
@@ -138,7 +117,6 @@
              v-on:click="hideCarDeleteModal()">Annuller</button>
         </div>
       </div>
-     
       <div class="col-sm col-md-4 col-lg-5 colStyling">
         <h5 class="fw-semibold">Egne biler</h5>
         <hr class="">
@@ -147,25 +125,26 @@
           <div class="card-body border">
             <div class="card-text d-flex justify-content-between">
               <div class="col-sm">
-                Bil Model: <br>
-                Bil Mærke: <br>
+                Bil brand: <br>
+                Bil model: <br>
                 Brændstof: <br>
               </div>
               <div class="col-sm">
-                {{ car.model }} <br>
-                {{car.brand}} <br>
+                {{ car.brand }} <br>
+                {{car.model}} <br>
                 {{car.fuelType}} <br>
               </div>
               <div class="mr-2">
                 <div class="col-sm text-center">
                   <button id="" type="button" class="btn mr-2"
-                    style="background-color: #74c574; color: black;">
+                  v-on:click="redirectToInfoDetaljeCar(car.carId)"
+                    style="background-color: rgb(163, 247, 163); color: black;">
                     <i class="fa fa-solid fa-info"></i>
                   </button>
                 </div>
                 <br> 
-                {{ car.carId }}
-                <!-- Button Triggers Modal -->
+                <!-- {{ car.carId }} -->
+                <!-- Button Triggers Modal Delete -->
                 <div class="col-sm text-center">
                   <button id="deleteButton" 
                   v-on:click="showCarDeleteModal();
@@ -181,6 +160,7 @@
             </div>
           </div>
         </div>
+      <!-- COL WITH CARRIDES/BOOKINGER -->
         <div class="col-sm pb-3 d-flex justify-content-end">
           <a href="/Pages/AddCar.html" type="button" class="btn btn-secondary ml-4">
             <i class="fa fa-plus"> Opret bil</i>
@@ -188,21 +168,31 @@
         </div>
       </div>
       &nbsp;
-       <!-- Modal V2 Bookinger -->
+       <!-- Modal Bookinger Delete -->
        <div class="deletemodal" ref="deleteModal">
         <div class="modal-content">
           <h5 class="fw-semibold">Er du sikker på at din booking skal slettes?</h5>
-          <button type="button" 
-          class="btn btn-danger" style="margin: 5px;"
+          <button type="button" class="btn btn-danger" style="margin: 5px;"
           v-on:click="deleteCarRide(); hideDeleteModal()">Ja</button>
             <button type="button" class="btn btn-dark" style="margin: 5px;"
              v-on:click="hideDeleteModal()">Anuller</button>
         </div>
       </div>
-
       <div class="col-sm col-md-4 colStyling">
         <h5 class="fw-semibold">Bookninger</h5>
         <hr class="">
+
+          <!-- Modal info -->
+       <!-- <div class="deletemodal" ref="deleteModal">
+        <div class="modal-content">
+          <h5 class="fw-semibold">Er du sikker på at din booking skal slettes?</h5>
+          <button type="button" class="btn btn-danger" style="margin: 5px;"
+          v-on:click="deleteCarRide(); hideDeleteModal()">Ja</button>
+            <button type="button" class="btn btn-dark" style="margin: 5px;"
+             v-on:click="hideDeleteModal()">Anuller</button>
+        </div>
+      </div> -->
+
         <div class="card mb-2 zoom" 
         v-for="carRide in carArray">
           <div class="card-body border">
@@ -211,51 +201,50 @@
                 Dato: <br>
                 Start: <br>
                 Slut: <br>
+                Pris: <br>
               </div>
               <div class="col-sm">
                 {{ parseDate(carRide.driveDate) }} <br>
                 {{ carRide.startDestination }} <br>
                 {{ carRide.endDestination }} <br>
-                {{ carRide.fuelType }} <br>
+                {{ carRide.price }} kr. <br>
               </div>
-
               <div class="mr-2">
+                <!--Redirect to Info side-->
                 <div class="col-sm text-center">
-                  <button id="" type="button" class="btn mr-2"
-                    style="background-color: #74c574; color: black;">
+                  <a type="button" class="btn mr-2"
+                  v-on:click="redirectToInfoDetaljeLift(carRide.carRideId)"
+                  style="background-color: rgb(163, 247, 163); color: black;">
+
                     <i class="fa fa-solid fa-info"></i>
-                  </button>
+                </a>
                 </div>
                 <br>
-                <!--Button show modal trigger
-                v-on:click="deleteCarRide(car.carRideId)" type="button"
-                -->
-                {{ carRide.carRideId }}
+                <!--Button show modal trigger delete
+                v-on:click="deleteCarRide(car.carRideId)" type="button"-->
+                <!-- {{ carRide.carRideId }} -->
                 <div class="col-sm text-center">
                   <button id="deleteButton" 
                   v-on:click="showDeleteModal(); this.deleteCarRideId = carRide.carRideId" 
-                  type="button"
-                  class="btn btn-danger mr-2">
+                  type="button" class="btn btn-danger mr-2">
                     <i class="fa fa-sharp fa-solid fa-trash"></i>
                   </button>
                 </div>
                 <!-- {{deleteMessage}} -->
                 <br>
-                
               </div>
             </div>
-          </div><!--ROW END-->
+          </div>
         </div>
         <div class="col-sm pb-3 d-flex justify-content-end">
           <a href="/Pages/mineLift.html" type="button" class="btn btn-secondary ml-4">
             <i class="fa fa-arrow">
-               Gå til bookinger</i>
+              < Gå til bookinger
+            </i>
           </a>
         </div>
-        <!-- </div> -->
-      </div>
+      </div><!--ROW END-->
     </div>
-
     <br>
     <br>
     <br>
@@ -271,14 +260,11 @@
           </div>
           <!-- Section: Social media section -->
           <section class="col-sm text-center">
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
             <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-google"></i></a>
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i
-                class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-floating m-3" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
           </section>
           <div class="p-3 text-white">
@@ -290,9 +276,7 @@
       </div>
     </footer>
     <!-- FOOTER END -->
-
   </div><!--app close-->
   <script src="/createAccount.js"></script>
 </body>
-
 </html>

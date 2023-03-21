@@ -20,12 +20,11 @@
     <script src="https://unpkg.com/vue@next"></script>
     <!--Own CSS link-->
     <link rel="stylesheet" href="../style.css">
-    <title>Om person og lift</title>
+    <title>Om lift</title>
 </head>
 
 <body>
-    <div id="detalje">
-
+    <div id="infoDetaljeLift">
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-md navbar-dark navStyling">
             <a class="navbar-brand" href="../index.html">
@@ -57,11 +56,7 @@
                 </div>
             </div>
         </nav><!--NAV SLUT-->
-        <div class="row" style="margin:auto">
-            <div class="col-sm text-center">
-                <img class="rounded-circle responsive m-4" src="/img/RandomPerson.png"
-                    style="max-height: 120px; width: auto;" />
-            </div>
+        <!-- <div class="row" style="margin:auto">
             <div class="col-sm m-1">
                 <span class="d-flex justify-content-center" style="font-size:400%; color:yellow;">&bigstar;</span>
                 <p class="font-weight-bold text-center">1</p>
@@ -77,55 +72,43 @@
                 <p class="font-weight-bold text-center">3</p>
                 <p class="font-weight-bold text-center">CO2 besparelse i kg</p>
             </div>
-        </div><!--ROW END-->
+        </div-->
+        <!-- ROW-->
         <hr>
         <div class="row" style="margin:auto">
-            <div class="col-sm-6">
-                <h2 class="font-weight-light p-2">Om person</h2>
-                <div class="d-flex justify-content-between">
-                    <!-- Første del -->
-                    <div>
-                        <div class="p-2 font-weight-bold">Rating &nbsp;&nbsp; </div>
-                        <div class="p-2 font-weight-bold">Beskrivelse &nbsp;&nbsp; </div>
-                        <div class="p-2 font-weight-bold">Telefon &nbsp; </div>
-                        <div class="p-2 font-weight-bold">Mail &nbsp; </div>
-                    </div>
-                    <!-- Anden del -->
-                    <div>
-                        <div class="p-2"> 4.5 </div>
-                        <div class="p-2"> Jeg kører ofte fra Århus banegård til Odsherred station. </div>
-                        <div class="p-2"> (DK) +45 68790894 </div>
-                        <div class="p-2"> brian@gmail.com </div>
-                    </div>
-                </div>
+            <div class="col-sm-3">
+                <!--COL 3-->
             </div>
-            <div class="col-sm-6">
-                <h2 class="font-weight-light p-2">Om lift</h2>
+            <div class="col-sm-6 card border">
+                <h2 class="font-weight-light p-2">Info om Liftet</h2>
                 <div class="d-flex justify-content-between">
                     <!-- Første del -->
                     <div>
                         <div class="p-2 font-weight-bold">Tidspunkt &nbsp; </div>
                         <div class="p-2 font-weight-bold">Fra &nbsp; </div>
                         <div class="p-2 font-weight-bold">Til &nbsp; </div>
-                        <div class="p-2 font-weight-bold">pris &nbsp; </div>
+                        <div class="p-2 font-weight-bold">Pris &nbsp; </div>
                     </div>
                     <!-- Anden del -->
                     <div>
-                        <div class="p-2"> {{ carride.driveDate }} </div>
-                        <div class="p-2"> {{ carride.startDestination }} </div>
-                        <div class="p-2"> {{ carride.endDestination }} </div>
-                        <div class="p-2"> {{ carride.price }} kr. </div>
+                        <div class="p-2">  {{ parseDate(carride.driveDate) }} <br></div>
+                        <div class="p-2">  {{ carride.startDestination }} <br></div>
+                        <div class="p-2">  {{ carride.endDestination }} <br> </div>
+                        <div class="p-2">  {{ carride.price }} kr. <br> </div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end m-4">
-                    <a type="button" href="../index.html" class="btn backBtnStyle">Tilbage til forsiden</a>
+                    <a type="button" href="/Pages/mineKonto.html" 
+                    class="btn backBtnStyle">Tilbage til min side</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a type="button" href="/Pages/login.html" class="btn logindBtnStyle">Book</a>
+                    <!-- <a type="button" href="/Pages/login.html" class="btn logindBtnStyle">Book</a> -->
                 </div>
-                <p class="d-flex justify-content-end">Log ind eller opret konto for at booke en plads</p>
+            </div>
+            <div class="col-sm-3">
+                <!--COL 3-->
             </div>
         </div>
-        <br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
         <!--FOOTER START-->
         <footer id="footer" class="footerStyling">
             <div class="container-fluid p-1">
@@ -154,7 +137,7 @@
         </footer>
         <!-- FOOTER END -->
     </div><!-- DETALJE APP END -->
-    <script src="/detalje.js"></script>
+    <script src="/infoDetaljeLift.js"></script>
 </body>
 
 </html>
