@@ -31,6 +31,7 @@ const createAccount = Vue.createApp({
               //CarRides - egne bookninger
               carArray: [],
               error: null,
+
               addCarRide: {
                 carRideId: 0,
                 driveDate: "",
@@ -42,6 +43,7 @@ const createAccount = Vue.createApp({
               },
               carRideToDelete: null,
               carToDeleteId: null,
+              infoCarRideId: null,
         }
     },
     created() { // life cycle method. Called when browser reloads page
@@ -161,6 +163,15 @@ const createAccount = Vue.createApp({
                 alert(ex.message)
             }
         },
+         //REDIRCT TIL DETALJE SIDEN CARRIDE
+         redirectToInfoDetaljeLift(carRideId){
+            location.href="/Pages/infoDetaljeLift.html?id=" + carRideId
+        },
+         //REDIRCT TIL DETALJE SIDEN CARRIDE
+         redirectToInfoDetaljeCar(carId){
+            location.href="/Pages/infoDetaljeCar.html?id=" + carId
+        },
+       
         //FILTERMETODE TIL DATO
         parseDate(time) {
             clock = time.slice(11, 16)
@@ -171,7 +182,7 @@ const createAccount = Vue.createApp({
             console.log("Converted date to:" + convertedDate)
             return convertedDate
         },
-        
+        //CARRIDE
         modalId(i) {
             return 'modal' + i;
         }, 
@@ -192,6 +203,16 @@ const createAccount = Vue.createApp({
         hideCarDeleteModal(){
             this.$refs.deleteCarModal.style.display = "none"
         },
+        //INFO
+        showInfoModal(){
+            this.$refs.infoModal.style.display = "block"
+            console.log(this.infoCarRideId)
+            // console.log(this.carRideToDelete)
+        },
+        hideInfoModal(){
+            this.$refs.infoModal.style.display = "none"
+        }
+
 
     }
 })
