@@ -87,7 +87,9 @@
 
             <div class="col-sm">
               <div class="btn-group dropdown">
-                <button style="background-color: black; border-radius: 30%;" type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button style="background-color: black; border-radius: 30%;" type="button"
+                  class="btn text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
                   Sorter
                 </button>
                 <div class="dropdown-menu">
@@ -121,81 +123,99 @@
       <!--COL 5 CARDS-->
       <div class="col-sm-5 p-3 frontpageBackStyling">
         <div class="card mb-2 zoom" v-for="car in carrideArray">
-          <!--HER ER REDIRECT TIL DETALJESIDEN-->
           <!--Data is stored in key/value format - ?id=1-->
-          <a id="CardInfo" v-on:click="redirectToDetalje(car.carRideId)" style="color:black">
-            <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
-              <div class="card-text d-flex justify-content-between">
-                <div class="card-text m-1">
-                  <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
-                  <h5 class="card-title text-center">Bruger</h5>
-                  <h6 class="text-center">
-                    <span class="red-star checked">★</span><span class="red-star checked">★</span><span
-                      class="red-star checked">★</span><span class="red-star">★</span><span class="red-star">★</span>
-                  </h6>
-                </div>
+          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
+            <div class="card-text d-flex justify-content-between">
+
+              <div class="card-text m-1">
+                <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
+                <h5 class="card-title text-center">Bruger</h5>
+                <h6 class="text-center">
+                  <span class="red-star checked">★</span><span class="red-star checked">★</span><span
+                    class="red-star checked">★</span><span class="red-star">★</span><span class="red-star">★</span>
+                </h6>
+              </div>
+              <!--HER ER REDIRECT TIL DETALJESIDEN-->
+              <a id="CardInfo" v-on:click="redirectToDetalje(car.carRideId)" style="color:black">
                 <div class="col-sm mr-2">
                   Dato: {{ parseDate(car.driveDate) }} <br>
                   Pris: {{ car.price }} kr. <br>
                   <div class="text-secondary"> {{car.startDestination}} <br> </div>
                   <div class="text-secondary"> {{car.endDestination}} <br> </div>
                 </div>
-                <div class="mr-2">
-                  <button id="deleteButton" 
-                  v-on:click="deleteCarRide(car.carRideId)" type="button"
-                    class="btn btn-danger">Slet</button>
-                  <br>
-                  <br>
-                  <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
-                  <br>
-                  <!--HER ER DER EN REDIRECT TIL DETALJESIDEN-->
+              </a>
+              <div class="mr-2">
+                <div class="col-sm text-center">
+                  <button id="" type="button" class="btn btn-primary mr-2"
+                  v-on:click="redirectToInfoDetaljeCar(car.carId)"
+                    style="color: rgb(255, 255, 255);">
+                    <i class="fa fa-solid fa-edit"></i>
+                  </button>
                 </div>
-              </div>
+                <br> 
+                <!-- {{ car.carId }} -->
+                <!-- Button Triggers Modal Delete -->
+                <div class="col-sm text-center">
+                  <button id="deleteButton" 
+                  v-on:click="deleteCarRide(car.carRideId)"  
+                  type="button" 
+                  class="btn btn-danger mr-2">
+                    <i class="fa fa-sharp fa-solid fa-trash"></i>
+                  </button>
+                </div>
             </div>
-           </a>
+            </div>
+          </div>
+
         </div>
       </div>
       <!--COL 5 CARDS - REPEAT-->
-      <div class="col-sm-5 p-3  frontpageBackStyling">
+      <div class="col-sm-5 p-3 frontpageBackStyling">
         <div class="card mb-2 zoom" v-for="car in carrideArray">
-          <!--HER ER DER EN REDIRECT TIL DETALJESIDEN-->
-          <!--CARDS IN A A-TAG START-->
-          <a v-on:click="redirectToDetalje(car.carRideId)" style="color:black">
-            <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
-              <div class="card-text d-flex justify-content-between">
-                <div class="card-text m-1">
-                  <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
-                  <h5 class="card-title text-center">Bruger</h5>
-                  <h6 class="text-center">
-                    <span class="red-star checked">★</span>
-                    <span class="red-star checked">★</span>
-                    <span class="red-star checked">★</span>
-                    <span class="red-star">★</span>
-                    <span class="red-star">★</span>
-                  </h6>
-                </div>
-                <div class="mr-2">
+          <!--Data is stored in key/value format - ?id=1-->
+          <div style="background-color: rgb(240, 240, 240); border: 1px solid black;" class="card-body">
+            <div class="card-text d-flex justify-content-between">
+
+              <div class="card-text m-1">
+                <img class="card-img" src="/img/Profile Pic Icon.png" style="height: 90px; width: auto;" /> <br>
+                <h5 class="card-title text-center">Bruger</h5>
+                <h6 class="text-center">
+                  <span class="red-star checked">★</span><span class="red-star checked">★</span><span
+                    class="red-star checked">★</span><span class="red-star">★</span><span class="red-star">★</span>
+                </h6>
+              </div>
+              <!--HER ER REDIRECT TIL DETALJESIDEN-->
+              <a id="CardInfo" v-on:click="redirectToDetalje(car.carRideId)" style="color:black">
+                <div class="col-sm mr-2">
                   Dato: {{ parseDate(car.driveDate) }} <br>
-                  {{ car.price }} kr. <br>
-                  <div class="text-secondary">
-                    {{car.startDestination}} <br>
-                  </div>
-                  <div class="text-secondary">
-                    {{car.endDestination}} <br>
-                  </div>
+                  Pris: {{ car.price }} kr. <br>
+                  <div class="text-secondary"> {{car.startDestination}} <br> </div>
+                  <div class="text-secondary"> {{car.endDestination}} <br> </div>
                 </div>
-                <div class="mr-2">
+              </a>
+              <div class="mr-2">
                   <div class="col-sm text-center">
-                    <button id="deleteButton" v-on:click="deleteCarRide(car.carRideId)" type="button"
-                      class="btn btn-danger">Slet</button> {{deleteMessage}}
-                  </div> <br>
+                    <button id="" type="button" class="btn btn-primary mr-2"
+                    v-on:click="redirectToInfoDetaljeCar(car.carId)"
+                      style="color: rgb(255, 255, 255);">
+                      <i class="fa fa-solid fa-edit"></i>
+                    </button>
+                  </div>
+                  <br> 
+                  <!-- {{ car.carId }} -->
+                  <!-- Button Triggers Modal Delete -->
                   <div class="col-sm text-center">
-                    <button id="updateButton" v-on:click="" type="button" class="btn btn-primary">Ret</button>
-                  </div><br>
-                </div>
+                    <button id="deleteButton" 
+                    v-on:click="deleteCarRide(car.carRideId)"  
+                    type="button" 
+                    class="btn btn-danger mr-2">
+                      <i class="fa fa-sharp fa-solid fa-trash"></i>
+                    </button>
+                  </div>
               </div>
             </div>
-          </a> <!--CARDS IN A A-TAG END-->
+          </div>
+
         </div>
       </div>
     </div>
@@ -235,4 +255,5 @@
   </div>
   <script src="/index.js"></script>
 </body>
+
 </html>
