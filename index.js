@@ -42,9 +42,7 @@ const home = Vue.createApp({
                 phone:"",
                 email:""
               },
-
-
-
+              deleteCarRideId: null,
         }
     },
     created() { // life cycle method. Called when browser reloads page
@@ -147,9 +145,9 @@ const home = Vue.createApp({
         },
 
         //DELETE METODER
-        async deleteCarRide(deleteCarRideId) {
+        async deleteCarRide() {
             console.log(this.deleteCarRideId)
-            const url = baseUrl + "/CarRides/" + deleteCarRideId
+            const url = baseUrl + "/CarRides/" + this.deleteCarRideId
             try {
                 response = await axios.delete(url)
                 this.deleteMessage = response.status + " " + response.statusText
@@ -197,6 +195,15 @@ const home = Vue.createApp({
             convertedDate = date + "-" + month + "-" + year + " / " + clock
             //console.log("Converted date to:" + convertedDate)
             return convertedDate
+        },
+        //MODAL ON DELETE
+        showDeleteModal(){
+            this.$refs.deleteModal.style.display = "block"
+            console.log(this.carRideToDelete)
+            
+        },
+        hideDeleteModal(){
+            this.$refs.deleteModal.style.display = "none"
         },
     }
 })
